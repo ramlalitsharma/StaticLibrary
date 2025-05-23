@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Explore 50+ handy web tools and mini projects including calculators, color generators, animations and more. Copy code and try live demos. SEO & AdSense ready." />
+<meta name="keywords" content="web tools, javascript projects, css animations, calculators, color generator, lorem ipsum, price slider, timer, code copy" />
+<meta name="author" content="Your Name or Brand" />
+<title>Web Tools Hub - 50+ Mini Projects & Live Code</title>
+
+<!-- Open Graph / Social Sharing -->
+<meta property="og:title" content="Web Tools Hub - 50+ Mini Projects & Live Code" />
+<meta property="og:description" content="Explore handy web tools and mini projects with live demos and copyable code snippets." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yourdomain.com" />
+<meta property="og:image" content="https://yourdomain.com/preview-image.png" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Web Tools Hub - 50+ Mini Projects & Live Code" />
+<meta name="twitter:description" content="Explore handy web tools and mini projects with live demos and copyable code snippets." />
+<meta name="twitter:image" content="https://yourdomain.com/preview-image.png" />
+
+<style>
+  /* Reset & base */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0; padding: 0;
+    background: #f8f9fa;
+    color: #212529;
+    line-height: 1.5;
+  }
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  a:hover, a:focus {
+    text-decoration: underline;
+  }
+  header, nav, main, footer, section {
+    padding: 1rem;
+  }
+  header {
+    background: #343a40;
+    color: white;
+    text-align: center;
+  }
+  h1 {
+    margin: 0.25rem 0;
+  }
+  /* Navigation */
+  nav {
+    background: white;
+    border-bottom: 1px solid #dee2e6;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  #project-nav {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0.5rem 1rem;
+    gap: 10px;
+    justify-content: center;
+  }
+  #project-nav a {
+    background: #e9ecef;
+    padding: 0.4rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+  #project-nav a:hover, #project-nav a:focus {
+    background: #007bff;
+    color: white;
+  }
+  /* Search */
+  #search-container {
+    max-width: 1200px;
+    margin: 1rem auto;
+    padding: 0 1rem;
+    text-align: center;
+  }
+  #search-input {
+    width: 100%;
+    max-width: 400px;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+  }
+  /* Main container */
+  main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem;
+  }
+  section.project {
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 1px 6px rgb(0 0 0 / 0.1);
+    margin-bottom: 2rem;
+    padding: 1rem 1.25rem;
+  }
+  section.project h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #343a40;
+  }
+  .live-demo {
+    margin: 1rem 0;
+    border: 1px solid #ced4da;
+    padding: 1rem;
+    border-radius: 4px;
+    background: #f1f3f5;
+  }
+  pre {
+    background: #212529;
+    color: #f8f9fa;
+    overflow-x: auto;
+    padding: 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+  }
+  .copy-btn {
+    margin-top: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    user-select: none;
+    transition: background-color 0.3s ease;
+  }
+  .copy-btn:hover, .copy-btn:focus {
+    background: #0056b3;
+    outline: none;
+  }
+  /* Responsive iframe or demo container */
+  .live-demo iframe, .live-demo > * {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Footer */
+  footer {
+    background: #343a40;
+    color: white;
+    text-align: center;
+    padding: 1rem 1rem;
+    font-size: 0.9rem;
+  }
+  footer a {
+    color: #adb5bd;
+  }
+  /* Responsive layout */
+  @media (max-width: 600px) {
+    #project-nav {
+      justify-content: flex-start;
+      overflow-x: auto;
+      padding: 0.5rem;
+    }
+    #project-nav a {
+      flex-shrink: 0;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Web Tools Hub</h1>
+  <p>50+ Mini Projects & Live Code Demos — Copy & Use in Your Projects</p>
+</header>
+
+<nav aria-label="Primary navigation">
+  <div id="project-nav" role="list" aria-live="polite" aria-relevant="additions"></div>
+</nav>
+
+<div id="search-container">
+  <label for="search-input" class="visually-hidden">Search projects</label>
+  <input type="search" id="search-input" placeholder="Search tools and projects..." aria-describedby="search-desc" />
+  <div id="search-desc" class="visually-hidden">Type keywords to filter the list of projects</div>
+</div>
+
+<main id="projects-container" tabindex="-1" aria-live="polite" aria-relevant="additions"></main>
+
+<!-- Privacy Policy & About / Contact Sections -->
+<section id="privacy-policy" class="project" aria-label="Privacy Policy">
+  <h2>Privacy Policy</h2>
+  <p>Your privacy is important to us. This site does not collect personal data except through Google AdSense and Google Analytics cookies. We do not share any information with third parties except as required by law.</p>
+  <p>For more information about Google Ads and data usage, please visit <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy & Terms</a>.</p>
+</section>
+
+<section id="about-contact" class="project" aria-label="About and Contact">
+  <h2>About & Contact</h2>
+  <p>This website offers a collection of mini web projects and tools that you can try live and copy code from to use in your own projects. It's built with HTML, CSS, and JavaScript and designed to be SEO-friendly and AdSense-ready.</p>
+  <p>If you have any questions or want to suggest new tools, please email: <a href="mailto:contact@yourdomain.com">contact@yourdomain.com</a></p>
+</section>
+
+<footer>
+  &copy; 2025 Web Tools Hub. All rights reserved. | <a href="#privacy-policy">Privacy Policy</a> | <a href="#about-contact">About & Contact</a>
+</footer>
+
+<script>
+  // List of projects with demos and code (Add your full projects here)
+  const projects = [
+    {
+      id: 'expanding-cards',
+      title: 'Expanding Cards',
+      keywords: 'cards, animation, hover, css',
+      description: 'Interactive cards that expand on hover to reveal more content.',
+      demo: `<div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
+          <div style="background:#007bff;color:#fff;padding:1rem;border-radius:8px;flex:1 1 120px;cursor:pointer;transition:all 0.3s ease;" 
+               onmouseover="this.style.flex='3 1 300px'" onmouseout="this.style.flex='1 1 120px'">Card 1</div>
+          <div style="background:#6c757d;color:#fff;padding:1rem;border-radius:8px;flex:1 1 120px;cursor:pointer;transition:all 0.3s ease;" 
+               onmouseover="this.style.flex='3 1 300px'" onmouseout="this.style.flex='1 1 120px'">Card 2</div>
+          <div style="background:#28a745;color:#fff;padding:1rem;border-radius:8px;flex:1 1 120px;cursor:pointer;transition:all 0.3s ease;" 
+               onmouseover="this.style.flex='3 1 300px'" onmouseout="this.style.flex='1 1 120px'">Card 3</div>
+          <div style="background:#dc3545;color:#fff;padding:1rem;border-radius:8px;flex:1 1 120px;cursor:pointer;transition:all 0.3s ease;" 
+               onmouseover="this.style.flex='3 1 300px'" onmouseout="this.style.flex='1 1 120px'">Card 4</div>
+        </div>`,
+      code: `<!-- HTML -->
+<div class="cards-container">
+  <div class="card">Card 1</div>
+  <div class="card">Card 2</div>
+  <div class="card">Card 3</div>
+  <div class="card">Card 4</div>
+</div>
+
+<!-- CSS -->
+.cards-container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.card {
+  background-color: #007bff;
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  flex: 1 1 120px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.card:hover {
+  flex: 3 1 300px;
+}
+`
+    },
+    {
+      id: 'progress-steps',
+      title: 'Progress Steps',
+      keywords: 'progress, steps, navigation, indicator',
+      description: 'Visual progress indicator with navigation buttons.',
+      demo: `<div style="max-width:300px;margin:auto;font-family:sans-serif;">
+        <div style="display:flex;justify-content:space-between;margin-bottom:15px;">
+          <div style="width:30px;height:30px;border-radius:50%;background:#007BFF;color:#fff;display:flex;align-items:center;justify-content:center;">1</div>
+          <div style="width:30px;height:30px;border-radius:50%;background:#ccc;color:#fff;display:flex;align-items:center;justify-content:center;">2</div>
+          <div style="width:30px;height:30px;border-radius:50%;background:#ccc;color:#fff;display:flex;align-items:center;justify-content:center;">3</div>
+          <div style="width:30px;height:30px;border-radius:50%;background:#ccc;color:#fff;display:flex;align-items:center;justify-content:center;">4</div>
+        </div>
+        <button disabled style="margin-right:10px;padding:5px 10px;">Prev</button>
+        <button>Next</button>
+      </div>`,
+      code: `<!-- HTML -->
+<div class="progress-container">
+  <div class="step active">1</div>
+  <div class="step">2</div>
+  <div class="step">3</div>
+  <div class="step">4</div>
+</div>
+<button id="prev" disabled>Prev</button>
+<button id="next">Next</button>
+
+<!-- CSS -->
+.progress-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.step {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #ccc;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+}
+.step.active {
+  background-color: #007bff;
+}
+
+<!-- JS -->
+const steps = document.querySelectorAll('.step');
+const prevBtn = document.getElementById('prev');
+const nextBtn = document.getElementById('next');
+let currentStep = 1;
+
+nextBtn.addEventListener('click', () => {
+  currentStep++;
+  if(currentStep > steps.length) currentStep = steps.length;
+  updateSteps();
+});
+prevBtn.addEventListener('click', () => {
+  currentStep--;
+  if(currentStep < 1) currentStep = 1;
+  updateSteps();
+});
+
+function updateSteps() {
+  steps.forEach((step, idx) => {
+    if(idx < currentStep) step.classList.add('active');
+    else step.classList.remove('active');
+  });
+  prevBtn.disabled = currentStep === 1;
+  nextBtn.disabled = currentStep === steps.length;
+}
+`
+    },
+    // Add all other projects similarly
+  ];
+
+  const navContainer = document.getElementById('project-nav');
+  const projectsContainer = document.getElementById('projects-container');
+
+  // Create nav links
+  projects.forEach(proj => {
+    const link = document.createElement('a');
+    link.href = `#${proj.id}`;
+    link.textContent = proj.title;
+    link.setAttribute('role', 'listitem');
+    navContainer.appendChild(link);
+  });
+
+  // Render all projects in main container
+  function renderProjects(filter = '') {
+    projectsContainer.innerHTML = '';
+    const filtered = projects.filter(p =>
+      p.title.toLowerCase().includes(filter.toLowerCase()) ||
+      p.keywords.toLowerCase().includes(filter.toLowerCase()) ||
+      p.description.toLowerCase().includes(filter.toLowerCase())
+    );
+    if(filtered.length === 0) {
+      projectsContainer.innerHTML = '<p>No projects match your search.</p>';
+      return;
+    }
+    filtered.forEach(proj => {
+      const section = document.createElement('section');
+      section.className = 'project';
+      section.id = proj.id;
+      section.setAttribute('tabindex', '0');
+      section.setAttribute('aria-label', proj.title);
+
+      section.innerHTML = `
+        <h2>${proj.title}</h2>
+        <p>${proj.description}</p>
+        <div class="live-demo" aria-live="polite" aria-atomic="true">${proj.demo}</div>
+        <button class="copy-btn" aria-label="Copy code for ${proj.title}">Copy Code</button>
+        <pre><code>${proj.code.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>
+      `;
+
+      projectsContainer.appendChild(section);
+    });
+  }
+
+  // Initial render
+  renderProjects();
+
+  // Search filter
+  const searchInput = document.getElementById('search-input');
+  searchInput.addEventListener('input', () => {
+    renderProjects(searchInput.value.trim());
+  });
+
+  // Copy code functionality
+  document.body.addEventListener('click', e => {
+    if(e.target.classList.contains('copy-btn')){
+      const pre = e.target.nextElementSibling;
+      if(pre) {
+        const code = pre.innerText;
+        navigator.clipboard.writeText(code).then(() => {
+          e.target.textContent = 'Copied!';
+          setTimeout(() => e.target.textContent = 'Copy Code', 1500);
+        }).catch(() => {
+          alert('Failed to copy code.');
+        });
+      }
+    }
+  });
+
+  // Accessibility: Focus main on load for screen readers
+  window.onload = () => {
+    projectsContainer.focus();
+  };
+</script>
+
+</body>
+</html>
