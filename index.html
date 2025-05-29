@@ -30,7 +30,7 @@
   <!-- Schema Markup -->
   <script type="application/ld+json">
     {
-      "@context": "https://staticlibrary.netlify.app/",
+      "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "Web Tools Hub",
       "url": "https://staticlibrary.netlify.app/",
@@ -40,9 +40,7 @@
 
   <style>
     /* Reset & Base */
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
+    *, *::before, *::after { box-sizing: border-box; }
     body {
       font-family: 'Inter', sans-serif;
       margin: 0;
@@ -52,16 +50,9 @@
       line-height: 1.6;
       transition: background 0.3s ease, color 0.3s ease;
     }
-    a {
-      color: #3182ce;
-      text-decoration: none;
-    }
-    a:hover, a:focus {
-      text-decoration: underline;
-    }
-    header, nav, main, footer, section {
-      padding: 1.5rem;
-    }
+    a { color: #3182ce; text-decoration: none; }
+    a:hover, a:focus { text-decoration: underline; }
+    header, nav, main, footer, section { padding: 1.5rem; }
 
     /* Header */
     header {
@@ -71,15 +62,8 @@
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       position: relative;
     }
-    h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin: 0.25rem 0;
-    }
-    header p {
-      font-size: 1.1rem;
-      opacity: 0.9;
-    }
+    h1 { font-size: 2.5rem; font-weight: 700; margin: 0.25rem 0; }
+    header p { font-size: 1.1rem; opacity: 0.9; }
     #theme-toggle {
       position: absolute;
       top: 1rem;
@@ -92,10 +76,7 @@
       cursor: pointer;
       transition: all 0.3s ease;
     }
-    #theme-toggle:hover {
-      background: #2b6cb0;
-      transform: scale(1.1);
-    }
+    #theme-toggle:hover { background: #2b6cb0; transform: scale(1.1); }
 
     /* Navigation */
     nav {
@@ -161,19 +142,11 @@
       left: 50%;
       transform: translateX(-50%);
     }
-    #search-suggestions div {
-      padding: 0.5rem;
-      cursor: pointer;
-    }
-    #search-suggestions div:hover {
-      background: #f7fafc;
-    }
+    #search-suggestions div { padding: 0.5rem; cursor: pointer; }
+    #search-suggestions div:hover { background: #f7fafc; }
 
     /* Main Content */
-    main {
-      max-width: 1200px;
-      margin: auto;
-    }
+    main { max-width: 1200px; margin: auto; }
     section.project {
       background: #fff;
       border-radius: 12px;
@@ -186,11 +159,7 @@
       transform: translateY(-5px);
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
     }
-    section.project h2 {
-      font-size: 1.75rem;
-      color: #2d3748;
-      margin-top: 0;
-    }
+    section.project h2 { font-size: 1.75rem; color: #2d3748; margin-top: 0; }
     .live-demo {
       margin: 1rem 0;
       padding: 1rem;
@@ -223,10 +192,7 @@
     }
 
     /* Ad Styling */
-    .ad-container {
-      text-align: center;
-      margin: 2rem 0;
-    }
+    .ad-container { text-align: center; margin: 2rem 0; }
 
     /* Footer */
     footer {
@@ -236,10 +202,7 @@
       padding: 2rem;
       font-size: 1rem;
     }
-    footer a {
-      color: #90cdf4;
-      margin: 0 0.5rem;
-    }
+    footer a { color: #90cdf4; margin: 0 0.5rem; }
 
     /* Back to Top */
     #back-to-top {
@@ -255,38 +218,16 @@
       display: none;
       transition: all 0.3s ease;
     }
-    #back-to-top:hover {
-      background: #2b6cb0;
-      transform: scale(1.1);
-    }
+    #back-to-top:hover { background: #2b6cb0; transform: scale(1.1); }
 
     /* Dark Mode */
-    .dark-mode {
-      background: #1a202c;
-      color: #e2e8f0;
-    }
-    .dark-mode header {
-      background: linear-gradient(90deg, #2d3748, #4a5568);
-    }
-    .dark-mode section.project, .dark-mode nav {
-      background: #2d3748;
-      border-color: #4a5568;
-    }
-    .dark-mode #project-nav a {
-      background: #4a5568;
-      color: #e2e8f0;
-    }
-    .dark-mode #project-nav a:hover {
-      background: #3182ce;
-    }
-    .dark-mode #search-input {
-      background: #4a5568;
-      border-color: #718096;
-      color: #e2e8f0;
-    }
-    .dark-mode #search-suggestions {
-      background: #2d3748;
-    }
+    .dark-mode { background: #1a202c; color: #e2e8f0; }
+    .dark-mode header { background: linear-gradient(90deg, #2d3748, #4a5568); }
+    .dark-mode section.project, .dark-mode nav { background: #2d3748; border-color: #4a5568; }
+    .dark-mode #project-nav a { background: #4a5568; color: #e2e8f0; }
+    .dark-mode #project-nav a:hover { background: #3182ce; }
+    .dark-mode #search-input { background: #4a5568; border-color: #718096; color: #e2e8f0; }
+    .dark-mode #search-suggestions { background: #2d3748; }
 
     /* Accessibility */
     .visually-hidden {
@@ -299,16 +240,9 @@
 
     /* Responsive Design */
     @media (max-width: 600px) {
-      #project-nav {
-        justify-content: flex-start;
-        padding: 0.5rem;
-      }
-      h1 {
-        font-size: 2rem;
-      }
-      section.project h2 {
-        font-size: 1.5rem;
-      }
+      #project-nav { justify-content: flex-start; padding: 0.5rem; }
+      h1 { font-size: 2rem; }
+      section.project h2 { font-size: 1.5rem; }
     }
   </style>
 </head>
@@ -325,9 +259,7 @@
            data-ad-slot="YOUR_BANNER_AD_SLOT_ID"
            data-ad-format="auto"
            data-full-width-responsive="true"></ins>
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
   </header>
 
@@ -344,47 +276,69 @@
 
   <main id="projects-container" tabindex="-1" aria-live="polite" aria-relevant="additions">
     <!-- Projects inserted dynamically -->
-    <!-- In-Article Ads -->
-    <div class="ad-container" id="ad-after-project-5" style="display: none;">
+    <div class="ad-container" id="ad-after-project-10" style="display: none;">
       <ins class="adsbygoogle"
            style="display:block"
            data-ad-client="ca-pub-8149507764464883"
            data-ad-slot="YOUR_IN_ARTICLE_AD_SLOT_ID_1"
            data-ad-format="auto"
            data-full-width-responsive="true"></ins>
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
-    <div class="ad-container" id="ad-after-project-10" style="display: none;">
+    <div class="ad-container" id="ad-after-project-20" style="display: none;">
       <ins class="adsbygoogle"
            style="display:block"
            data-ad-client="ca-pub-8149507764464883"
            data-ad-slot="YOUR_IN_ARTICLE_AD_SLOT_ID_2"
            data-ad-format="auto"
            data-full-width-responsive="true"></ins>
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+    <div class="ad-container" id="ad-after-project-30" style="display: none;">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-8149507764464883"
+           data-ad-slot="YOUR_IN_ARTICLE_AD_SLOT_ID_3"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+    <div class="ad-container" id="ad-after-project-40" style="display: none;">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-8149507764464883"
+           data-ad-slot="YOUR_IN_ARTICLE_AD_SLOT_ID_4"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+    <div class="ad-container" id="ad-after-project-50" style="display: none;">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-8149507764464883"
+           data-ad-slot="YOUR_IN_ARTICLE_AD_SLOT_ID_5"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
   </main>
 
   <!-- Privacy Policy -->
   <section id="privacy" class="project">
     <h2>Privacy Policy</h2>
-    <p>At Web Tools Hub, we are committed to protecting your privacy. We collect minimal data, such as analytics via Google Analytics and cookies for AdSense ads, to enhance your experience. No personal information is collected unless voluntarily provided (e.g., through contact forms or newsletter signups). Data is not shared with third parties except as required by law or for ad serving. You can opt out of cookies via your browser settings. For questions, contact us at [your-email@yourdomain.com].</p>
+    <p>At Web Tools Hub, we prioritize your privacy. We collect minimal data, such as analytics via Google Analytics and cookies for AdSense ads, to improve your experience. No personal information is collected unless provided voluntarily (e.g., via contact forms). Data is not shared with third parties except as required by law or for ad serving. You can opt out of cookies via browser settings. Contact us at [your-email@yourdomain.com] for questions.</p>
   </section>
 
   <!-- Terms of Service -->
   <section id="terms" class="project">
     <h2>Terms of Service</h2>
-    <p>By using Web Tools Hub, you agree to these Terms of Service. All content, including code snippets and demos, is for educational purposes. You may use the code in your projects but must not claim ownership. We are not liable for any damages resulting from site use. We reserve the right to modify or discontinue the site without notice. For inquiries, contact [your-email@yourdomain.com].</p>
+    <p>By using Web Tools Hub, you agree to these Terms. Content, including code snippets and demos, is for educational use. You may use the code but must not claim ownership. We are not liable for damages from site use. We may modify or discontinue the site without notice. Contact [your-email@yourdomain.com] for inquiries.</p>
   </section>
 
   <!-- Contact Page -->
   <section id="contact" class="project">
     <h2>Contact Us</h2>
-    <p>Have questions or feedback? Reach out via email at <a href="mailto:your-email@yourdomain.com">your-email@yourdomain.com</a>. We love hearing from our community!</p>
+    <p>Questions or feedback? Email us at <a href="mailto:your-email@yourdomain.com">your-email@yourdomain.com</a>. We value your input!</p>
   </section>
 
   <footer>
@@ -394,13 +348,13 @@
   <button id="back-to-top" aria-label="Back to top">↑</button>
 
   <script>
-    // Project Data (20 Implemented + 40 Placeholders)
+    // Project Data (60 Implemented Projects)
     const detailedProjects = [
       {
         id: 'project-1',
         title: 'Expanding Cards',
         keywords: 'expanding cards animation css js demo',
-        description: 'Create an interactive card gallery where cards expand on click with smooth transitions. Ideal for portfolios, image galleries, or product showcases, this project leverages CSS flexbox for layout and JavaScript for dynamic resizing. The animation provides a visually appealing way to highlight content, making it perfect for engaging users on modern websites.',
+        description: 'Create an interactive card gallery where cards expand on click with smooth transitions. Ideal for portfolios or product showcases, this project uses CSS flexbox and JavaScript for dynamic resizing, enhancing user engagement with visual effects.',
         demo: `
           <div class="expanding-cards-container" style="display:flex;gap:10px;max-width:600px;margin:auto;">
             <div class="card" style="flex:1;cursor:pointer;background:#6C5B7B;color:white;border-radius:8px;padding:1rem;transition:flex 0.5s ease;">
@@ -418,11 +372,9 @@
           </div>
         `,
         code: `
-          /* CSS */
           .expanding-cards-container { display: flex; gap: 10px; max-width: 600px; margin: auto; }
           .expanding-cards-container .card { flex: 1; cursor: pointer; background: #6C5B7B; color: white; border-radius: 8px; padding: 1rem; transition: flex 0.5s ease; }
           .expanding-cards-container .card.expanded { flex: 3; }
-          /* JavaScript */
           const cards = document.querySelectorAll('.expanding-cards-container .card');
           cards.forEach(card => {
             card.addEventListener('click', () => {
@@ -436,7 +388,7 @@
         id: 'project-2',
         title: 'Progress Steps',
         keywords: 'progress steps wizard form css js demo',
-        description: 'Build a multi-step progress bar for forms, wizards, or checkout processes. This project uses CSS for styling and JavaScript to update progress dynamically, providing visual feedback to users. It’s ideal for e-commerce sites, registration flows, or any multi-step user journey, enhancing UX with clear navigation cues.',
+        description: 'Build a multi-step progress bar for forms or checkout processes. Using CSS for styling and JavaScript for dynamic updates, this project provides clear navigation cues, ideal for e-commerce or registration flows.',
         demo: `
           <div id="progress-steps-container" style="max-width:400px;margin:auto;">
             <div id="progress" style="display:flex;justify-content:space-between;margin-bottom:1rem;">
@@ -492,7 +444,7 @@
         id: 'project-3',
         title: 'Rotating Navigation Animation',
         keywords: 'rotating navigation animation css js menu demo',
-        description: 'A hamburger menu that rotates when toggled, revealing a navigation bar. This project combines CSS transitions for smooth animations and JavaScript for toggle functionality, making it ideal for mobile-friendly websites. It enhances navigation UX with a visually engaging effect.',
+        description: 'A hamburger menu that rotates to reveal a navigation bar. Using CSS transitions and JavaScript for toggling, this project enhances mobile-friendly navigation with a visually engaging effect.',
         demo: `
           <div id="rot-nav" style="text-align:center;margin:2rem 0;">
             <button aria-label="Toggle navigation menu" id="nav-toggle">
@@ -524,8 +476,7 @@
         id: 'project-4',
         title: 'Hidden Search Widget',
         keywords: 'hidden search widget toggle input css js demo',
-        description: 'A search input that toggles with a smooth animation, saving space in minimalistic designs. This project uses CSS transitions for the animation and JavaScript to handle visibility, perfect for headers or sidebars where space is limited.',
+        description: 'A search input that toggles with a smooth animation, saving space in minimalistic designs. This project uses CSS transitions and JavaScript for visibility control, ideal for headers or sidebars.',
         demo: `
           <div style="text-align:center;margin:2rem 0;">
-            <button id="toggle-search" aria-expanded="false" aria-controls="search-box" style="padding:0.5rem 1rem;cursor:pointer;">Toggle Search</button>
-            <input type="search" id="search-box" placeholder="Type to search..." style="display:none;margin-top:1rem;p
+   
