@@ -1,0 +1,64 @@
+/* Custom Tailwind Overrides */
+.project {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project:hover {
+  transform: translateY(-5px);
+}
+.dark .project {
+  background: #1f2937;
+}
+.nav-link {
+  transition: all 0.2s ease;
+  display: inline-block;
+  margin: 0.25rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+.nav-link:hover {
+  background: #2563eb;
+  transform: scale(1.05);
+}
+.copy-btn:hover {
+  transform: scale(1.05);
+}
+#search-suggestions div:hover {
+  background: #f1f5f9;
+}
+.dark #search-suggestions div:hover {
+  background: #374151;
+}
+html {
+  scroll-behavior: smooth;
+}
+#project-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+#projects-container {
+  margin-top: 1rem;
+  min-height: 400px;
+}
+@media (max-width: 640px) {
+  .nav-link {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+  }
+  #project-nav {
+    justify-content: flex-start;
+  }
+}
+.demo {
+  min-height: 100px;
+}
+.code {
+  position: relative;
+}
+#projects-container:has(.project) #loading-message {
+  display: none;
+}
