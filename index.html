@@ -348,6 +348,103 @@
   <button id="back-to-top" aria-label="Back to top">↑</button>
 
   <script>
+    // Project Data (defined above with 60 projects)
+
+// Render Projects
+function renderProjects(projects) {
+  const container = document.getElementById('projects-container');
+  container.innerHTML = '';
+  projects.forEach((project, index) => {
+    const section = document.createElement('section');
+    section.className = 'project';
+    section.id = project.id;
+    section.innerHTML = `
+      <h2>${project.title}</h2>
+      <p>${project.description}</p>
+      <div class="live-demo">${project.demo}</div>
+      <pre><code>${project.code.trim()}</code></pre>
+      <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+    `;
+    container.appendChild(section);
+    // Show ads after projects 10, 20, 30, 40, 50
+    if ([10, 20, 30, 40, 50].includes(index + 1)) {
+      document.getElementById(`ad-after-project-${index + 1}`).style.display = 'block';
+    }
+  });
+}
+
+// Render Navigation
+function renderNav() {
+  const nav = document.getElementById('project-nav');
+  detailedProjects.forEach(project => {
+    const a = document.createElement('a');
+    a.href = `#${project.id}`;
+    a.textContent = project.title;
+    a.setAttribute('role', 'listitem');
+    nav.appendChild(a);
+  });
+}
+
+// Search Functionality
+function setupSearch() {
+  const searchInput = document.getElementById('search-input');
+  const suggestions = document.getElementById('search-suggestions');
+  searchInput.addEventListener('input', () => {
+    const query = searchInput.value.toLowerCase();
+    suggestions.innerHTML = '';
+    if (query.length < 2) {
+      suggestions.style.display = 'none';
+      renderProjects(detailedProjects);
+      return;
+    }
+    const filtered = detailedProjects.filter(project =>
+      project.title.toLowerCase().includes(query) ||
+      project.keywords.toLowerCase().includes(query)
+    );
+    filtered.slice(0, 5).forEach(project => {
+      const div = document.createElement('div');
+      div.textContent = project.title;
+      div.addEventListener('click', () => {
+        searchInput.value = project.title;
+        suggestions.style.display = 'none';
+        renderProjects([project]);
+      });
+      suggestions.appendChild(div);
+    });
+    suggestions.style.display = filtered.length ? 'block' : 'none';
+    renderProjects(filtered);
+  });
+}
+
+// Copy Code
+function copyCode(btn) {
+  const code = btn.previousElementSibling.querySelector('code').textContent;
+  navigator.clipboard.writeText(code).then(() => {
+    btn.textContent = 'Copied!';
+    setTimeout(() => (btn.textContent = 'Copy Code'), 2000);
+  });
+}
+
+// Theme Toggle
+document.getElementById('theme-toggle').addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+  localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+});
+
+// Back to Top
+const backToTop = document.getElementById('back-to-top');
+window.addEventListener('scroll', () => {
+  backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+});
+backToTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Initialize
+if (localStorage.getItem('theme') === 'dark') document.body.classList.add('dark-mode');
+renderNav();
+renderProjects(detailedProjects);
+setupSearch();
     // Project Data (60 Implemented Projects)
     const detailedProjects = [
       {
@@ -479,4 +576,462 @@
         description: 'A search input that toggles with a smooth animation, saving space in minimalistic designs. This project uses CSS transitions and JavaScript for visibility control, ideal for headers or sidebars.',
         demo: `
           <div style="text-align:center;margin:2rem 0;">
+
+
+          // Continuation of detailedProjects array
+const detailedProjects = [
+  // ... (Projects 1–35 from previous response) ...
+  {
+    id: 'project-36',
+    title: 'Pomodoro Timer',
+    keywords: 'pomodoro timer productivity javascript demo',
+    description: 'A Pomodoro timer to boost productivity with 25-minute work sessions and 5-minute breaks. This project uses JavaScript for real-time countdowns and CSS for a clean interface. Ideal for students or professionals, it helps manage time efficiently.',
+    demo: `
+      <div style="pomodoro-container" style="max-width:400px;margin:auto;text-align:padding;">
+        <p id="pomodoro-display" style="font-size:28px;padding:1rem;">25:00</p>
+        <button onclick="startPomodoro()" style="padding:0.5rem 1rem;margin-right:0.5rem;">Start</button>
+        <button onclick="resetPomodoro()" style="padding:0.5rem 1;padding:1rem;">Reset</button>
+      </div>
+    `,
+    code: `
+      let pomodoroTime = 25 * 60;
+      let interval;
+      const pomodoroDisplay = document.getElementById('pomodoro-display');
+      function startPomodoro() {
+        clearInterval(interval);
+        interval = setInterval(() => {
+          if (pomodoroTime <= 0) {
+            clearInterval(interval);
+            pomodoroDisplay.textContent = 'Done!';
+            return;
+          }
+          pomodoroTime--;
+          const minutes = Math.floor(pomodoroTime / 60);
+          const seconds = Math.floor((pomodoroTime % 60);
+          pomodoroDisplay.textContent = `\${minutes.toString().padStart(2, '0')}:\${seconds.toString().padStart(2, '0')}`;
+        }, 1000);
+      }
+      function resetPomodoro() {
+        clearInterval(interval);
+        pomodoroTime = 25 * 60;
+        pomodoroDisplay.textContent = '25:00';
+      }
+    `
+  },
+  {
+    id: 'project-37',
+    title: 'Currency Converter',
+    keywords: 'currency converter api javascript demo',
+    description: 'Convert between different currencies using a real-time exchange rate API. This project uses JavaScript for API calls and CSS for a user-friendly interface, perfect for travel or finance apps. Users select currencies and input an amount to convert.',
+    demo: `
+      <div style="currency-converter" style="max-width:400px;margin:auto;">
+        <input type="number" id="currency-input" placeholder="Enter amount" style="padding:0.5rem;" />
+        <select id="from-currency">
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+        </select>
+        <select id="to-currency">
+          <option value="EUR">EUR</option>
+          <option value="USD">USD</option>
+        </select>
+        <button onclick="convertCurrency()" style="padding: margin-top:0.5rem;padding:0.5rem 1rem;">Convert</button>
+        <p id="currency-result"></p>
+      </div>
+    `,
+    code: `
+      async function convertCurrency() {
+        const amount = document.getElementById('currency-input').value;
+        const from = document.getElementById('from-currency').value;
+        const to = document.getElementById('to-currency').value;
+        const result = document.getElementById('currency-result');
+        result.textContent = 'Loading...';
+        try {
+          const res = await fetch(`https://api.exchangerate-api.com/v4/latest/\${from}`);
+          const data = await res.json();
+          const converted = (amount * data.rates[to]).toFixed(2);
+          result.textContent = `\${amount} \${from} = \${converted} \${to}`;
+        } catch {
+          result.textContent = 'Error fetching rates.';
+        }
+      }
+    `
+  },
+  {
+    id: 'project-38',
+    title: 'Animated Counter',
+    keywords: 'animated counter numbers javascript demo',
+    description: 'Display numbers with an animated counting effect, ideal for stats or dashboards. This project uses JavaScript to increment values smoothly and CSS for styling, enhancing visual appeal for metrics like user counts or sales.',
+    demo: `
+      <div style="max-width:400px;margin:auto;text-align:center;">
+        <p id="counter" style="font-size:2rem;">0</p>
+        <button onclick="startCounter()" style="padding:0.5rem 1rem;">Start Count</button>
+      </div>
+    `,
+    code: `
+      function startCounter() {
+        let count = 0;
+        const counter = document.getElementById('counter');
+        const interval = setInterval(() => {
+          if (count >= 100) {
+            clearInterval(interval);
+            return;
+          }
+          counter.textContent = count++;
+        }, 20);
+      }
+    `
+  },
+  {
+    id: 'project-39',
+    title: 'Tabs Component',
+    keywords: 'tabs component css js demo',
+    description: 'A tabbed interface to switch between content sections. This project uses CSS for styling and JavaScript for tab switching, perfect for organizing content like product details or FAQs in a compact layout.',
+    demo: `
+      <div style="max-width:400px;margin:auto;">
+        <div class="tabs">
+          <button class="tab-btn active" data-tab="tab1" style="padding:0.5rem 1rem;">Tab 1</button>
+          <button class="tab-btn" data-tab="tab2" style="padding:0.5rem 1rem;">Tab 2</button>
+          <div id="tab1" class="tab-content" style="padding:1rem;border:1px solid #e2e8f0;">Content for Tab 1</div>
+          <div id="tab2" class="tab-content" style="display:none;padding:1rem;border:1px solid #e2e8f0;">Content for Tab 2</div>
+        </div>
+      </div>
+    `,
+    code: `
+      const tabButtons = document.querySelectorAll('.tab-btn');
+      tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          tabButtons.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          document.querySelectorAll('.tab-content').forEach(content => {
+            content.style.display = content.id === btn.dataset.tab ? 'block' : 'none';
+          });
+        });
+      });
+    `
+  },
+  {
+    id: 'project-40',
+    title: 'Snake Game',
+    keywords: 'snake game javascript canvas demo',
+    description: 'A classic Snake game using HTML5 Canvas. Players control a snake to eat food and grow, avoiding collisions. This project uses JavaScript for game logic and Canvas for rendering, offering a fun, nostalgic experience.',
+    demo: `
+      <div style="max-width:400px;margin:auto;">
+        <canvas id="snakeCanvas" width="300" height="300" style="border:1px solid #000;"></canvas>
+        <button onclick="startSnakeGame()">Start Game</button>
+      </div>
+    `,
+    code: `
+      function startSnakeGame() {
+        const canvas = document.getElementById('snakeCanvas');
+        const ctx = canvas.getContext('2d');
+        let snake = [{x:10, y:10}];
+        let food = {x:15, y:15};
+        let dx = 1, dy = 0;
+        function draw() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          snake.forEach(segment => {
+            ctx.fillStyle = 'green';
+            ctx.fillRect(segment.x*20, segment.y*20, 20, 20);
+          });
+          ctx.fillStyle = 'red';
+          ctx.fillRect(food.x*20, food.y*20, 20, 20);
+          let head = {x: snake[0].x + dx, y: snake[0].y + dy};
+          snake.unshift(head);
+          if (head.x === food.x && head.y === food.y) {
+            food = {x: Math.floor(Math.random()*15), y: Math.floor(Math.random()*15)};
+          } else {
+            snake.pop();
+          }
+          if (head.x < 0 || head.x >= 15 || head.y < 0 || head.y >= 15) clearInterval(game);
+          setTimeout(draw, 100);
+        }
+        document.addEventListener('keydown', e => {
+          if (e.key === 'ArrowUp' && dy === 0) { dx = 0; dy = -1; }
+          if (e.key === 'ArrowDown' && dy === 0) { dx = 0; dy = 1; }
+          if (e.key === 'ArrowLeft' && dx === 0) { dx = -1; dy = 0; }
+          if (e.key === 'ArrowRight' && dx === 0) { dx = 1; dy = 0; }
+        });
+        let game = setInterval(draw, 100);
+      }
+    `
+  },
+  {
+    id: 'project-41',
+    title: 'BMI Calculator',
+    keywords: 'bmi calculator health javascript demo',
+    description: 'Calculate Body Mass Index based on height and weight inputs. This project uses JavaScript for calculations and CSS for a simple form, useful for health or fitness apps.',
+    demo: `
+      <div style="max-width:400px;margin:auto;">
+        <input type="number" id="weight" placeholder="Weight (kg)" style="padding:0.5rem;margin-bottom:0.5rem;" />
+        <input type="number" id="height" placeholder="Height (cm)" style="padding:0.5rem;margin-bottom:0.5rem;" />
+        <button onclick="calculateBMI()">Calculate</button>
+        <p id="bmi-result"></p>
+      </div>
+    `,
+    code: `
+      function calculateBMI() {
+        const weight = parseFloat(document.getElementById('weight').value);
+        const height = parseFloat(document.getElementById('height').value) / 100;
+        const result = document.getElementById('bmi-result');
+        if (weight && height) {
+          const bmi = (weight / (height * height)).toFixed(2);
+          result.textContent = `BMI: ${bmi}`;
+        } else {
+          result.textContent = 'Please enter valid values.';
+        }
+      }
+    `
+  },
+  {
+    id: 'project-42',
+    title: 'Star Rating System',
+    keywords: 'star rating feedback javascript demo',
+    description: 'An interactive star rating system for user feedback. This project uses JavaScript for rating logic and CSS for star icons, perfect for reviews or surveys.',
+    demo: `
+      <div style="max-width:400px;margin:auto;">
+        <div id="star-rating">
+          <span class="star" data-value="1">★</span>
+          <span class="star" data-value="2">★</span>
+          <span class="star" data-value="3">★</span>
+          <span class="star" data-value="4">★</span>
+          <span class="star" data-value="5">★</span>
+        </div>
+        <p id="rating-result"></p>
+      </div>
+    `,
+    code: `
+      const stars = document.querySelectorAll('.star');
+      stars.forEach(star => {
+        star.addEventListener('click', () => {
+          const value = star.dataset.value;
+          stars.forEach(s => s.style.color = s.dataset.value <= value ? 'gold' : '#ccc');
+          document.getElementById('rating-result').textContent = `Rating: ${value} stars`;
+        });
+      });
+    `
+  },
+  {
+    id: 'project-43',
+    title: 'Password Strength Meter',
+    keywords: 'password strength meter javascript demo',
+    description: 'Evaluate password strength in real-time with visual feedback. This project uses JavaScript to check criteria like length and character types, enhancing security for registration forms.',
+    demo: `
+      <div style="max-width:400px;margin:auto;">
+        <input type="password" id="password-input" placeholder="Enter password" style="padding:0.5rem;" />
+        <p id="strength-meter"></p>
+      </div>
+    `,
+    code: `
+      const passwordInput = document.getElementById('password-input');
+      const strengthMeter = document.getElementById('strength-meter');
+      passwordInput.addEventListener('input', () => {
+        const password = passwordInput.value;
+        let strength = 0;
+        if (password.length > 8) strength++;
+        if (/[A-Z]/.test(password)) strength++;
+        if (/[0-9]/.test(password)) strength++;
+        if (/[^A-Za-z0-9]/.test(password)) strength++;
+        strengthMeter.textContent = strength >= 3 ? 'Strong' : strength >= 2 ? 'Medium' : 'Weak';
+        strengthMeter.style.color = strength >= 3 ? 'green' : strength >= 2 ? 'orange' : 'red';
+      });
+    `
+  },
+  {
+    id: 'project-44',
+    title: 'Infinite Scroll Gallery',
+    keywords: 'infinite scroll gallery api javascript demo',
+    description: 'Load images dynamically as users scroll, using an API like Unsplash. This project uses JavaScript for infinite loading and CSS for grid layout, ideal for photo galleries.',
+    demo: `
+      <div id="infinite-gallery" style="max-width:600px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;">
+        <!-- Images loaded dynamically -->
+      </div>
+      <button onclick="loadMoreImages()">Load More</button>
+    `,
+    code: `
+      let page = 1;
+      async function loadMoreImages() {
+        const gallery = document.getElementById('infinite-gallery');
+        try {
+          const res = await fetch(`https://api.unsplash.com/photos?page=${page}&client_id=YOUR_ACCESS_KEY`);
+          const images = await res.json();
+          images.forEach(img => {
+            const imgElement = document.createElement('img');
+            imgElement.src = img.urls.thumb;
+            imgElement.style.width = '100%';
+            gallery.appendChild(imgElement);
+          });
+          page++;
+        } catch {
+          console.error('Error loading images.');
+        }
+      }
+    `
+  },
+  {
+    id: 'project-45',
+    title: 'Animated Navigation Menu',
+    keywords: 'animated navigation menu css js demo',
+    description: 'A navigation menu with animated transitions for mobile and desktop. This project uses CSS for animations and JavaScript for toggling, enhancing site navigation UX.',
+    demo: `
+      <div style="max-width:400px;margin:auto;">
+        <button id="nav-menu-btn" style="padding:0.5rem;">☰ Menu</button>
+        <nav id="nav-menu" style="display:none;">
+          <a href="#" style="display:block;padding:0.5rem;">Home</a>
+          <a href="#" style="display:block;padding:0.5rem;">About</a>
+          <a href="#" style="display:block;padding:0.5rem;">Contact</a>
+        </nav>
+      </div>
+    `,
+    code: `
+      const navBtn = document.getElementById('nav-menu-btn');
+      const navMenu = document.getElementById('nav-menu');
+      navBtn.addEventListener('click', () => {
+        navMenu.style.display = navMenu.style.display === 'block' ? 'none' : 'block';
+        navMenu.style.transition = 'opacity 0.3s ease';
+        navMenu.style.opacity = navMenu.style.display === 'block' ? '1' : '0';
+      });
+    `
+  },
+  {
+    id: 'project-46',
+    title: 'Word Counter',
+    keywords: 'word counter text javascript demo',
+    description: 'Count words and characters in real-time for text input. This project uses JavaScript for counting logic and CSS for styling, useful for writing or editing tools.',
+    demo: `
+      <div style="max-width:400px;margin:auto;">
+        <textarea id="word-input" placeholder="Type here..." style="width:100%;padding:0.5rem;"></textarea>
+        <p id="word-count">Words: 0, Characters: 0</p>
+      </div>
+    `,
+    code: `
+      const wordInput = document.getElementById('word-input');
+      const wordCount = document.getElementById('word-count');
+      wordInput.addEventListener('input', () => {
+        const text = wordInput.value.trim();
+        const words = text ? text.split(/\s+/).length : 0;
+        const chars = text.length;
+        wordCount.textContent = `Words: ${words}, Characters: ${chars}`;
+      });
+    `
+  },
+  {
+    id: 'project-47',
+    title: 'Digital Clock',
+    keywords: 'digital clock time javascript demo',
+    description: 'A real-time digital clock displaying hours, minutes, and seconds. This project uses JavaScript for time updates and CSS for styling, perfect for dashboards or widgets.',
+    demo: `
+      <div style="max-width:400px;margin:auto;text-align:center;">
+        <p id="digital-clock" style="font-size:2rem;"></p>
+      </div>
+    `,
+    code: `
+      function updateClock() {
+        const now = new Date();
+        const hours = now.getHours().toString().padStart(2, '0');
+        const minutes = now.getMinutes().toString().padStart(2, '0');
+        const seconds = now.getSeconds().toString().padStart(2, '0');
+        document.getElementById('digital-clock').textContent = `${hours}:${minutes}:${seconds}`;
+      }
+      setInterval(updateClock, 1000);
+      updateClock();
+    `
+  },
+  {
+    id: 'project-48',
+    title: 'Color Flipper',
+    keywords: 'color flipper background javascript demo',
+    description: 'Change the background color randomly with a button click. This project uses JavaScript to generate colors and CSS for smooth transitions, adding a playful touch to sites.',
+    demo: `
+      <div style="max-width:400px;margin:auto;text-align:center;">
+        <button onclick="flipColor()">Change Color</button>
+        <p id="color-value"></p>
+      </div>
+    `,
+    code: `
+      function flipColor() {
+        const color = '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
+        document.body.style.backgroundColor = color;
+        document.getElementById('color-value').textContent = color;
+      }
+    `
+  },
+  {
+    id: 'project-49',
+    title: 'Testimonial Slider',
+    keywords: 'testimonial slider css js demo',
+    description: 'A slider to showcase testimonials with navigation. This project uses JavaScript for sliding logic and CSS for styling, ideal for business or portfolio sites.',
+    demo: `
+      <div style="max-width:400px;margin:auto;">
+        <div id="testimonial" style="padding:1rem;border:1px solid #e2e8f0;">
+          <p id="testimonial-text">Great product!</p>
+          <p id="testimonial-author">- John Doe</p>
+        </div>
+        <button onclick="nextTestimonial()">Next</button>
+      </div>
+    `,
+    code: `
+      const testimonials = [
+        { text: 'Great product!', author: 'John Doe' },
+        { text: 'Amazing service!', author: 'Jane Smith' }
+      ];
+      let currentTestimonial = 0;
+      function nextTestimonial() {
+        currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+        document.getElementById('testimonial-text').textContent = testimonials[currentTestimonial].text;
+        document.getElementById('testimonial-author').textContent = `- ${testimonials[currentTestimonial].author}`;
+      }
+    `
+  },
+  {
+    id: 'project-50',
+    title: 'Random User Generator',
+    keywords: 'random user generator api javascript demo',
+    description: 'Fetch random user profiles from an API like RandomUser. This project uses JavaScript for API calls and CSS for card layouts, great for mockups or testing.',
+    demo: `
+      <div style="max-width:400px;margin:auto;">
+        <button onclick="getRandomUser()">Get User</button>
+        <div id="user-profile"></div>
+      </div>
+    `,
+    code: `
+      async function getRandomUser() {
+        const profile = document.getElementById('user-profile');
+        profile.innerHTML = 'Loading...';
+        try {
+          const res = await fetch('https://randomuser.me/api/');
+          const data = await res.json();
+          const user = data.results[0];
+          profile.innerHTML = `
+            <img src="${user.picture.thumbnail}" style="border-radius:50%;" />
+            <p>${user.name.first} ${user.name.last}</p>
+            <p>${user.email}</p>
+          `;
+        } catch {
+          profile.innerHTML = 'Error fetching user.';
+        }
+      }
+    `
+  },
+  {
+    id: 'project-51',
+    title: 'Loan Calculator',
+    keywords: 'loan calculator finance javascript demo',
+    description: 'Calculate monthly loan payments based on amount, interest, and term. This project uses JavaScript for financial calculations and CSS for form styling, useful for finance apps.',
+    demo: `
+      <div style="max-width:400px;margin:auto;">
+        <input type="number" id="loan-amount" placeholder="Loan Amount" style="padding:0.5rem;margin-bottom:0.5rem;" />
+        <input type="number" id="interest-rate" placeholder="Interest Rate (%)" style="padding:0.5rem;margin-bottom:0.5rem;" />
+        <input type="number" id="loan-term" placeholder="Term (years)" style="padding:0.5rem;margin-bottom:0.5rem;" />
+        <button onclick="calculateLoan()">Calculate</button>
+        <p id="loan-result"></p>
+      </div>
+    `,
+    code: `
+      function calculateLoan() {
+        const amount = parseFloat(document.getElementById('loan-amount').value);
+        const rate = parseFloat(document.getElementById('interest-rate').value) / 100 / 12;
+        const term = parseFloat(document.getElementById('loan-term').value) * 12;
+        const result = document.getElementById('loan-result');
+        if (amount && rate && term) {
+          const payme
    
