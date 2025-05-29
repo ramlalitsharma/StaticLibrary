@@ -1,31 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <!-- AdSense Script -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8149507764464883"
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-xxxxxxxxxxxxxxxx"
      crossorigin="anonymous"></script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Explore 60+ web tools and mini projects, including calculators, animations, and generators. Copy code, try live demos, and enhance your projects. AdSense and SEO optimized." />
-  <meta name="keywords" content="web tools, javascript projects, css animations, calculators, color generator, lorem ipsum, price slider, timer, code snippets" />
-  <meta name="author" content="Web Tools Hub" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore 60+ web tools and mini-projects with live demos and copyable code. Includes calculators, animations, and more. AdSense-compliant and SEO-optimized.">
+  <meta name="keywords" content="web tools, javascript projects, css animations, calculators, generators, code snippets, responsive, AdSense">
+  <meta name="author" content="Web Tools Hub">
   <title>Web Tools Hub - 60+ Mini Projects & Live Code</title>
 
-  <!-- Open Graph / Social Sharing -->
-  <meta property="og:title" content="Web Tools Hub - 60+ Mini Projects & Live Code" />
-  <meta property="og:description" content="Discover 60+ web tools and mini projects with live demos and copyable code snippets for developers and designers." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://yourdomain.com" />
-  <meta property="og:image" content="https://yourdomain.com/assets/preview-image.webp" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Web Tools Hub - 60+ Mini Projects & Live Code">
+  <meta property="og:description" content="Discover 60+ web tools and mini-projects with live demos and copyable code for developers and designers.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://your-domain.com">
+  <meta property="og:image" content="https://your-domain.com/assets/preview-image.webp">
 
   <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Web Tools Hub - 60+ Mini Projects & Live Code" />
-  <meta name="twitter:description" content="Discover 60+ web tools and mini projects with live demos and copyable code snippets for developers and designers." />
-  <meta name="twitter:image" content="https://yourdomain.com/assets/preview-image.webp" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Web Tools Hub - 60+ Mini Projects & Live Code">
+  <meta name="twitter:description" content="Discover 60+ web tools and mini-projects with live demos and copyable code for developers and designers.">
+  <meta name="twitter:image" content="https://your-domain.com/assets/preview-image.webp">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom Tailwind Overrides */
+    .project { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .project:hover { transform: translateY(-5px); }
+    .dark .project { background: #1f2937; }
+    .nav-link { transition: all 0.2s ease; }
+    .nav-link:hover { background: #2563eb; transform: scale(1.05); }
+    .copy-btn:hover { transform: scale(1.05); }
+    #search-suggestions div:hover { background: #f1f5f9; }
+    .dark #search-suggestions div:hover { background: #374151; }
+    /* Smooth scroll behavior */
+    html { scroll-behavior: smooth; }
+  </style>
 
   <!-- Schema Markup -->
   <script type="application/ld+json">
@@ -33,229 +46,23 @@
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "Web Tools Hub",
-      "url": "https://staticlibrary.netlify.app/",
-      "description": "Explore 60+ web tools and mini projects with live demos and code snippets for developers and designers."
+      "url": "https://your-domain.com",
+      "description": "Explore 60+ web tools and mini-projects with live demos and code snippets for developers."
     }
   </script>
-
-  <style>
-    /* Reset & Base */
-    *, *::before, *::after { box-sizing: border-box; }
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-      color: #1a202c;
-      line-height: 1.6;
-      transition: background 0.3s ease, color 0.3s ease;
-    }
-    a { color: #3182ce; text-decoration: none; }
-    a:hover, a:focus { text-decoration: underline; }
-    header, nav, main, footer, section { padding: 1.5rem; }
-
-    /* Header */
-    header {
-      background: linear-gradient(90deg, #1a202c, #2d3748);
-      color: #fff;
-      text-align: center;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      position: relative;
-    }
-    h1 { font-size: 2.5rem; font-weight: 700; margin: 0.25rem 0; }
-    header p { font-size: 1.1rem; opacity: 0.9; }
-    #theme-toggle {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      background: #3182ce;
-      color: #fff;
-      border: none;
-      padding: 0.5rem;
-      border-radius: 50%;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    #theme-toggle:hover { background: #2b6cb0; transform: scale(1.1); }
-
-    /* Navigation */
-    nav {
-      background: #fff;
-      border-bottom: 1px solid #e2e8f0;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    #project-nav {
-      display: flex;
-      flex-wrap: wrap;
-      max-width: 1200px;
-      margin: auto;
-      gap: 10px;
-      justify-content: center;
-      overflow-x: auto;
-      padding: 0.5rem 1rem;
-    }
-    #project-nav a {
-      background: #edf2f7;
-      padding: 0.6rem 1rem;
-      border-radius: 20px;
-      font-size: 0.9rem;
-      white-space: nowrap;
-      transition: all 0.3s ease;
-    }
-    #project-nav a:hover, #project-nav a:focus {
-      background: #3182ce;
-      color: #fff;
-      transform: translateY(-2px);
-    }
-
-    /* Search */
-    #search-container {
-      max-width: 1200px;
-      margin: 1.5rem auto;
-      text-align: center;
-      position: relative;
-    }
-    #search-input {
-      width: 100%;
-      max-width: 400px;
-      padding: 0.75rem;
-      font-size: 1rem;
-      border: 1px solid #e2e8f0;
-      border-radius: 20px;
-      transition: box-shadow 0.3s ease;
-    }
-    #search-input:focus {
-      outline: none;
-      box-shadow: 0 0 8px rgba(49, 130, 206, 0.5);
-    }
-    #search-suggestions {
-      position: absolute;
-      background: #fff;
-      width: 100%;
-      max-width: 400px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      display: none;
-      z-index: 1000;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    #search-suggestions div { padding: 0.5rem; cursor: pointer; }
-    #search-suggestions div:hover { background: #f7fafc; }
-
-    /* Main Content */
-    main { max-width: 1200px; margin: auto; }
-    section.project {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      margin-bottom: 2rem;
-      padding: 1.5rem;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    section.project:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-    }
-    section.project h2 { font-size: 1.75rem; color: #2d3748; margin-top: 0; }
-    .live-demo {
-      margin: 1rem 0;
-      padding: 1rem;
-      border: 1px solid #e2e8f0;
-      border-radius: 8px;
-      background: #f7fafc;
-    }
-    pre {
-      background: #2d3748;
-      color: #e2e8f0;
-      padding: 1rem;
-      border-radius: 8px;
-      overflow-x: auto;
-      font-size: 0.9rem;
-      white-space: pre-wrap;
-    }
-    .copy-btn {
-      background: #3182ce;
-      color: #fff;
-      padding: 0.6rem 1.2rem;
-      border: none;
-      border-radius: 20px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    .copy-btn:hover, .copy-btn:focus {
-      background: #2b6cb0;
-      transform: scale(1.05);
-      outline: none;
-    }
-
-    /* Ad Styling */
-    .ad-container { text-align: center; margin: 2rem 0; }
-
-    /* Footer */
-    footer {
-      background: #1a202c;
-      color: #e2e8f0;
-      text-align: center;
-      padding: 2rem;
-      font-size: 1rem;
-    }
-    footer a { color: #90cdf4; margin: 0 0.5rem; }
-
-    /* Back to Top */
-    #back-to-top {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #3182ce;
-      color: #fff;
-      padding: 0.75rem;
-      border-radius: 50%;
-      border: none;
-      cursor: pointer;
-      display: none;
-      transition: all 0.3s ease;
-    }
-    #back-to-top:hover { background: #2b6cb0; transform: scale(1.1); }
-
-    /* Dark Mode */
-    .dark-mode { background: #1a202c; color: #e2e8f0; }
-    .dark-mode header { background: linear-gradient(90deg, #2d3748, #4a5568); }
-    .dark-mode section.project, .dark-mode nav { background: #2d3748; border-color: #4a5568; }
-    .dark-mode #project-nav a { background: #4a5568; color: #e2e8f0; }
-    .dark-mode #project-nav a:hover { background: #3182ce; }
-    .dark-mode #search-input { background: #4a5568; border-color: #718096; color: #e2e8f0; }
-    .dark-mode #search-suggestions { background: #2d3748; }
-
-    /* Accessibility */
-    .visually-hidden {
-      position: absolute;
-      height: 1px;
-      width: 1px;
-      overflow: hidden;
-      clip: rect(1px, 1px, 1px, 1px);
-    }
-
-    /* Responsive Design */
-    @media (max-width: 600px) {
-      #project-nav { justify-content: flex-start; padding: 0.5rem; }
-      h1 { font-size: 2rem; }
-      section.project h2 { font-size: 1.5rem; }
-    }
-  </style>
 </head>
-<body>
-  <header>
-    <h1>Web Tools Hub</h1>
-    <p>60+ Mini Projects & Live Code Demos — Copy & Use in Your Projects</p>
-    <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans transition-colors duration-300">
+  <header class="bg-gradient-to-r from-gray-900 to-gray-700 text-white text-center py-8 shadow-lg relative">
+    <h1 class="text-4xl md:text-5xl font-bold">Web Tools Hub</h1>
+    <p class="text-lg md:text-xl mt-2 opacity-90">60+ Mini Projects & Live Code Demos — Copy & Use</p>
+    <button id="theme-toggle" class="absolute top-4 right-4 bg-blue-600 text-white rounded-full p-2 hover:bg-blue-700 transition-transform" aria-label="Toggle dark mode">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
+    </button>
     <!-- Banner Ad -->
-    <div class="ad-container">
+    <div class="ad-container mt-6 max-w-4xl mx-auto">
       <ins class="adsbygoogle"
            style="display:block"
-           data-ad-client="ca-pub-8149507764464883"
+           data-ad-client="ca-pub-xxxxxxxxxxxxxxxx"
            data-ad-slot="YOUR_BANNER_AD_SLOT_ID"
            data-ad-format="auto"
            data-full-width-responsive="true"></ins>
@@ -263,60 +70,61 @@
     </div>
   </header>
 
-  <nav aria-label="Primary navigation">
-    <div id="project-nav" role="list" aria-live="polite" aria-relevant="additions"></div>
+  <nav class="bg-white dark:bg-gray-800 shadow sticky top-0 z-50 py-4" aria-label="Primary navigation">
+    <div id="project-nav" class="flex flex-wrap gap-2 justify-center max-w-6xl mx-auto overflow-x-auto px-4" role="list"></div>
   </nav>
 
-  <div id="search-container">
-    <label for="search-input" class="visually-hidden">Search projects</label>
-    <input type="search" id="search-input" placeholder="Search tools and projects..." aria-describedby="search-desc" autocomplete="off" />
-    <div id="search-desc" class="visually-hidden">Type keywords to filter the list of projects</div>
-    <div id="search-suggestions"></div>
+  <div class="max-w-4xl mx-auto my-6 px-4">
+    <label for="search-input" class="sr-only">Search projects</label>
+    <input type="search" id="search-input" placeholder="Search tools and projects..." class="w-full p-3 rounded-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:outline-none" aria-describedby="search-desc" autocomplete="off">
+    <div id="search-desc" class="sr-only">Type keywords to filter projects</div>
+    <div id="search-suggestions" class="absolute w-full max-w-md bg-white dark:bg-gray-800 rounded-lg shadow-lg mt-1 hidden"></div>
   </div>
 
-  <main id="projects-container" tabindex="-1" aria-live="polite" aria-relevant="additions">
-    <!-- Projects inserted dynamically -->
-    <div class="ad-container" id="ad-after-project-10" style="display: none;">
+  <main id="main-content" class="max-w-6xl mx-auto px-4 pb-16" tabindex="-1" aria-live="polite">
+    <div id="projects-container" class="space-y-6"></div>
+    <!-- Ad Placements -->
+    <div class="ad-container hidden" id="ad-after-project-10">
       <ins class="adsbygoogle"
            style="display:block"
-           data-ad-client="ca-pub-8149507764464883"
-           data-ad-slot="YOUR_IN_ARTICLE_AD_SLOT_ID_1"
+           data-ad-client="ca-pub-xxxxxxxxxxxxxxxx"
+           data-ad-slot="YOUR_AD_SLOT_1"
            data-ad-format="auto"
            data-full-width-responsive="true"></ins>
       <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
-    <div class="ad-container" id="ad-after-project-20" style="display: none;">
+    <div class="ad-container hidden" id="ad-after-project-20">
       <ins class="adsbygoogle"
            style="display:block"
-           data-ad-client="ca-pub-8149507764464883"
-           data-ad-slot="YOUR_IN_ARTICLE_AD_SLOT_ID_2"
+           data-ad-client="ca-pub-xxxxxxxxxxxxxxxx"
+           data-ad-slot="YOUR_AD_SLOT_2"
            data-ad-format="auto"
            data-full-width-responsive="true"></ins>
       <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
-    <div class="ad-container" id="ad-after-project-30" style="display: none;">
+    <div class="ad-container hidden" id="ad-after-project-30">
       <ins class="adsbygoogle"
            style="display:block"
-           data-ad-client="ca-pub-8149507764464883"
-           data-ad-slot="YOUR_IN_ARTICLE_AD_SLOT_ID_3"
+           data-ad-client="ca-pub-xxxxxxxxxxxxxxxx"
+           data-ad-slot="YOUR_AD_SLOT_3"
            data-ad-format="auto"
            data-full-width-responsive="true"></ins>
       <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
-    <div class="ad-container" id="ad-after-project-40" style="display: none;">
+    <div class="ad-container hidden" id="ad-after-project-40">
       <ins class="adsbygoogle"
            style="display:block"
-           data-ad-client="ca-pub-8149507764464883"
-           data-ad-slot="YOUR_IN_ARTICLE_AD_SLOT_ID_4"
+           data-ad-client="ca-pub-xxxxxxxxxxxxxxxx"
+           data-ad-slot="YOUR_AD_SLOT_4"
            data-ad-format="auto"
            data-full-width-responsive="true"></ins>
       <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
-    <div class="ad-container" id="ad-after-project-50" style="display: none;">
+    <div class="ad-container hidden" id="ad-after-project-50">
       <ins class="adsbygoogle"
            style="display:block"
-           data-ad-client="ca-pub-8149507764464883"
-           data-ad-slot="YOUR_IN_ARTICLE_AD_SLOT_ID_5"
+           data-ad-client="ca-pub-xxxxxxxxxxxxxxxx"
+           data-ad-slot="YOUR_AD_SLOT_5"
            data-ad-format="auto"
            data-full-width-responsive="true"></ins>
       <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
@@ -324,159 +132,161 @@
   </main>
 
   <!-- Privacy Policy -->
-  <section id="privacy" class="project">
-    <h2>Privacy Policy</h2>
-    <p>At Web Tools Hub, we prioritize your privacy. We collect minimal data, such as analytics via Google Analytics and cookies for AdSense ads, to improve your experience. No personal information is collected unless provided voluntarily (e.g., via contact forms). Data is not shared with third parties except as required by law or for ad serving. You can opt out of cookies via browser settings. Contact us at [your-email@yourdomain.com] for questions.</p>
+  <section id="privacy" class="project bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 max-w-md mx-auto mb-6">
+    <h2 class="text-2xl font-bold mb-4">Privacy Policy</h2>
+    <p class="text-gray-700 dark:text-gray-300">Web Tools Hub collects minimal data via Google Analytics and AdSense cookies to enhance user experience. No personal data is collected unless provided voluntarily. Data isn’t shared except for ad purposes or legal requirements. Opt out of cookies via browser settings. Contact [your-email@yourdomain.com] for inquiries.</p>
   </section>
 
   <!-- Terms of Service -->
-  <section id="terms" class="project">
-    <h2>Terms of Service</h2>
-    <p>By using Web Tools Hub, you agree to these Terms. Content, including code snippets and demos, is for educational use. You may use the code but must not claim ownership. We are not liable for damages from site use. We may modify or discontinue the site without notice. Contact [your-email@yourdomain.com] for inquiries.</p>
+  <section id="terms" class="project bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 max-w-md mx-auto mb-6">
+    <h2 class="text-2xl font-bold mb-4">Terms of Service</h2>
+    <p class="text-gray-700 dark:text-gray-300">By using Web Tools Hub, you agree to use content for educational purposes. Code snippets are free to use but not to claim as your own. We’re not liable for damages from site use. Contact [your-email@yourdomain.com] for questions.</p>
   </section>
 
-  <!-- Contact Page -->
-  <section id="contact" class="project">
-    <h2>Contact Us</h2>
-    <p>Questions or feedback? Email us at <a href="mailto:your-email@yourdomain.com">your-email@yourdomain.com</a>. We value your input!</p>
+  <!-- Contact -->
+  <section id="contact" class="project bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 max-w-md mx-auto mb-6">
+    <h2 class="text-2xl font-bold mb-4">Contact Us</h2>
+    <p class="text-gray-700 dark:text-gray-300">Have feedback? Email us at <a href="mailto:your-email@yourdomain.com" class="text-blue-600 hover:underline">your-email@yourdomain.com</a>.</p>
   </section>
 
-  <footer>
-    <p>© 2025 Web Tools Hub. <a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a> | <a href="#contact">Contact Us</a></p>
+  <footer class="bg-gray-900 text-gray-100 text-center py-6">
+    <p>© 2025 Web Tools Hub | <a href="#privacy" class="text-blue-400 hover:underline">Privacy</a> | <a href="#terms" class="text-blue-400 hover:underline">Terms</a> | <a href="#contact" class="text-blue-400 hover:underline">Contact</a></p>
   </footer>
 
-  <button id="back-to-top" aria-label="Back to top">↑</button>
+  <button id="back-to-top" class="fixed bottom-6 right-6 bg-blue-600 text-white rounded-full p-3 shadow-lg hover:bg-blue-700 transition-transform hidden" aria-label="Back to top">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" /></svg>
+  </button>
 
   <script>
-    // Project Data (defined above with 60 projects)
 
-// Render Projects
-function renderProjects(projects) {
+
+    // Render Projects
+function renderProjects(filter = '') {
   const container = document.getElementById('projects-container');
   container.innerHTML = '';
   projects.forEach((project, index) => {
-    const section = document.createElement('section');
-    section.className = 'project';
-    section.id = project.id;
-    section.innerHTML = `
-      <h2>${project.title}</h2>
-      <p>${project.description}</p>
-      <div class="live-demo">${project.demo}</div>
-      <pre><code>${project.code.trim()}</code></pre>
-      <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+    if (filter && !project.keywords.some(k => k.toLowerCase().includes(filter.toLowerCase())) && !project.title.toLowerCase().includes(filter.toLowerCase())) return;
+    const div = document.createElement('div');
+    div.id = project.id;
+    div.className = 'project bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6';
+    div.innerHTML = `
+      <h2 class="text-2xl font-bold mb-4">${project.title}</h2>
+      <p class="text-gray-700 dark:text-gray-300 mb-4">${project.description}</p>
+      <div class="demo mb-4 p-4 bg-gray-100 dark:bg-gray-700 rounded">${project.demo}</div>
+      <div class="code relative">
+        <pre class="bg-gray-900 text-gray-100 p-4 rounded overflow-x-auto"><code>${project.code.trim()}</code></pre>
+        <button class="copy-btn absolute top-2 right-2 bg-blue-600 text-white px-2 py-1 rounded hover:bg-blue-700 transition-transform" data-code="${project.code.trim().replace(/"/g, '&quot;')}">Copy</button>
+      </div>
     `;
-    container.appendChild(section);
-    // Show ads after projects 10, 20, 30, 40, 50
+    container.appendChild(div);
+    // Show ads after specific projects
     if ([10, 20, 30, 40, 50].includes(index + 1)) {
-      document.getElementById(`ad-after-project-${index + 1}`).style.display = 'block';
+      document.getElementById(`ad-after-project-${index + 1}`).classList.remove('hidden');
     }
   });
+  // Re-run demo scripts for dynamically added content
+  evalDemoScripts();
 }
 
 // Render Navigation
 function renderNav() {
   const nav = document.getElementById('project-nav');
-  detailedProjects.forEach(project => {
+  projects.forEach(project => {
     const a = document.createElement('a');
     a.href = `#${project.id}`;
+    a.className = 'nav-link px-3 py-2 bg-blue-600 text-white rounded hover:bg-blue-700';
     a.textContent = project.title;
     a.setAttribute('role', 'listitem');
     nav.appendChild(a);
   });
 }
 
-// Search Functionality
-function setupSearch() {
-  const searchInput = document.getElementById('search-input');
-  const suggestions = document.getElementById('search-suggestions');
-  searchInput.addEventListener('input', () => {
-    const query = searchInput.value.toLowerCase();
-    suggestions.innerHTML = '';
-    if (query.length < 2) {
-      suggestions.style.display = 'none';
-      renderProjects(detailedProjects);
-      return;
+// Evaluate Demo Scripts
+function evalDemoScripts() {
+  projects.forEach(project => {
+    const demoDiv = document.querySelector(`#${project.id} .demo`);
+    if (demoDiv && project.code) {
+      try {
+        const script = document.createElement('script');
+        script.textContent = project.code;
+        demoDiv.appendChild(script);
+      } catch (e) {
+        console.warn(`Error evaluating script for ${project.title}:`, e);
+      }
     }
-    const filtered = detailedProjects.filter(project =>
-      project.title.toLowerCase().includes(query) ||
-      project.keywords.toLowerCase().includes(query)
-    );
-    filtered.slice(0, 5).forEach(project => {
-      const div = document.createElement('div');
-      div.textContent = project.title;
-      div.addEventListener('click', () => {
-        searchInput.value = project.title;
-        suggestions.style.display = 'none';
-        renderProjects([project]);
-      });
-      suggestions.appendChild(div);
-    });
-    suggestions.style.display = filtered.length ? 'block' : 'none';
-    renderProjects(filtered);
   });
+}
+
+// Search with Autocomplete
+const searchInput = document.getElementById('search-input');
+const suggestionsDiv = document.getElementById('search-suggestions');
+searchInput.addEventListener('input', () => {
+  const query = searchInput.value.toLowerCase();
+  renderProjects(query);
+  if (!query) {
+    suggestionsDiv.classList.add('hidden');
+    return;
+  }
+  const suggestions = projects
+    .filter(p => p.title.toLowerCase().includes(query) || p.keywords.some(k => k.toLowerCase().includes(query)))
+    .slice(0, 5)
+    .map(p => `<div class="p-2 cursor-pointer" onclick="searchInput.value='${p.title}'; renderProjects('${p.title}'); suggestionsDiv.classList.add('hidden')">${p.title}</div>`);
+  suggestionsDiv.innerHTML = suggestions.join('');
+  suggestionsDiv.classList.toggle('hidden', suggestions.length === 0);
+});
+
+// Theme Toggle
+const themeToggle = document.getElementById('theme-toggle');
+themeToggle.addEventListener('click', () => {
+  document.documentElement.classList.toggle('dark');
+  localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+  themeToggle.querySelector('svg').classList.toggle('rotate-180');
+});
+if (localStorage.getItem('theme') === 'dark' || window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  document.documentElement.classList.add('dark');
 }
 
 // Copy Code
-function copyCode(btn) {
-  const code = btn.previousElementSibling.querySelector('code').textContent;
-  navigator.clipboard.writeText(code).then(() => {
-    btn.textContent = 'Copied!';
-    setTimeout(() => (btn.textContent = 'Copy Code'), 2000);
-  });
-}
-
-// Theme Toggle
-document.getElementById('theme-toggle').addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode');
-  localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+document.addEventListener('click', e => {
+  if (e.target.classList.contains('copy-btn')) {
+    navigator.clipboard.writeText(e.target.dataset.code).then(() => {
+      e.target.textContent = 'Copied!';
+      setTimeout(() => e.target.textContent = 'Copy', 2000);
+    });
+  }
 });
 
 // Back to Top
 const backToTop = document.getElementById('back-to-top');
 window.addEventListener('scroll', () => {
-  backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+  backToTop.classList.toggle('hidden', window.scrollY < 300);
 });
-backToTop.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
 // Initialize
-if (localStorage.getItem('theme') === 'dark') document.body.classList.add('dark-mode');
 renderNav();
-renderProjects(detailedProjects);
-setupSearch();
-    // Project Data (60 Implemented Projects)
-    const detailedProjects = [
+renderProjects();
+    // Project Data (60 Projects)
+    const projects = [
       {
         id: 'project-1',
         title: 'Expanding Cards',
-        keywords: 'expanding cards animation css js demo',
-        description: 'Create an interactive card gallery where cards expand on click with smooth transitions. Ideal for portfolios or product showcases, this project uses CSS flexbox and JavaScript for dynamic resizing, enhancing user engagement with visual effects.',
-        demo: `
-          <div class="expanding-cards-container" style="display:flex;gap:10px;max-width:600px;margin:auto;">
-            <div class="card" style="flex:1;cursor:pointer;background:#6C5B7B;color:white;border-radius:8px;padding:1rem;transition:flex 0.5s ease;">
-              <h3>Card 1</h3>
-              <p>Click to expand</p>
-            </div>
-            <div class="card" style="flex:1;cursor:pointer;background:#355C7D;color:white;border-radius:8px;padding:1rem;transition:flex 0.5s ease;">
-              <h3>Card 2</h3>
-              <p>Click to expand</p>
-            </div>
-            <div class="card" style="flex:1;cursor:pointer;background:#F67280;color:white;border-radius:8px;padding:1rem;transition:flex 0.5s ease;">
-              <h3>Card 3</h3>
-              <p>Click to expand</p>
-            </div>
+        keywords: ['expanding', 'cards', 'animation', 'css', 'js'],
+        description: 'Interactive card gallery where cards expand on click with smooth animations. Perfect for portfolios or product showcases, using CSS flexbox and JavaScript for dynamic resizing.',
+        demo: `<div class="flex gap-2 max-w-xl mx-auto">
+          <div class="card flex-1 bg-purple-500 text-white rounded-lg p-4 cursor-pointer transition-all duration-500" onclick="this.parentNode.querySelectorAll('.card').forEach(c => c.classList.remove('flex-[3]')); this.classList.add('flex-[3]')">
+            <h3 class="font-bold">Card 1</h3><p>Click to expand</p>
           </div>
-        `,
+          <div class="card flex-1 bg-blue-600 text-white rounded-lg p-4 cursor-pointer transition-all duration-500" onclick="this.parentNode.querySelectorAll('.card').forEach(c => c.classList.remove('flex-[3]')); this.classList.add('flex-[3]')">
+            <h3 class="font-bold">Card 2</h3><p>Click to expand</p>
+          </div>
+        </div>`,
         code: `
-          .expanding-cards-container { display: flex; gap: 10px; max-width: 600px; margin: auto; }
-          .expanding-cards-container .card { flex: 1; cursor: pointer; background: #6C5B7B; color: white; border-radius: 8px; padding: 1rem; transition: flex 0.5s ease; }
-          .expanding-cards-container .card.expanded { flex: 3; }
-          const cards = document.querySelectorAll('.expanding-cards-container .card');
+          const cards = document.querySelectorAll('.card');
           cards.forEach(card => {
             card.addEventListener('click', () => {
-              cards.forEach(c => c.classList.remove('expanded'));
-              card.classList.add('expanded');
+              cards.forEach(c => c.classList.remove('flex-[3]'));
+              card.classList.add('flex-[3]');
             });
           });
         `
@@ -484,87 +294,73 @@ setupSearch();
       {
         id: 'project-2',
         title: 'Progress Steps',
-        keywords: 'progress steps wizard form css js demo',
-        description: 'Build a multi-step progress bar for forms or checkout processes. Using CSS for styling and JavaScript for dynamic updates, this project provides clear navigation cues, ideal for e-commerce or registration flows.',
-        demo: `
-          <div id="progress-steps-container" style="max-width:400px;margin:auto;">
-            <div id="progress" style="display:flex;justify-content:space-between;margin-bottom:1rem;">
-              <div class="step active" style="width:30px;height:30px;border-radius:50%;background:#3182ce;color:white;display:flex;justify-content:center;align-items:center;">1</div>
-              <div class="step" style="width:30px;height:30px;border-radius:50%;background:#e2e8f0;color:#2d3748;display:flex;justify-content:center;align-items:center;">2</div>
-              <div class="step" style="width:30px;height:30px;border-radius:50%;background:#e2e8f0;color:#2d3748;display:flex;justify-content:center;align-items:center;">3</div>
-            </div>
-            <div id="progress-bar" style="height:8px;background:#e2e8f0;border-radius:4px;overflow:hidden;">
-              <div id="progress-bar-fill" style="width:33%;height:100%;background:#3182ce;transition:width 0.3s ease;"></div>
-            </div>
-            <div style="margin-top:1rem;display:flex;justify-content:space-between;">
-              <button id="prev" disabled style="padding:0.5rem 1rem;">Previous</button>
-              <button id="next" style="padding:0.5rem 1rem;">Next</button>
-            </div>
+        keywords: ['progress', 'steps', 'wizard', 'form', 'js'],
+        description: 'Multi-step progress bar for forms or checkout processes. Uses Tailwind CSS for styling and JavaScript for step updates, ideal for e-commerce.',
+        demo: `<div class="max-w-sm mx-auto text-center">
+          <div class="flex justify-between mb-4">
+            <div class="step w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center">1</div>
+            <div class="step w-8 h-8 rounded-full bg-gray-300 text-gray-800 flex items-center justify-center">2</div>
+            <div class="step w-8 h-8 rounded-full bg-gray-300 text-gray-800 flex items-center justify-center">3</div>
           </div>
-        `,
+          <div class="h-2 bg-gray-300 rounded"><div id="progress-fill" class="h-full bg-blue-600 w-1/3 rounded transition-all"></div></div>
+          <div class="mt-4 flex justify-between">
+            <button id="prev-step" class="px-4 py-2 bg-gray-400 text-white rounded disabled:opacity-50" disabled>Prev</button>
+            <button id="next-step" class="px-4 py-2 bg-blue-600 text-white rounded">Next</button>
+          </div>
+        </div>`,
         code: `
-          const progress = document.getElementById('progress');
-          const prev = document.getElementById('prev');
-          const next = document.getElementById('next');
-          const progressBarFill = document.getElementById('progress-bar-fill');
-          const steps = document.querySelectorAll('#progress .step');
-          let currentStep = 1;
+          const prev = document.getElementById('prev-step');
+          const next = document.getElementById('next-step');
+          const steps = document.querySelectorAll('.step');
+          const fill = document.getElementById('progress-fill');
+          let current = 1;
           next.addEventListener('click', () => {
-            currentStep++;
-            if (currentStep > steps.length) currentStep = steps.length;
-            updateProgress();
+            current++;
+            if (current > steps.length) current = steps.length;
+            updateSteps();
           });
           prev.addEventListener('click', () => {
-            currentStep--;
-            if (currentStep < 1) currentStep = 1;
-            updateProgress();
+            current--;
+            if (current < 1) current = 1;
+            updateSteps();
           });
-          function updateProgress() {
-            steps.forEach((step, idx) => {
-              if (idx < currentStep) {
-                step.classList.add('active');
-                step.style.background = '#3182ce';
-                step.style.color = 'white';
-              } else {
-                step.classList.remove('active');
-                step.style.background = '#e2e8f0';
-                step.style.color = '#2d3748';
-              }
+          function updateSteps() {
+            steps.forEach((step, i) => {
+              step.classList.toggle('bg-blue-600', i < current);
+              step.classList.toggle('bg-gray-300', i >= current);
+              step.classList.toggle('text-white', i < current);
+              step.classList.toggle('text-gray-800', i >= current);
             });
-            progressBarFill.style.width = ((currentStep - 1) / (steps.length - 1)) * 100 + '%';
-            prev.disabled = currentStep === 1;
-            next.disabled = currentStep === steps.length;
+            fill.style.width = \`\${((current - 1) / (steps.length - 1)) * 100}%\`;
+            prev.disabled = current === 1;
+            next.disabled = current === steps.length;
           }
         `
       },
       {
         id: 'project-3',
-        title: 'Rotating Navigation Animation',
-        keywords: 'rotating navigation animation css js menu demo',
-        description: 'A hamburger menu that rotates to reveal a navigation bar. Using CSS transitions and JavaScript for toggling, this project enhances mobile-friendly navigation with a visually engaging effect.',
-        demo: `
-          <div id="rot-nav" style="text-align:center;margin:2rem 0;">
-            <button aria-label="Toggle navigation menu" id="nav-toggle">
-              <span style="display:block;width:30px;height:4px;background:#3182ce;margin:6px 0;transition:all 0.3s ease;"></span>
-              <span style="display:block;width:30px;height:4px;background:#3182ce;margin:6px 0;transition:all 0.3s ease;"></span>
-              <span style="display:block;width:30px;height:4px;background:#3182ce;margin:6px 0;transition:all 0.3s ease;"></span>
-            </button>
-            <nav id="menu" aria-label="Main menu" style="display:none;margin-top:1rem;">
-              <a href="#" style="margin-right:1rem;">Home</a>
-              <a href="#" style="margin-right:1rem;">About</a>
-              <a href="#">Contact</a>
-            </nav>
-          </div>
-        `,
+        title: 'Rotating Navigation',
+        keywords: ['rotating', 'navigation', 'menu', 'css', 'js'],
+        description: 'Hamburger menu that rotates to reveal navigation links. Uses CSS transitions and JavaScript for toggling, enhancing mobile navigation.',
+        demo: `<div class="text-center">
+          <button id="nav-toggle" class="p-2" aria-label="Toggle navigation">
+            <span class="block w-6 h-1 bg-blue-600 mb-1"></span>
+            <span class="block w-6 h-1 bg-blue-600 mb-1"></span>
+            <span class="block w-6 h-1 bg-blue-600"></span>
+          </button>
+          <nav id="nav-menu" class="hidden mt-4">
+            <a href="#" class="mx-2 text-blue-600">Home</a>
+            <a href="#" class="mx-2 text-blue-600">About</a>
+          </nav>
+        </div>`,
         code: `
-          const navToggle = document.getElementById('nav-toggle');
-          const menu = document.getElementById('menu');
-          navToggle.addEventListener('click', () => {
-            const isVisible = menu.style.display === 'block';
-            menu.style.display = isVisible ? 'none' : 'block';
-            const spans = navToggle.querySelectorAll('span');
+          const toggle = document.getElementById('nav-toggle');
+          const menu = document.getElementById('nav-menu');
+          toggle.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            const spans = toggle.querySelectorAll('span');
             spans.forEach((span, i) => {
-              span.style.transform = isVisible ? 'rotate(0deg)' : \`rotate(\${(i - 1) * 45}deg)\`;
+              span.style.transform = menu.classList.contains('hidden') ? 'rotate(0)' : \`rotate(\${(i - 1) * 45}deg)\`;
             });
           });
         `
@@ -572,466 +368,1491 @@ setupSearch();
       {
         id: 'project-4',
         title: 'Hidden Search Widget',
-        keywords: 'hidden search widget toggle input css js demo',
-        description: 'A search input that toggles with a smooth animation, saving space in minimalistic designs. This project uses CSS transitions and JavaScript for visibility control, ideal for headers or sidebars.',
-        demo: `
-          <div style="text-align:center;margin:2rem 0;">
-
-
-          // Continuation of detailedProjects array
-const detailedProjects = [
-  // ... (Projects 1–35 from previous response) ...
-  {
-    id: 'project-36',
-    title: 'Pomodoro Timer',
-    keywords: 'pomodoro timer productivity javascript demo',
-    description: 'A Pomodoro timer to boost productivity with 25-minute work sessions and 5-minute breaks. This project uses JavaScript for real-time countdowns and CSS for a clean interface. Ideal for students or professionals, it helps manage time efficiently.',
-    demo: `
-      <div style="pomodoro-container" style="max-width:400px;margin:auto;text-align:padding;">
-        <p id="pomodoro-display" style="font-size:28px;padding:1rem;">25:00</p>
-        <button onclick="startPomodoro()" style="padding:0.5rem 1rem;margin-right:0.5rem;">Start</button>
-        <button onclick="resetPomodoro()" style="padding:0.5rem 1;padding:1rem;">Reset</button>
-      </div>
-    `,
-    code: `
-      let pomodoroTime = 25 * 60;
-      let interval;
-      const pomodoroDisplay = document.getElementById('pomodoro-display');
-      function startPomodoro() {
-        clearInterval(interval);
-        interval = setInterval(() => {
-          if (pomodoroTime <= 0) {
+        keywords: ['search', 'widget', 'animation', 'css', 'js'],
+        description: 'Togglable search input with smooth animation. Saves space in headers, using Tailwind CSS and JavaScript for visibility control.',
+        demo: `<div class="text-center">
+          <button id="toggle-search" class="px-4 py-2 bg-blue-600 text-white rounded">Search</button>
+          <input id="search-box" type="search" placeholder="Search..." class="hidden mt-2 p-2 w-48 border rounded">
+        </div>`,
+        code: `
+          const toggle = document.getElementById('toggle-search');
+          const search = document.getElementById('search-box');
+          toggle.addEventListener('click', () => {
+            search.classList.toggle('hidden');
+            if (!search.classList.contains('hidden')) search.focus();
+          });
+        `
+      },
+      {
+        id: 'project-5',
+        title: 'Blurry Loading',
+        keywords: ['blurry', 'loading', 'image', 'css', 'js'],
+        description: 'Image loading with a blurry placeholder transitioning to clear. Enhances UX for galleries using CSS filters and JavaScript.',
+        demo: `<div class="max-w-sm mx-auto">
+          <img id="blur-image" src="https://picsum.photos/400/200" alt="Sample" class="w-full blur-md transition-all duration-500">
+        </div>`,
+        code: `
+          const img = document.getElementById('blur-image');
+          img.onload = () => {
+            setTimeout(() => img.classList.remove('blur-md'), 1000);
+          };
+        `
+      },
+      {
+        id: 'project-6',
+        title: 'Scroll Animation',
+        keywords: ['scroll', 'animation', 'fade', 'css', 'js'],
+        description: 'Fade-in elements on scroll for engaging pages. Uses JavaScript for visibility detection and Tailwind CSS for transitions.',
+        demo: `<div class="max-w-md mx-auto space-y-4">
+          <div class="fade-box opacity-0 p-4 bg-blue-600 text-white rounded">Box 1</div>
+          <div class="fade-box opacity-0 p-4 bg-gray-600 text-white rounded">Box 2</div>
+        </div>`,
+        code: `
+          const boxes = document.querySelectorAll('.fade-box');
+          function checkVisibility() {
+            boxes.forEach(box => {
+              const rect = box.getBoundingClientRect();
+              if (rect.top <= window.innerHeight) {
+                box.classList.add('opacity-100');
+                box.classList.remove('opacity-0');
+              }
+            });
+          }
+          window.addEventListener('scroll', checkVisibility);
+          checkVisibility();
+        `
+      },
+      {
+        id: 'project-7',
+        title: 'Split Landing Page',
+        keywords: ['split', 'landing', 'hover', 'css', 'js'],
+        description: 'Split-screen landing page with expanding panels on hover. Great for comparisons, using Tailwind CSS and JavaScript.',
+        demo: `<div class="flex h-48 max-w-md mx-auto">
+          <div class="split-left flex-1 bg-red-500 text-white p-4 cursor-pointer transition-all" onmouseenter="this.classList.add('flex-[3]'); this.nextElementSibling.classList.add('flex-1')" onmouseleave="this.classList.remove('flex-[3]'); this.nextElementSibling.classList.remove('flex-1')">Left</div>
+          <div class="split-right flex-1 bg-blue-600 text-white p-4 cursor-pointer transition-all" onmouseenter="this.classList.add('flex-[3]'); this.previousElementSibling.classList.add('flex-1')" onmouseleave="this.classList.remove('flex-[3]'); this.previousElementSibling.classList.remove('flex-1')">Right</div>
+        </div>`,
+        code: `
+          const left = document.querySelector('.split-left');
+          const right = document.querySelector('.split-right');
+          left.addEventListener('mouseenter', () => {
+            left.classList.add('flex-[3]');
+            right.classList.add('flex-1');
+          });
+          left.addEventListener('mouseleave', () => {
+            left.classList.remove('flex-[3]');
+            right.classList.remove('flex-1');
+          });
+          right.addEventListener('mouseenter', () => {
+            right.classList.add('flex-[3]');
+            left.classList.add('flex-1');
+          });
+          right.addEventListener('mouseleave', () => {
+            right.classList.remove('flex-[3]');
+            left.classList.remove('flex-1');
+          });
+        `
+      },{
+        id: 'project-9',
+        title: 'Sound Board',
+        keywords: ['sound', 'board', 'audio', 'js'],
+        description: 'Play audio clips with buttons for interactive apps. Uses JavaScript for audio playback and Tailwind CSS for styling.',
+        demo: `<div class="flex justify-center gap-2">
+          <button class="sound-btn px-4 py-2 bg-blue-600 text-white rounded" data-sound="https://www.soundjay.com/button/beep-07.wav">Beep</button>
+          <button class="sound-btn px-4 py-2 bg-blue-600 text-white rounded" data-sound="https://www.soundjay.com/button/button-16.wav">Click</button>
+        </div>`,
+        code: `
+          document.querySelectorAll('.sound-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+              new Audio(btn.dataset.sound).play();
+            });
+          });
+        `
+      },
+      {
+        id: 'project-10',
+        title: 'Dad Joke Generator',
+        keywords: ['dad', 'joke', 'generator', 'api', 'js'],
+        description: 'Fetch random dad jokes from an API. Uses async JavaScript and Fetch API to add humor to your site.',
+        demo: `<div class="max-w-sm mx-auto text-center">
+          <button id="joke-btn" class="px-4 py-2 bg-blue-600 text-white rounded">Get Joke</button>
+          <p id="joke-text" class="mt-4"></p>
+        </div>`,
+        code: `
+          const btn = document.getElementById('joke-btn');
+          const text = document.getElementById('joke-text');
+          btn.addEventListener('click', async () => {
+            text.textContent = 'Loading...';
+            try {
+              const res = await fetch('https://icanhazdadjoke.com/', { headers: { Accept: 'application/json' } });
+              const data = await res.json();
+              text.textContent = data.joke;
+            } catch {
+              text.textContent = 'Failed to fetch joke.';
+            }
+          });
+        `
+      },
+      {
+        id: 'project-11',
+        title: 'Color Palette Generator',
+        keywords: ['color', 'palette', 'generator', 'css', 'js'],
+        description: 'Generate random color palettes with HEX values. Streamlines design workflows using JavaScript and Tailwind CSS.',
+        demo: `<div class="max-w-md mx-auto text-center">
+          <div id="color-palette" class="flex gap-2"></div>
+          <button onclick="generatePalette()" class="mt-4 px-4 py-2 bg-blue-600 text-white rounded">Generate</button>
+        </div>`,
+        code: `
+          function generatePalette() {
+            const palette = document.getElementById('color-palette');
+            palette.innerHTML = '';
+            for (let i = 0; i < 5; i++) {
+              const color = '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
+              const div = document.createElement('div');
+              div.className = 'w-16 h-16 flex items-center justify-center text-white';
+              div.style.backgroundColor = color;
+              div.textContent = color;
+              palette.appendChild(div);
+            }
+          }
+        `
+      },
+      {
+        id: 'project-12',
+        title: 'To-Do List',
+        keywords: ['todo', 'list', 'localstorage', 'js'],
+        description: 'To-do list with add/delete functionality using local storage. Teaches CRUD operations, ideal for task management.',
+        demo: `<div class="max-w-sm mx-auto">
+          <input id="todo-input" type="text" placeholder="Add task..." class="w-full p-2 border rounded">
+          <button onclick="addTodo()" class="mt-2 px-4 py-2 bg-blue-600 text-white rounded">Add</button>
+          <ul id="todo-list" class="mt-4 space-y-2"></ul>
+        </div>`,
+        code: `
+          function addTodo() {
+            const input = document.getElementById('todo-input');
+            const list = document.getElementById('todo-list');
+            if (input.value.trim()) {
+              const li = document.createElement('li');
+              li.textContent = input.value;
+              li.className = 'p-2 bg-gray-200 rounded';
+              list.appendChild(li);
+              input.value = '';
+              localStorage.setItem('todos', list.innerHTML);
+            }
+          }
+          document.getElementById('todo-list').innerHTML = localStorage.getItem('todos') || '';
+        `
+      },
+      {
+        id: 'project-13',
+        title: 'Weather Widget',
+        keywords: ['weather', 'widget', 'api', 'js'],
+        description: 'Display real-time weather via OpenWeatherMap API. Users input a city to see temperature and conditions. (Replace YOUR_API_KEY).',
+        demo: `<div class="max-w-sm mx-auto text-center">
+          <input id="city-input" type="text" placeholder="Enter city..." class="p-2 border rounded">
+          <button onclick="getWeather()" class="mt-2 px-4 py-2 bg-blue-600 text-white rounded">Get Weather</button>
+          <p id="weather-text" class="mt-4"></p>
+        </div>`,
+        code: `
+          async function getWeather() {
+            const city = document.getElementById('city-input').value;
+            const text = document.getElementById('weather-text');
+            text.textContent = 'Loading...';
+            try {
+              const res = await fetch(\`https://api.openweathermap.org/data/2.5/weather?q=\${city}&appid=YOUR_API_KEY&units=metric\`);
+              const data = await res.json();
+              text.textContent = \`\${data.name}: \${data.main.temp}°C, \${data.weather[0].description}\`;
+            } catch {
+              text.textContent = 'City not found.';
+            }
+          }
+        `
+      },
+      {
+        id: 'project-14',
+        title: 'Image Carousel',
+        keywords: ['image', 'carousel', 'slider', 'css', 'js'],
+        description: 'Responsive image carousel with navigation. Perfect for galleries, using Tailwind CSS and JavaScript for sliding.',
+        demo: `<div class="max-w-md mx-auto relative overflow-hidden">
+          <div id="carousel" class="flex transition-transform duration-500">
+            <img src="https://picsum.photos/400/200?random=1" class="w-full" alt="Slide 1" loading="lazy">
+            <img src="https://picsum.photos/400/200?random=2" class="w-full" alt="Slide 2" loading="lazy">
+          </div>
+          <button onclick="prevSlide()" class="absolute top-1/2 left-2 bg-blue-600 text-white p-2 rounded">←</button>
+          <button onclick="nextSlide()" class="absolute top-1/2 right-2 bg-blue-600 text-white p-2 rounded">→</button>
+        </div>`,
+        code: `
+          let slide = 0;
+          function prevSlide() {
+            slide = slide > 0 ? slide - 1 : 1;
+            document.getElementById('carousel').style.transform = \`translateX(-\${slide * 100}%)\`;
+          }
+          function nextSlide() {
+            slide = slide < 1 ? slide + 1 : 0;
+            document.getElementById('carousel').style.transform = \`translateX(-\${slide * 100}%)\`;
+          }
+        `
+      },
+      {
+        id: 'project-15',
+        title: 'Password Generator',
+        keywords: ['password', 'generator', 'security', 'js'],
+        description: 'Generate secure random passwords. Enhances security for forms using JavaScript and Tailwind CSS.',
+        demo: `<div class="max-w-sm mx-auto text-center">
+          <input id="password-output" type="text" readonly class="w-full p-2 border rounded">
+          <button onclick="generatePassword()" class="mt-2 px-4 py-2 bg-blue-600 text-white rounded">Generate</button>
+        </div>`,
+        code: `
+          function generatePassword() {
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*';
+            let password = '';
+            for (let i = 0; i < 12; i++) {
+              password += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            document.getElementById('password-output').value = password;
+          }
+        `
+      },
+      {
+        id: 'project-16',
+        title: 'Countdown Timer',
+        keywords: ['countdown', 'timer', 'js'],
+        description: 'Countdown timer for events or deadlines. Uses JavaScript for real-time updates, ideal for promotions.',
+        demo: `<div class="max-w-sm mx-auto text-center">
+          <input id="timer-input" type="datetime-local" class="p-2 border rounded">
+          <button onclick="startTimer()" class="mt-2 px-4 py-2 bg-blue-600 text-white rounded">Start</button>
+          <p id="timer-output" class="mt-4"></p>
+        </div>`,
+        code: `
+          function startTimer() {
+            const input = document.getElementById('timer-input').value;
+            const output = document.getElementById('timer-output');
+            const end = new Date(input).getTime();
+            const interval = setInterval(() => {
+              const now = new Date().getTime();
+              const distance = end - now;
+              if (distance < 0) {
+                clearInterval(interval);
+                output.textContent = 'Timer ended!';
+                return;
+              }
+              const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+              const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+              const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+              const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+              output.textContent = \`\${days}d \${hours}h \${minutes}m \${seconds}s\`;
+            }, 1000);
+          }
+        `
+      },
+      {
+        id: 'project-17',
+        title: 'Lorem Ipsum Generator',
+        keywords: ['lorem', 'ipsum', 'generator', 'js'],
+        description: 'Generate placeholder text for design mockups. Uses JavaScript to create random Lorem Ipsum, useful for prototyping.',
+        demo: `<div class="max-w-md mx-auto">
+          <button onclick="generateLorem()" class="px-4 py-2 bg-blue-600 text-white rounded">Generate</button>
+          <p id="lorem-output" class="mt-4"></p>
+        </div>`,
+        code: `
+          function generateLorem() {
+            const words = ['lorem', 'ipsum', 'dolor', 'sit', 'amet', 'consectetur', 'adipiscing', 'elit'];
+            let text = '';
+            for (let i = 0; i < 50; i++) {
+              text += words[Math.floor(Math.random() * words.length)] + ' ';
+            }
+            document.getElementById('lorem-output').textContent = text;
+          }
+        `
+      },
+      {
+        id: 'project-18',
+        title: 'Price Slider',
+        keywords: ['price', 'slider', 'range', 'css', 'js'],
+        description: 'Range slider for price selection with real-time display. Ideal for e-commerce, using Tailwind CSS and JavaScript.',
+        demo: `<div class="max-w-sm mx-auto">
+          <input id="price-slider" type="range" min="0" max="100" value="50" class="w-full">
+          <p id="price-output" class="text-center mt-2">$50</p>
+        </div>`,
+        code: `
+          const slider = document.getElementById('price-slider');
+          const output = document.getElementById('price-output');
+          slider.addEventListener('input', () => {
+            output.textContent = \`$\${slider.value}\`;
+          });
+        `
+      },
+      {
+        id: 'project-19',
+        title: 'Sticky Notes',
+        keywords: ['sticky', 'notes', 'localstorage', 'js'],
+        description: 'Create and save sticky notes with local storage. Perfect for reminders, using JavaScript and Tailwind CSS.',
+        demo: `<div class="max-w-md mx-auto">
+          <textarea id="note-input" placeholder="Write note..." class="w-full p-2 border rounded"></textarea>
+          <button onclick="addNote()" class="mt-2 px-4 py-2 bg-blue-600 text-white rounded">Add</button>
+          <div id="notes-container" class="mt-4 grid gap-2"></div>
+        </div>`,
+        code: `
+          function addNote() {
+            const input = document.getElementById('note-input');
+            const container = document.getElementById('notes-container');
+            if (input.value.trim()) {
+              const note = document.createElement('div');
+              note.textContent = input.value;
+              note.className = 'p-4 bg-yellow-100 rounded';
+              container.appendChild(note);
+              input.value = '';
+              localStorage.setItem('notes', container.innerHTML);
+            }
+          }
+          document.getElementById('notes-container').innerHTML = localStorage.getItem('notes') || '';
+        `
+      },
+      {
+        id: 'project-20',
+        title: 'Quiz App',
+        keywords: ['quiz', 'app', 'js'],
+        description: 'Multiple-choice quiz with scoring. Great for educational tools, using JavaScript for logic and Tailwind CSS for styling.',
+        demo: `<div class="max-w-sm mx-auto">
+          <p id="quiz-question" class="font-bold"></p>
+          <div id="quiz-options" class="mt-4 space-y-2"></div>
+          <button onclick="checkAnswer()" class="mt-4 px-4 py-2 bg-blue-600 text-white rounded">Submit</button>
+          <p id="quiz-score" class="mt-4"></p>
+        </div>`,
+        code: `
+          const questions = [
+            { question: '2+2?', options: ['3', '4', '5'], answer: '4' },
+            { question: 'Capital of France?', options: ['Paris', 'London', 'Berlin'], answer: 'Paris' }
+          ];
+          let current = 0;
+          let score = 0;
+          function loadQuestion() {
+            const q = questions[current];
+            document.getElementById('quiz-question').textContent = q.question;
+            const options = document.getElementById('quiz-options');
+            options.innerHTML = '';
+            q.options.forEach(opt => {
+              const btn = document.createElement('button');
+              btn.textContent = opt;
+              btn.className = 'w-full p-2 bg-gray-200 rounded';
+              btn.onclick = () => selectOption(opt);
+              options.appendChild(btn);
+            });
+          }
+          function selectOption(opt) {
+            if (opt === questions[current].answer) score++;
+            current++;
+            if (current < questions.length) {
+              loadQuestion();
+            } else {
+              document.getElementById('quiz-question').textContent = 'Quiz Complete!';
+              document.getElementById('quiz-options').innerHTML = '';
+              document.getElementById('quiz-score').textContent = \`Score: \${score}/\${questions.length}\`;
+            }
+          }
+          loadQuestion();
+        `
+      },
+      {
+        id: 'project-21',
+        title: 'Drag and Drop List',
+        keywords: ['drag', 'drop', 'list', 'js'],
+        description: 'Reorderable list using HTML5 Drag and Drop API. Ideal for task management, styled with Tailwind CSS.',
+        demo: `<div class="max-w-sm mx-auto">
+          <ul id="drag-list" class="space-y-2">
+            <li draggable="true" class="p-2 border rounded bg-gray-200">Item 1</li>
+            <li draggable="true" class="p-2 border rounded bg-gray-200">Item 2</li>
+            <li draggable="true" class="p-2 border rounded bg-gray-200">Item 3</li>
+          </ul>
+        </div>`,
+        code: `
+          const list = document.getElementById('drag-list');
+          let draggedItem = null;
+          list.addEventListener('dragstart', e => {
+            draggedItem = e.target;
+            e.target.style.opacity = '0.5';
+          });
+          list.addEventListener('dragend', e => {
+            e.target.style.opacity = '1';
+            draggedItem = null;
+          });
+          list.addEventListener('dragover', e => e.preventDefault());
+          list.addEventListener('drop', e => {
+            e.preventDefault();
+            if (e.target.tagName === 'LI') {
+              list.insertBefore(draggedItem, e.target);
+            }
+          });
+        `
+      },
+      {
+        id: 'project-22',
+        title: 'Typing Speed Test',
+        keywords: ['typing', 'speed', 'test', 'js'],
+        description: 'Measure typing speed and accuracy in WPM. Great for educational apps, using JavaScript and Tailwind CSS.',
+        demo: `<div class="max-w-sm mx-auto">
+          <p id="typing-text" class="p-2 bg-gray-100 rounded">The quick brown fox jumps over the lazy dog</p>
+          <textarea id="typing-input" class="w-full p-2 border rounded mt-2"></textarea>
+          <button onclick="startTypingTest()" class="mt-2 px-4 py-2 bg-blue-600 text-white rounded">Start</button>
+          <p id="typing-result" class="mt-4"></p>
+        </div>`,
+        code: `
+          let startTime;
+          function startTypingTest() {
+            const input = document.getElementById('typing-input');
+            const result = document.getElementById('typing-result');
+            if (!startTime) {
+              startTime = new Date();
+              input.focus();
+            }
+            input.addEventListener('input', () => {
+              if (input.value === document.getElementById('typing-text').textContent) {
+                const endTime = new Date();
+                const timeTaken = (endTime - startTime) / 1000;
+                const wpm = Math.round((input.value.split(' ').length / timeTaken) * 60);
+                result.textContent = \`WPM: \${wpm}\`;
+                startTime = null;
+                input.value = '';
+              }
+            });
+          }
+        `
+      },{
+        id: 'project-23',
+        title: 'Parallax Scrolling',
+        keywords: ['parallax', 'scrolling', 'css', 'js'],
+        description: 'Immersive parallax scrolling effect for backgrounds. Uses JavaScript for scroll movement and Tailwind CSS.',
+        demo: `<div id="parallax" class="h-48 bg-fixed bg-center bg-cover" style="background-image: url('https://picsum.photos/600/400')"></div>`,
+        code: `
+          const parallax = document.getElementById('parallax');
+          window.addEventListener('scroll', () => {
+            let offset = window.pageYOffset;
+            parallax.style.backgroundPositionY = offset * 0.7 + 'px';
+          });
+        `
+      },
+      {
+        id: 'project-24',
+        title: 'Sticky Navbar',
+        keywords: ['sticky', 'navbar', 'css', 'js'],
+        description: 'Navigation bar that sticks on scroll. Uses JavaScript for scroll detection and Tailwind CSS for styling.',
+        demo: `<nav id="sticky-nav" class="bg-blue-600 text-white p-4 text-center">
+          <a href="#" class="mx-2">Home</a>
+          <a href="#" class="mx-2">About</a>
+        </nav>`,
+        code: `
+          const nav = document.getElementById('sticky-nav');
+          const sticky = nav.offsetTop;
+          window.addEventListener('scroll', () => {
+            if (window.pageYOffset >= sticky) {
+              nav.classList.add('fixed', 'top-0', 'w-full');
+            } else {
+              nav.classList.remove('fixed', 'top-0', 'w-full');
+            }
+          });
+        `
+      },
+      {
+        id: 'project-25',
+        title: 'Random Quote Generator',
+        keywords: ['random', 'quote', 'generator', 'api', 'js'],
+        description: 'Fetch random quotes from an API. Ideal for motivational content, using async JavaScript and Tailwind CSS.',
+        demo: `<div class="max-w-sm mx-auto text-center">
+          <button onclick="getQuote()" class="px-4 py-2 bg-blue-600 text-white rounded">Get Quote</button>
+          <p id="quote-text" class="mt-4"></p>
+        </div>`,
+        code: `
+          async function getQuote() {
+            const text = document.getElementById('quote-text');
+            text.textContent = 'Loading...';
+            try {
+              const res = await fetch('https://api.quotable.io/random');
+              const data = await res.json();
+              text.textContent = \`\${data.content} — \${data.author}\`;
+            } catch {
+              text.textContent = 'Failed to fetch quote.';
+            }
+          }
+        `
+      },
+      {
+        id: 'project-26',
+        title: 'Image Magnifier',
+        keywords: ['image', 'magnifier', 'zoom', 'js'],
+        description: 'Zoom into images on hover. Ideal for e-commerce, using JavaScript for zoom and Tailwind CSS.',
+        demo: `<div class="max-w-sm mx-auto relative">
+          <img src="https://picsum.photos/400/200" class="w-full" alt="Sample">
+          <div id="zoom" class="hidden absolute w-24 h-24 border rounded-full"></div>
+        </div>`,
+        code: `
+          const img = document.querySelector('img');
+          const zoom = document.getElementById('zoom');
+          img.addEventListener('mousemove', e => {
+            zoom.classList.remove('hidden');
+            const rect = img.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            zoom.style.left = x - 50 + 'px';
+            zoom.style.top = y - 50 + 'px';
+            zoom.style.backgroundImage = \`url(\${img.src})\`;
+            zoom.style.backgroundSize = \`\${img.width * 2}px \${img.height * 2}px\`;
+            zoom.style.backgroundPosition = \`-\${x * 2 - 50}px -\${y * 2 - 50}px\`;
+          });
+          img.addEventListener('mouseleave', () => zoom.classList.add('hidden'));
+        `
+      },
+      {
+        id: 'project-27',
+        title: 'Accordion FAQ',
+        keywords: ['accordion', 'faq', 'css', 'js'],
+        description: 'Collapsible FAQ section. Improves UX using JavaScript for toggling and Tailwind CSS for styling.',
+        demo: `<div class="max-w-sm mx-auto">
+          <button class="acc-btn w-full text-left p-2 bg-gray-200 rounded">Question 1</button>
+          <div class="acc-content hidden p-2">Answer 1</div>
+          <button class="acc-btn w-full text-left p-2 bg-gray-200 rounded mt-2">Question 2</button>
+          <div class="acc-content hidden p-2">Answer 2</div>
+        </div>`,
+        code: `
+          document.querySelectorAll('.acc-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+              const content = btn.nextElementSibling;
+              content.classList.toggle('hidden');
+            });
+          });
+        `
+      },
+      {
+        id: 'project-28',
+        title: 'Tic-Tac-Toe Game',
+        keywords: ['tic-tac-toe', 'game', 'js'],
+        description: 'Two-player tic-tac-toe with win detection. Fun for casual gaming, using JavaScript and Tailwind CSS.',
+        demo: `<div class="max-w-xs mx-auto">
+          <div id="tic-tac-toe" class="grid grid-cols-3 gap-2">
+            <div class="cell w-16 h-16 border text-3xl text-center"></div>
+            <div class="cell w-16 h-16 border text-3xl text-center"></div>
+            <div class="cell w-16 h-16 border text-3xl text-center"></div>
+            <div class="cell w-16 h-16 border text-3xl text-center"></div>
+            <div class="cell w-16 h-16 border text-3xl text-center"></div>
+            <div class="cell w-16 h-16 border text-3xl text-center"></div>
+            <div class="cell w-16 h-16 border text-3xl text-center"></div>
+            <div class="cell w-16 h-16 border text-3xl text-center"></div>
+            <div class="cell w-16 h-16 border text-3xl text-center"></div>
+          </div>
+          <p id="game-status" class="mt-4 text-center"></p>
+        </div>`,
+        code: `
+          const cells = document.querySelectorAll('.cell');
+          let player = 'X';
+          cells.forEach(cell => {
+            cell.addEventListener('click', () => {
+              if (!cell.textContent) {
+                cell.textContent = player;
+                if (checkWin()) {
+                  document.getElementById('game-status').textContent = \`\${player} wins!\`;
+                  cells.forEach(c => c.style.pointerEvents = 'none');
+                } else {
+                  player = player === 'X' ? 'O' : 'X';
+                }
+              }
+            });
+          });
+          function checkWin() {
+            const wins = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]];
+            return wins.some(combo => combo.every(i => cells[i].textContent === player));
+          }
+        `
+      },
+      {
+        id: 'project-29',
+        title: 'Unit Converter',
+        keywords: ['unit', 'converter', 'js'],
+        description: 'Convert units like length or weight. Practical for utility apps, using JavaScript and Tailwind CSS.',
+        demo: `<div class="max-w-sm mx-auto">
+          <input id="unit-input" type="number" placeholder="Enter value" class="p-2 border rounded">
+          <select id="unit-type" class="mt-2 p-2 border rounded">
+            <option value="cm-to-m">CM to M</option>
+            <option value="m-to-cm">M to CM</option>
+          </select>
+          <p id="unit-result" class="mt-4"></p>
+        </div>`,
+        code: `
+          const input = document.getElementById('unit-input');
+          const type = document.getElementById('unit-type');
+          const result = document.getElementById('unit-result');
+          input.addEventListener('input', convert);
+          type.addEventListener('change', convert);
+          function convert() {
+            const value = parseFloat(input.value);
+            if (isNaN(value)) return;
+            if (type.value === 'cm-to-m') {
+              result.textContent = \`\${value / 100} meters\`;
+            } else {
+              result.textContent = \`\${value * 100} centimeters\`;
+            }
+          }
+        `
+      },
+      {
+        id: 'project-30',
+        title: 'Modal Popup',
+        keywords: ['modal', 'popup', 'css', 'js'],
+        description: 'Customizable modal for alerts or content. Enhances interactivity using JavaScript and Tailwind CSS.',
+        demo: `<div class="text-center">
+          <button onclick="openModal()" class="px-4 py-2 bg-blue-600 text-white rounded">Open</button>
+          <div id="modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+            <div class="bg-white dark:bg-gray-800 p-6 rounded">
+              <p>Modal Content</p>
+              <button onclick="closeModal()" class="mt-4 px-4 py-2 bg-blue-600 text-white rounded">Close</button>
+            </div>
+          </div>
+        </div>`,
+        code: `
+          function openModal() {
+            document.getElementById('modal').classList.remove('hidden');
+          }
+          function closeModal() {
+            document.getElementById('modal').classList.add('hidden');
+          }
+        `
+      },
+      {
+        id: 'project-31',
+        title: 'Calculator',
+        keywords: ['calculator', 'js'],
+        description: 'Basic arithmetic calculator. Great for learning, using JavaScript for logic and Tailwind CSS for styling.',
+        demo: `<div class="max-w-xs mx-auto p-4 border rounded">
+          <input id="calc-display" readonly class="w-full p-2 border rounded mb-2">
+          <div class="grid grid-cols-4 gap-2">
+            <button onclick="appendCalc('1')" class="p-2 bg-gray-200 rounded">1</button>
+            <button onclick="appendCalc('2')" class="p-2 bg-gray-200 rounded">2</button>
+            <button onclick="appendCalc('3')" class="p-2 bg-gray-200 rounded">3</button>
+            <button onclick="appendCalc('+')" class="p-2 bg-blue-600 text-white rounded">+</button>
+            <button onclick="appendCalc('4')" class="p-2 bg-gray-200 rounded">4</button>
+            <button onclick="appendCalc('5')" class="p-2 bg-gray-200 rounded">5</button>
+            <button onclick="appendCalc('6')" class="p-2 bg-gray-200 rounded">6</button>
+            <button onclick="appendCalc('-')" class="p-2 bg-blue-600 text-white rounded">-</button>
+            <button onclick="appendCalc('7')" class="p-2 bg-gray-200 rounded">7</button>
+            <button onclick="appendCalc('8')" class="p-2 bg-gray-200 rounded">8</button>
+            <button onclick="appendCalc('9')" class="p-2 bg-gray-200 rounded">9</button>
+            <button onclick="appendCalc('*')" class="p-2 bg-blue-600 text-white rounded">*</button>
+            <button onclick="appendCalc('0')" class="p-2 bg-gray-200 rounded">0</button>
+            <button onclick="appendCalc('/')" class="p-2 bg-blue-600 text-white rounded">/</button>
+            <button onclick="calculate()" class="p-2 bg-green-600 text-white rounded">=</button>
+            <button onclick="clearCalc()" class="p-2 bg-red-600 text-white rounded">C</button>
+          </div>
+        </div>`,
+        code: `
+          const display = document.getElementById('calc-display');
+          function appendCalc(value) {
+            display.value += value;
+          }
+          function calculate() {
+            try {
+              display.value = eval(display.value);
+            } catch {
+              display.value = 'Error';
+            }
+          }
+          function clearCalc() {
+            display.value = '';
+          }
+        `
+      },
+      {
+        id: 'project-32',
+        title: 'Image Filter Gallery',
+        keywords: ['image', 'filter', 'gallery', 'css', 'js'],
+        description: 'Filter images by category in a gallery. Ideal for portfolios, using JavaScript and Tailwind CSS.',
+        demo: `<div class="max-w-md mx-auto">
+          <div class="flex gap-2 mb-4">
+            <button onclick="filterImages('all')" class="px-4 py-2 bg-blue-600 text-white rounded">All</button>
+            <button onclick="filterImages('nature')" class="px-4 py-2 bg-blue-600 text-white rounded">Nature</button>
+            <button onclick="filterImages('city')" class="px-4 py-2 bg-blue-600 text-white rounded">City</button>
+          </div>
+          <div id="gallery" class="grid grid-cols-2 gap-2">
+            <img src="https://picsum.photos/200?random=1" data-category="nature" class="w-full" loading="lazy">
+            <img src="https://picsum.photos/200?random=2" data-category="city" class="w-full" loading="lazy">
+          </div>
+        </div>`,
+        code: `
+          function filterImages(category) {
+            const images = document.querySelectorAll('#gallery img');
+            images.forEach(img => {
+              img.classList.toggle('hidden', !(category === 'all' || img.dataset.category === category));
+            });
+          }
+        `
+      },
+      {
+        id: 'project-33',
+        title: 'Stopwatch',
+        keywords: ['stopwatch', 'timer', 'js'],
+        description: 'Stopwatch with start, stop, and reset. Useful for tracking tasks, using JavaScript and Tailwind CSS.',
+        demo: `<div class="max-w-sm mx-auto text-center">
+          <p id="stopwatch-display" class="text-2xl mb-4">00:00:00</p>
+          <button onclick="startStopwatch()" class="px-4 py-2 bg-blue-600 text-white rounded">Start</button>
+          <button onclick="stopStopwatch()" class="px-4 py-2 bg-red-600 text-white rounded">Stop</button>
+          <button onclick="resetStopwatch()" class="px-4 py-2 bg-gray-600 text-white rounded">Reset</button>
+        </div>`,
+        code: `
+          let time = 0;
+          let interval;
+          const display = document.getElementById('stopwatch-display');
+          function startStopwatch() {
+            interval = setInterval(() => {
+              time++;
+              const hours = Math.floor(time / 3600);
+              const minutes = Math.floor((time % 3600) / 60);
+              const seconds = time % 60;
+              display.textContent = \`\${hours.toString().padStart(2, '0')}:\${minutes.toString().padStart(2, '0')}:\${seconds.toString().padStart(2, '0')}\`;
+            }, 1000);
+          }
+          function stopStopwatch() {
             clearInterval(interval);
-            pomodoroDisplay.textContent = 'Done!';
-            return;
           }
-          pomodoroTime--;
-          const minutes = Math.floor(pomodoroTime / 60);
-          const seconds = Math.floor((pomodoroTime % 60);
-          pomodoroDisplay.textContent = `\${minutes.toString().padStart(2, '0')}:\${seconds.toString().padStart(2, '0')}`;
-        }, 1000);
-      }
-      function resetPomodoro() {
-        clearInterval(interval);
-        pomodoroTime = 25 * 60;
-        pomodoroDisplay.textContent = '25:00';
-      }
-    `
-  },
-  {
-    id: 'project-37',
-    title: 'Currency Converter',
-    keywords: 'currency converter api javascript demo',
-    description: 'Convert between different currencies using a real-time exchange rate API. This project uses JavaScript for API calls and CSS for a user-friendly interface, perfect for travel or finance apps. Users select currencies and input an amount to convert.',
-    demo: `
-      <div style="currency-converter" style="max-width:400px;margin:auto;">
-        <input type="number" id="currency-input" placeholder="Enter amount" style="padding:0.5rem;" />
-        <select id="from-currency">
-          <option value="USD">USD</option>
-          <option value="EUR">EUR</option>
-        </select>
-        <select id="to-currency">
-          <option value="EUR">EUR</option>
-          <option value="USD">USD</option>
-        </select>
-        <button onclick="convertCurrency()" style="padding: margin-top:0.5rem;padding:0.5rem 1rem;">Convert</button>
-        <p id="currency-result"></p>
-      </div>
-    `,
-    code: `
-      async function convertCurrency() {
-        const amount = document.getElementById('currency-input').value;
-        const from = document.getElementById('from-currency').value;
-        const to = document.getElementById('to-currency').value;
-        const result = document.getElementById('currency-result');
-        result.textContent = 'Loading...';
-        try {
-          const res = await fetch(`https://api.exchangerate-api.com/v4/latest/\${from}`);
-          const data = await res.json();
-          const converted = (amount * data.rates[to]).toFixed(2);
-          result.textContent = `\${amount} \${from} = \${converted} \${to}`;
-        } catch {
-          result.textContent = 'Error fetching rates.';
-        }
-      }
-    `
-  },
-  {
-    id: 'project-38',
-    title: 'Animated Counter',
-    keywords: 'animated counter numbers javascript demo',
-    description: 'Display numbers with an animated counting effect, ideal for stats or dashboards. This project uses JavaScript to increment values smoothly and CSS for styling, enhancing visual appeal for metrics like user counts or sales.',
-    demo: `
-      <div style="max-width:400px;margin:auto;text-align:center;">
-        <p id="counter" style="font-size:2rem;">0</p>
-        <button onclick="startCounter()" style="padding:0.5rem 1rem;">Start Count</button>
-      </div>
-    `,
-    code: `
-      function startCounter() {
-        let count = 0;
-        const counter = document.getElementById('counter');
-        const interval = setInterval(() => {
-          if (count >= 100) {
+          function resetStopwatch() {
             clearInterval(interval);
-            return;
+            time = 0;
+            display.textContent = '00:00:00';
           }
-          counter.textContent = count++;
-        }, 20);
-      }
-    `
-  },
-  {
-    id: 'project-39',
-    title: 'Tabs Component',
-    keywords: 'tabs component css js demo',
-    description: 'A tabbed interface to switch between content sections. This project uses CSS for styling and JavaScript for tab switching, perfect for organizing content like product details or FAQs in a compact layout.',
-    demo: `
-      <div style="max-width:400px;margin:auto;">
-        <div class="tabs">
-          <button class="tab-btn active" data-tab="tab1" style="padding:0.5rem 1rem;">Tab 1</button>
-          <button class="tab-btn" data-tab="tab2" style="padding:0.5rem 1rem;">Tab 2</button>
-          <div id="tab1" class="tab-content" style="padding:1rem;border:1px solid #e2e8f0;">Content for Tab 1</div>
-          <div id="tab2" class="tab-content" style="display:none;padding:1rem;border:1px solid #e2e8f0;">Content for Tab 2</div>
-        </div>
-      </div>
-    `,
-    code: `
-      const tabButtons = document.querySelectorAll('.tab-btn');
-      tabButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-          tabButtons.forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-          document.querySelectorAll('.tab-content').forEach(content => {
-            content.style.display = content.id === btn.dataset.tab ? 'block' : 'none';
+        `
+      },
+      {
+        id: 'project-34',
+        title: 'Hover Board',
+        keywords: ['hover', 'board', 'animation', 'css', 'js'],
+        description: 'Interactive grid with color-changing squares on hover. Uses JavaScript for dynamic colors and Tailwind CSS.',
+        demo: `<div id="hover-board" class="max-w-sm mx-auto grid grid-cols-5 gap-1">
+          <div class="square w-full pt-[100%] bg-gray-200"></div>
+          <div class="square w-full pt-[100%] bg-gray-200"></div>
+          <div class="square w-full pt-[100%] bg-gray-200"></div>
+          <div class="square w-full pt-[100%] bg-gray-200"></div>
+          <div class="square w-full pt-[100%] bg-gray-200"></div>
+        </div>`,
+        code: `
+          document.querySelectorAll('.square').forEach(square => {
+            square.addEventListener('mouseover', () => {
+              square.style.background = '#' + Math.floor(Math.random()*16777215).toString(16);
+            });
+            square.addEventListener('mouseout', () => {
+              square.style.background = '#e5e7eb';
+            });
           });
-        });
-      });
-    `
-  },
-  {
-    id: 'project-40',
-    title: 'Snake Game',
-    keywords: 'snake game javascript canvas demo',
-    description: 'A classic Snake game using HTML5 Canvas. Players control a snake to eat food and grow, avoiding collisions. This project uses JavaScript for game logic and Canvas for rendering, offering a fun, nostalgic experience.',
-    demo: `
-      <div style="max-width:400px;margin:auto;">
-        <canvas id="snakeCanvas" width="300" height="300" style="border:1px solid #000;"></canvas>
-        <button onclick="startSnakeGame()">Start Game</button>
-      </div>
-    `,
-    code: `
-      function startSnakeGame() {
-        const canvas = document.getElementById('snakeCanvas');
-        const ctx = canvas.getContext('2d');
-        let snake = [{x:10, y:10}];
-        let food = {x:15, y:15};
-        let dx = 1, dy = 0;
-        function draw() {
-          ctx.clearRect(0, 0, canvas.width, canvas.height);
-          snake.forEach(segment => {
-            ctx.fillStyle = 'green';
-            ctx.fillRect(segment.x*20, segment.y*20, 20, 20);
+        `
+      },
+      {
+        id: 'project-35',
+        title: 'Memory Card Game',
+        keywords: ['memory', 'card', 'game', 'js'],
+        description: 'Card-matching game to test memory. Engaging for all ages, using JavaScript and Tailwind CSS.',
+        demo: `<div id="memory-game" class="max-w-sm mx-auto grid grid-cols-4 gap-2">
+          <div class="card w-16 h-16 bg-blue-600 text-white text-2xl text-center leading-[4rem] cursor-pointer" data-value="A">?</div>
+          <div class="card w-16 h-16 bg-blue-600 text-white text-2xl text-center leading-[4rem] cursor-pointer" data-value="A">?</div>
+          <div class="card w-16 h-16 bg-blue-600 text-white text-2xl text-center leading-[4rem] cursor-pointer" data-value="B">?</div>
+          <div class="card w-16 h-16 bg-blue-600 text-white text-2xl text-center leading-[4rem] cursor-pointer" data-value="B">?</div>
+        </div>`,
+        code: `
+          const cards = document.querySelectorAll('.card');
+          let flipped = null;
+          cards.forEach(card => {
+            card.addEventListener('click', () => {
+              if (card.textContent === '?' && !flipped) {
+                card.textContent = card.dataset.value;
+                flipped = card;
+              } else if (card.textContent === '?' && flipped) {
+                card.textContent = card.dataset.value;
+                if (card.dataset.value === flipped.dataset.value) {
+                  flipped = null;
+                } else {
+                  setTimeout(() => {
+                    card.textContent = '?';
+                    flipped.textContent = '?';
+                    flipped = null;
+                  }, 1000);
+                }
+              }
+            });
           });
-          ctx.fillStyle = 'red';
-          ctx.fillRect(food.x*20, food.y*20, 20, 20);
-          let head = {x: snake[0].x + dx, y: snake[0].y + dy};
-          snake.unshift(head);
-          if (head.x === food.x && head.y === food.y) {
-            food = {x: Math.floor(Math.random()*15), y: Math.floor(Math.random()*15)};
-          } else {
-            snake.pop();
+        `
+      },
+      {
+        id: 'project-36',
+        title: 'Pomodoro Timer',
+        keywords: ['pomodoro', 'timer', 'productivity', 'js'],
+        description: 'Pomodoro timer for 25-minute work sessions. Boosts productivity using JavaScript and Tailwind CSS.',
+        demo: `<div class="max-w-sm mx-auto text-center">
+          <p id="pomodoro-display" class="text-3xl mb-4">25:00</p>
+          <button onclick="startPomodoro()" class="px-4 py-2 bg-blue-600 text-white rounded">Start</button>
+          <button onclick="resetPomodoro()" class="px-4 py-2 bg-gray-600 text-white rounded">Reset</button>
+        </div>`,
+        code: `
+          let time = 25 * 60;
+          let interval;
+          const display = document.getElementById('pomodoro-display');
+          function startPomodoro() {
+            clearInterval(interval);
+            interval = setInterval(() => {
+              if (time <= 0) {
+                clearInterval(interval);
+                display.textContent = 'Done!';
+                return;
+              }
+              time--;
+              const minutes = Math.floor(time / 60);
+              const seconds = time % 60;
+              display.textContent = \`\${minutes.toString().padStart(2, '0')}:\${seconds.toString().padStart(2, '0')}\`;
+            }, 1000);
           }
-          if (head.x < 0 || head.x >= 15 || head.y < 0 || head.y >= 15) clearInterval(game);
-          setTimeout(draw, 100);
-        }
-        document.addEventListener('keydown', e => {
-          if (e.key === 'ArrowUp' && dy === 0) { dx = 0; dy = -1; }
-          if (e.key === 'ArrowDown' && dy === 0) { dx = 0; dy = 1; }
-          if (e.key === 'ArrowLeft' && dx === 0) { dx = -1; dy = 0; }
-          if (e.key === 'ArrowRight' && dx === 0) { dx = 1; dy = 0; }
-        });
-        let game = setInterval(draw, 100);
-      }
-    `
-  },
-  {
-    id: 'project-41',
-    title: 'BMI Calculator',
-    keywords: 'bmi calculator health javascript demo',
-    description: 'Calculate Body Mass Index based on height and weight inputs. This project uses JavaScript for calculations and CSS for a simple form, useful for health or fitness apps.',
-    demo: `
-      <div style="max-width:400px;margin:auto;">
-        <input type="number" id="weight" placeholder="Weight (kg)" style="padding:0.5rem;margin-bottom:0.5rem;" />
-        <input type="number" id="height" placeholder="Height (cm)" style="padding:0.5rem;margin-bottom:0.5rem;" />
-        <button onclick="calculateBMI()">Calculate</button>
-        <p id="bmi-result"></p>
-      </div>
-    `,
-    code: `
-      function calculateBMI() {
-        const weight = parseFloat(document.getElementById('weight').value);
-        const height = parseFloat(document.getElementById('height').value) / 100;
-        const result = document.getElementById('bmi-result');
-        if (weight && height) {
-          const bmi = (weight / (height * height)).toFixed(2);
-          result.textContent = `BMI: ${bmi}`;
-        } else {
-          result.textContent = 'Please enter valid values.';
-        }
-      }
-    `
-  },
-  {
-    id: 'project-42',
-    title: 'Star Rating System',
-    keywords: 'star rating feedback javascript demo',
-    description: 'An interactive star rating system for user feedback. This project uses JavaScript for rating logic and CSS for star icons, perfect for reviews or surveys.',
-    demo: `
-      <div style="max-width:400px;margin:auto;">
-        <div id="star-rating">
-          <span class="star" data-value="1">★</span>
-          <span class="star" data-value="2">★</span>
-          <span class="star" data-value="3">★</span>
-          <span class="star" data-value="4">★</span>
-          <span class="star" data-value="5">★</span>
-        </div>
-        <p id="rating-result"></p>
-      </div>
-    `,
-    code: `
-      const stars = document.querySelectorAll('.star');
-      stars.forEach(star => {
-        star.addEventListener('click', () => {
-          const value = star.dataset.value;
-          stars.forEach(s => s.style.color = s.dataset.value <= value ? 'gold' : '#ccc');
-          document.getElementById('rating-result').textContent = `Rating: ${value} stars`;
-        });
-      });
-    `
-  },
-  {
-    id: 'project-43',
-    title: 'Password Strength Meter',
-    keywords: 'password strength meter javascript demo',
-    description: 'Evaluate password strength in real-time with visual feedback. This project uses JavaScript to check criteria like length and character types, enhancing security for registration forms.',
-    demo: `
-      <div style="max-width:400px;margin:auto;">
-        <input type="password" id="password-input" placeholder="Enter password" style="padding:0.5rem;" />
-        <p id="strength-meter"></p>
-      </div>
-    `,
-    code: `
-      const passwordInput = document.getElementById('password-input');
-      const strengthMeter = document.getElementById('strength-meter');
-      passwordInput.addEventListener('input', () => {
-        const password = passwordInput.value;
-        let strength = 0;
-        if (password.length > 8) strength++;
-        if (/[A-Z]/.test(password)) strength++;
-        if (/[0-9]/.test(password)) strength++;
-        if (/[^A-Za-z0-9]/.test(password)) strength++;
-        strengthMeter.textContent = strength >= 3 ? 'Strong' : strength >= 2 ? 'Medium' : 'Weak';
-        strengthMeter.style.color = strength >= 3 ? 'green' : strength >= 2 ? 'orange' : 'red';
-      });
-    `
-  },
-  {
-    id: 'project-44',
-    title: 'Infinite Scroll Gallery',
-    keywords: 'infinite scroll gallery api javascript demo',
-    description: 'Load images dynamically as users scroll, using an API like Unsplash. This project uses JavaScript for infinite loading and CSS for grid layout, ideal for photo galleries.',
-    demo: `
-      <div id="infinite-gallery" style="max-width:600px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;">
-        <!-- Images loaded dynamically -->
-      </div>
-      <button onclick="loadMoreImages()">Load More</button>
-    `,
-    code: `
-      let page = 1;
-      async function loadMoreImages() {
-        const gallery = document.getElementById('infinite-gallery');
-        try {
-          const res = await fetch(`https://api.unsplash.com/photos?page=${page}&client_id=YOUR_ACCESS_KEY`);
-          const images = await res.json();
-          images.forEach(img => {
-            const imgElement = document.createElement('img');
-            imgElement.src = img.urls.thumb;
-            imgElement.style.width = '100%';
-            gallery.appendChild(imgElement);
+          function resetPomodoro() {
+            clearInterval(interval);
+            time = 25 * 60;
+            display.textContent = '25:00';
+          }
+        `
+      },{
+        id: 'project-37',
+        title: 'Currency Converter',
+        keywords: ['currency', 'converter', 'api', 'js'],
+        description: 'Convert currencies using real-time exchange rates. Uses JavaScript and Tailwind CSS. (Replace YOUR_API_KEY).',
+        demo: `<div class="max-w-sm mx-auto">
+          <input id="currency-input" type="number" placeholder="Enter amount" class="p-2 border rounded">
+          <select id="from-currency" class="mt-2 p-2 border rounded">
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+          </select>
+          <select id="to-currency" class="mt-2 p-2 border rounded">
+            <option value="EUR">EUR</option>
+            <option value="USD">USD</option>
+          </select>
+          <button onclick="convertCurrency()" class="mt-2 px-4 py-2 bg-blue-600 text-white rounded">Convert</button>
+          <p id="currency-result" class="mt-4"></p>
+        </div>`,
+        code: `
+          async function convertCurrency() {
+            const amount = document.getElementById('currency-input').value;
+            const from = document.getElementById('from-currency').value;
+            const to = document.getElementById('to-currency').value;
+            const result = document.getElementById('currency-result');
+            result.textContent = 'Loading...';
+            try {
+              const res = await fetch(\`https://api.exchangerate-api.com/v4/latest/\${from}\`);
+              const data = await res.json();
+              const converted = (amount * data.rates[to]).toFixed(2);
+              result.textContent = \`\${amount} \${from} = \${converted} \${to}\`;
+            } catch {
+              result.textContent = 'Error fetching rates.';
+            }
+          }
+        `
+      },
+      {
+        id: 'project-38',
+        title: 'Animated Counter',
+        keywords: ['animated', 'counter', 'js'],
+        description: 'Animated number counter for stats or dashboards. Uses JavaScript for smooth increments and Tailwind CSS.',
+        demo: `<div class="max-w-sm mx-auto text-center">
+          <p id="counter" class="text-3xl mb-4">0</p>
+          <button onclick="startCounter()" class="px-4 py-2 bg-blue-600 text-white rounded">Start</button>
+        </div>`,
+        code: `
+          function startCounter() {
+            let count = 0;
+            const counter = document.getElementById('counter');
+            const interval = setInterval(() => {
+              if (count >= 100) {
+                clearInterval(interval);
+                return;
+              }
+              counter.textContent = count++;
+            }, 20);
+          }
+        `
+      },
+      {
+        id: 'project-39',
+        title: 'Tabs Component',
+        keywords: ['tabs', 'component', 'css', 'js'],
+        description: 'Tabbed interface for content sections. Organizes content using JavaScript and Tailwind CSS.',
+        demo: `<div class="max-w-sm mx-auto">
+          <div class="flex gap-2">
+            <button class="tab-btn px-4 py-2 bg-blue-600 text-white rounded" data-tab="tab1">Tab 1</button>
+            <button class="tab-btn px-4 py-2 bg-gray-300 rounded" data-tab="tab2">Tab 2</button>
+          </div>
+          <div id="tab1" class="p-4 border rounded mt-2">Content for Tab 1</div>
+          <div id="tab2" class="p-4 border rounded mt-2 hidden">Content for Tab 2</div>
+        </div>`,
+        code: `
+          document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+              document.querySelectorAll('.tab-btn').forEach(b => {
+                b.classList.replace('bg-blue-600', 'bg-gray-300');
+                b.classList.remove('text-white');
+              });
+              btn.classList.replace('bg-gray-300', 'bg-blue-600');
+              btn.classList.add('text-white');
+              document.querySelectorAll('[id^="tab"]').forEach(content => {
+                content.classList.toggle('hidden', content.id !== btn.dataset.tab);
+              });
+            });
           });
-          page++;
-        } catch {
-          console.error('Error loading images.');
-        }
+        `
+      },
+      {
+        id: 'project-40',
+        title: 'Snake Game',
+        keywords: ['snake', 'game', 'canvas', 'js'],
+        description: 'Classic Snake game using HTML5 Canvas. Fun and nostalgic, with JavaScript for game logic and Tailwind CSS.',
+        demo: `<div class="max-w-sm mx-auto text-center">
+          <canvas id="snake" width="300" height="300" class="border"></canvas>
+          <button onclick="startSnake()" class="mt-4 px-4 py-2 bg-blue-600 text-white rounded">Start</button>
+        </div>`,
+        code: `
+          function startSnake() {
+            const canvas = document.getElementById('snake');
+            const ctx = canvas.getContext('2d');
+            let snake = [{x:10, y:10}];
+            let food = {x:15, y:15};
+            let dx = 1, dy = 0;
+            function draw() {
+              ctx.clearRect(0, 0, canvas.width, canvas.height);
+              snake.forEach(s => {
+                ctx.fillStyle = 'green';
+                ctx.fillRect(s.x*20, s.y*20, 20, 20);
+              });
+              ctx.fillStyle = 'red';
+              ctx.fillRect(food.x*20, food.y*20, 20', '*20);
+              let head = {x: snake[0].x + dx, y: snake[0].y + dy};
+              snake.unshift(head);
+              if (head.x === 'food.x' && head.x === food.x && head.y === food.y) {
+                food = {x: Math.floor(Math.random()*15), y: Math.floor(Math.random()*15)};
+              } else {
+                snake.pop();
+              }
+              if (head.x < 0 || head.x >= 15 || head.y < 0 || head.y >= 15) clearInterval(game);
+              setTimeout(draw, 100);
+            }
+            document.addEventListener('keydown', e => {
+              if (e.key === 'ArrowUp' && dy === 0) { dx = 0; dy = -1; }
+              if (e.key === 'ArrowDown' && dy === 0) { dx = 0; dy = 1; }
+              if (e.key === 'ArrowLeft' && dx === 0) { dx = -1; dy = 0; }
+              if (e.key === 'ArrowRight' && dx === 0) { dx = 1; dy = 0; }
+            });
+            let game = setInterval(draw, 100);
+          }
+        </div>`,
+        code: `
+          function startSnake() {
+            const canvas = document.getElementById('snake');
+            const ctx = canvas.getContext('2d');
+            let snake = [{x:10, y:10}];
+            let food = {x:15, y:15};
+            let dx = 1, dy = 0;
+            function draw() {
+              ctx.clearRect(0, 0, canvas.width, canvas.height);
+              snake.forEach(s => {
+                ctx.fillStyle = 'green';
+                ctx.fillRect(s.x*20, s.y*20, 20, 20);
+              });
+              ctx.fillStyle = 'red';
+              ctx.fillRect(food.x*20, food.y*20, 20, 20);
+              let head = {x: snake[0].x + dx, y: snake[0].y + dy};
+              snake.unshift(head);
+              if (head.x === food.x && head.y === food.y) {
+                food = {x: Math.floor(Math.random()*15), y: Math.floor(Math.random()*15)};
+              } else {
+                snake.pop();
+              }
+              if (head.x < 0 || head.x >= 15 || head.y < 0 || head.y >= 15) return clearInterval(game);
+              setTimeout(draw, 100);
+            }
+            document.addEventListener('keydown', e => {
+              if (e.key === 'ArrowUp' && dy === 0) { dx = 0; dy = -1; }
+              else if (e.key === 'ArrowDown' && dy === 0) { dx = 0; dy = 1; }
+              else if (e.key === 'ArrowLeft' && dx === 0) { dx = -1; dy = 0; }
+              else if (e.key === 'ArrowRight' && dx === 0) { dx = 1; dy = 0; }
+            });
+            let gameInterval = setInterval(draw, 100);
+          }
+        `
+      },{
+        id: 'project-41',
+        title: 'BMI Calculator',
+        keywords: ['bmi', 'calculator', 'health', 'js'],
+        description: 'Calculate Body Mass Index based on height and weight. Useful for health apps, using JavaScript and Tailwind CSS.',
+        demo: `<div class="max-w-sm mx-auto">
+          <input id="weight" type="number" placeholder="Weight (kg)" class="padding: 2px; border rounded">
+        <input id="height" type="number" placeholder="Height (cm)" class="mt-2 p-2 border rounded">
+        <button onclick="calculateBMI()" class="mt-4 px-4 py-2 bg-blue-600 text-white">Calculate</button>
+        <p id="bmi-result" class="mt-4"></p>
+      </div>`,
+        code: `
+          function calculateBMI() {
+            const weight = parseFloat(document.getElementById('weight').value);
+            const height = parseFloat(document.getElementById('height').value) / 100;
+            const result = document.getElementById('bmi-result');
+            if (weight && height) {
+              const bmi = (weight / (height * height)).toFixed(2);
+              result.textContent = \`BMI: \${bmi}\`;
+            } else {
+              result.textContent = 'Please enter valid values.';
+            }
+          }
+        `
+      },
+      {
+        id: 'project-42',
+        title: 'Star Rating System',
+        keywords: ['star', 'rating', 'feedback', 'js'],
+        description: 'Interactive star rating system for user feedback. Users can click stars to set a rating, ideal for product reviews or surveys. Built with JavaScript for dynamic updates and Tailwind CSS for responsive styling, it’s accessible with keyboard navigation.',
+        demo: `<div class="max-w-sm mx-auto text-center">
+          <div id="star-rating" class="flex justify-center gap-1">
+            <span class="star text-2xl cursor-pointer text-gray-300 hover:text-yellow-400" data-value="1" role="button" aria-label="1 star">★</span>
+            <span class="star text-2xl cursor-pointer text-gray-300 hover:text-yellow-400" data-value="2" role="button" aria-label="2 stars">★</span>
+            <span class="star text-2xl cursor-pointer text-gray-300 hover:text-yellow-400" data-value="3" role="button" aria-label="3 stars">★</span>
+            <span class="star text-2xl cursor-pointer text-gray-300 hover:text-yellow-400" data-value="4" role="button" aria-label="4 stars">★</span>
+            <span class="star text-2xl cursor-pointer text-gray-300 hover:text-yellow-400" data-value="5" role="button" aria-label="5 stars">★</span>
+          </div>
+          <p id="rating-result" class="mt-4"></p>
+        </div>`,
+        code: `
+          document.querySelectorAll('.star').forEach(star => {
+            star.addEventListener('click', () => {
+              const value = parseInt(star.dataset.value);
+              document.querySelectorAll('.star').forEach(s => {
+                s.style.color = parseInt(s.dataset.value) <= value ? '#facc15' : '#d1d5db';
+              });
+              document.getElementById('rating-result').textContent = \`Rated: \${value} star\${value > 1 ? 's' : ''}\`;
+            });
+            star.addEventListener('keydown', e => {
+              if (e.key === 'Enter') star.click();
+            });
+          });
+        `
+      },
+      {
+        id: 'project-43',
+        title: 'Image Cropper',
+        keywords: ['image', 'cropper', 'canvas', 'js'],
+        description: 'Crop images directly in the browser using HTML5 Canvas. Useful for profile picture editors, with JavaScript handling cropping logic and Tailwind CSS for a clean UI.',
+        demo: `<div class="max-w-sm mx-auto text-center">
+          <input type="file" id="crop-input" accept="image/*" class="mb-4">
+          <canvas id="crop-canvas" class="border" width="200" height="200"></canvas>
+          <button onclick="cropImage()" class="mt-4 px-4 py-2 bg-blue-600 text-white rounded">Crop</button>
+        </div>`,
+        code: `
+          const input = document.getElementById('crop-input');
+          const canvas = document.getElementById('crop-canvas');
+          const ctx = canvas.getContext('2d');
+          let img = new Image();
+          input.addEventListener('change', e => {
+            const file = e.target.files[0];
+            img.src = URL.createObjectURL(file);
+            img.onload = () => {
+              ctx.drawImage(img, 0, 0, 200, 200);
+            };
+          });
+          function cropImage() {
+            ctx.drawImage(img, 50, 50, 100, 100, 0, 0, 200, 200);
+          }
+        `
+      },
+      {
+        id: 'project-44',
+        title: 'Password Strength Meter',
+        keywords: ['password', 'strength', 'meter', 'js'],
+        description: 'Real-time password strength indicator for secure forms. Analyzes password complexity using JavaScript regex, styled with Tailwind CSS for clarity.',
+        demo: `<div class="max-w-sm mx-auto">
+          <input id="password-meter" type="password" placeholder="Enter password" class="w-full p-2 border rounded">
+          <div id="strength-bar" class="h-2 mt-2 bg-gray-300 rounded"></div>
+          <p id="strength-text" class="mt-2"></p>
+        </div>`,
+        code: `
+          const input = document.getElementById('password-meter');
+          const bar = document.getElementById('strength-bar');
+          const text = document.getElementById('strength-text');
+          input.addEventListener('input', () => {
+            const val = input.value;
+            let strength = 0;
+            if (val.length > 8) strength++;
+            if (/[A-Z]/.test(val)) strength++;
+            if (/[0-9]/.test(val)) strength++;
+            if (/[^A-Za-z0-9]/.test(val)) strength++;
+            bar.style.width = \`\${strength * 25}%\`;
+            bar.style.backgroundColor = strength < 2 ? '#ef4444' : strength < 4 ? '#facc15' : '#22c55e';
+            text.textContent = strength < 2 ? 'Weak' : strength < 4 ? 'Medium' : 'Strong';
+          });
+        `
+      },
+      {
+        id: 'project-45',
+        title: 'Digital Clock',
+        keywords: ['digital', 'clock', 'time', 'js'],
+        description: 'Real-time digital clock displaying hours, minutes, and seconds. Perfect for dashboards, using JavaScript for time updates and Tailwind CSS for styling.',
+        demo: `<div class="max-w-sm mx-auto text-center">
+          <p id="digital-clock" class="text-4xl font-mono bg-gray-800 text-white p-4 rounded"></p>
+        </div>`,
+        code: `
+          function updateClock() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            document.getElementById('digital-clock').textContent = \`\${hours}:\${minutes}:\${seconds}\`;
+          }
+          setInterval(updateClock, 1000);
+          updateClock();
+        `
+      },
+      {
+        id: 'project-46',
+        title: 'Analog Clock',
+        keywords: ['analog', 'clock', 'css', 'js'],
+        description: 'Animated analog clock with moving hands. Uses CSS for styling the clock face and JavaScript for real-time hand movement, ideal for decorative UIs.',
+        demo: `<div class="max-w-sm mx-auto">
+          <div id="analog-clock" class="relative w-40 h-40 bg-gray-200 rounded-full">
+            <div id="hour-hand" class="absolute w-1 h-16 bg-black top-1/2 left-1/2 origin-bottom"></div>
+            <div id="minute-hand" class="absolute w-1 h-20 bg-blue-600 top-1/2 left-1/2 origin-bottom"></div>
+            <div id="second-hand" class="absolute w-1 h-20 bg-red-600 top-1/2 left-1/2 origin-bottom"></div>
+          </div>
+        </div>`,
+        code: `
+          function updateAnalogClock() {
+            const now = new Date();
+            const hours = now.getHours() % 12;
+            const minutes = now.getMinutes();
+            const seconds = now.getSeconds();
+            document.getElementById('hour-hand').style.transform = \`rotate(\${hours * 30 + minutes / 2}deg)\`;
+            document.getElementById('minute-hand').style.transform = \`rotate(\${minutes * 6}deg)\`;
+            document.getElementById('second-hand').style.transform = \`rotate(\${seconds * 6}deg)\`;
+          }
+          setInterval(updateAnalogClock, 1000);
+          updateAnalogClock();
+        `
+      },
+      {
+        id: 'project-47',
+        title: 'Todo Calendar',
+        keywords: ['todo', 'calendar', 'js'],
+        description: 'Simple calendar with clickable dates to add tasks. Enhances productivity apps with JavaScript for date management and Tailwind CSS for layout.',
+        demo: `<div class="max-w-sm mx-auto">
+          <div id="calendar" class="grid grid-cols-7 gap-1 text-center"></div>
+          <input id="task-input" type="text" placeholder="Add task" class="mt-4 w-full p-2 border rounded">
+          <button onclick="addTask()" class="mt-2 px-4 py-2 bg-blue-600 text-white rounded">Add</button>
+        </div>`,
+        code: `
+          function renderCalendar() {
+            const calendar = document.getElementById('calendar');
+            calendar.innerHTML = '';
+            const days = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
+            days.forEach(day => {
+              const div = document.createElement('div');
+              div.textContent = day;
+              div.className = 'p-2 font-bold';
+              calendar.appendChild(div);
+            });
+            for (let i = 1; i <= 30; i++) {
+              const div = document.createElement('div');
+              div.textContent = i;
+              div.className = 'p-2 border cursor-pointer';
+              div.onclick = () => alert(\`Selected: \${i}\`);
+              calendar.appendChild(div);
+            }
+          }
+          function addTask() {
+            const input = document.getElementById('task-input');
+            if (input.value) alert(\`Task: \${input.value}\`);
+            input.value = '';
+          }
+          renderCalendar();
+        `
+      },
+      {
+        id: 'project-48',
+        title: 'Slideshow Background',
+        keywords: ['slideshow', 'background', 'css', 'js'],
+        description: 'Full-screen background slideshow with fade transitions. Perfect for landing pages, using JavaScript for image switching and Tailwind CSS for styling.',
+        demo: `<div id="slideshow" class="w-full h-48 bg-cover bg-center" style="background-image: url('https://picsum.photos/600/400?random=1')"></div>`,
+        code: `
+          const slideshow = document.getElementById('slideshow');
+          const images = ['https://picsum.photos/600/400?random=1', 'https://picsum.photos/600/400?random=2'];
+          let index = 0;
+          setInterval(() => {
+            index = (index + 1) % images.length;
+            slideshow.style.backgroundImage = \`url('\${images[index]}')\`;
+          }, 3000);
+        `
+      },
+      {
+        id: 'project-49',
+        title: 'Dynamic Form Builder',
+        keywords: ['form', 'builder', 'dynamic', 'js'],
+        description: 'Create custom forms by adding input fields dynamically. Useful for surveys, with JavaScript for form management and Tailwind CSS for styling.',
+        demo: `<div class="max-w-sm mx-auto">
+          <button onclick="addField()" class="px-4 py-2 bg-blue-600 text-white rounded">Add Field</button>
+          <form id="dynamic-form" class="mt-4 space-y-2"></form>
+        </div>`,
+        code: `
+          function addField() {
+            const form = document.getElementById('dynamic-form');
+            const div = document.createElement('div');
+            div.innerHTML = \`<input type="text" placeholder="Field" class="w-full p-2 border rounded">\`;
+            form.appendChild(div);
+          }
+        `
+      },
+      {
+        id: 'project-50',
+        title: 'Morse Code Translator',
+        keywords: ['morse', 'code', 'translator', 'js'],
+        description: 'Translate text to Morse code and vice versa. Educational tool for learning Morse, using JavaScript for translation and Tailwind CSS for UI.',
+        demo: `<div class="max-w-sm mx-auto">
+          <input id="morse-input" type="text" placeholder="Enter text" class="w-full p-2 border rounded">
+          <button onclick="translateMorse()" class="mt-2 px-4 py-2 bg-blue-600 text-white rounded">Translate</button>
+          <p id="morse-output" class="mt-4"></p>
+        </div>`,
+        code: `
+          const morseDict = { 'A': '.-', 'B': '-...', 'C': '-.-.' }; // Add more as needed
+          function translateMorse() {
+            const input = document.getElementById('morse-input').value.toUpperCase();
+            const output = document.getElementById('morse-output');
+            output.textContent = input.split('').map(char => morseDict[char] || '').join(' ');
+          }
+        `
+      },
+      {
+        id: 'project-51',
+        title: 'QR Code Generator',
+        keywords: ['qr', 'code', 'generator', 'api', 'js'],
+        description: 'Generate QR codes for URLs or text using an API. Useful for sharing links, with JavaScript for API calls and Tailwind CSS for styling.',
+        demo: `<div class="max-w-sm mx-auto text-center">
+          <input id="qr-input" type="text" placeholder="Enter URL" class="w-full p-2 border rounded">
+          <button onclick="generateQR()" class="mt-2 px-4 py-2 bg-blue-600 text-white rounded">Generate</button>
+          <img id="qr-output" class="mt-4 mx-auto" alt="QR Code">
+        </div>`,
+        code: `
+          function generateQR() {
+            const input = document.getElementById('qr-input').value;
+            const output = document.getElementById('qr-output');
+            if (input) {
+              output.src = \`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=\${encodeURIComponent(input)}\`;
+            }
+          }
+        `
+      },
+      {
+        id: 'project-52',
+        title: 'Emoji Picker',
+        keywords: ['emoji', 'picker', 'js'],
+        description: 'Interactive emoji picker for text inputs. Enhances user input with JavaScript for selection and Tailwind CSS for styling.',
+        demo: `<div class="max-w-sm mx-auto">
+          <input id="emoji-input" type="text" class="w-full p-2 border rounded">
+          <div id="emoji-picker" class="mt-2 grid grid-cols-5 gap-2"></div>
+        </div>`,
+        code: `
+          const emojis = ['😊', '😂', '😍', '😎', '😢'];
+          const picker = document.getElementById('emoji-picker');
+          const input = document.getElementById('emoji-input');
+          emojis.forEach(emoji => {
+            const btn = document.createElement('button');
+            btn.textContent = emoji;
+            btn.className = 'p-2 text-2xl';
+            btn.onclick = () => input.value += emoji;
+            picker.appendChild(btn);
+          });
+        `
+      },
+      {
+        id: 'project-53',
+        title: 'File Uploader',
+        keywords: ['file', 'uploader', 'js'],
+        description: 'Drag-and-drop file uploader with preview. Useful for forms, using JavaScript for file handling and Tailwind CSS for styling.',
+        demo: `<div class="max-w-sm mx-auto">
+          <div id="drop-zone" class="p-4 border-2 border-dashed rounded text-center">Drop files here</div>
+          <input type="file" id="file-input" class="hidden">
+          <p id="file-output" class="mt-4"></p>
+        </div>`,
+        code: `
+          const dropZone = document.getElementById('drop-zone');
+          const input = document.getElementById('file-input');
+          const output = document.getElementById('file-output');
+          dropZone.addEventListener('dragover', e => e.preventDefault());
+          dropZone.addEventListener('drop', e => {
+            e.preventDefault();
+            const file = e.dataTransfer.files[0];
+            output.textContent = \`File: \${file.name}\`;
+          });
+          dropZone.addEventListener('click', () => input.click());
+          input.addEventListener('change', () => {
+            output.textContent = \`File: \${input.files[0].name}\`;
+          });
+        `
+      },
+      {
+        id: 'project-54',
+        title: 'Random Password Generator',
+        keywords: ['random', 'password', 'generator', 'js'],
+        description: 'Generate cryptographically secure passwords with customizable length. Enhances security, using JavaScript and Tailwind CSS.',
+        demo: `<div class="max-w-sm mx-auto text-center">
+          <input id="random-password" type="text" readonly class="w-full p-2 border rounded">
+          <button onclick="generateRandomPassword()" class="mt-2 px-4 py-2 bg-blue-600 text-white rounded">Generate</button>
+        </div>`,
+        code: `
+          function generateRandomPassword() {
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*';
+            const length = 16;
+            let password = '';
+            for (let i = 0; i < length; i++) {
+              password += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            document.getElementById('random-password').value = password;
+          }
+        `
+      },
+      {
+        id: 'project-55',
+        title: 'Progress Circle',
+        keywords: ['progress', 'circle', 'svg', 'js'],
+        description: 'Animated SVG progress circle for visualizing completion. Ideal for dashboards, using JavaScript for updates and Tailwind CSS for styling.',
+        demo: `<div class="max-w-sm mx-auto text-center">
+          <svg class="w-32 h-32">
+            <circle cx="64" cy="64" r="60" fill="none" stroke="#e5e7eb" stroke-width="8"/>
+            <circle id="progress-circle" cx="64" cy="64" r="60" fill="none" stroke="#3b82f6" stroke-width="8" stroke-dasharray="377" stroke-dashoffset="377"/>
+          </svg>
+          <button onclick="updateProgress()" class="mt-4 px-4 py-2 bg-blue-600 text-white rounded">Update</button>
+        </div>`,
+        code: `
+          let progress = 0;
+          function updateProgress() {
+            progress = (progress + 25) % 101;
+            const circle = document.getElementById('progress-circle');
+            const offset = 377 - (progress / 100) * 377;
+            circle.style.strokeDashoffset = offset;
+          }
+        `
+      },
+      {
+        id: 'project-56',
+        title: 'Interactive Map',
+        keywords: ['interactive', 'map', 'svg', 'js'],
+        description: 'Clickable SVG map with hover effects. Useful for educational or regional displays, using JavaScript for interactivity and Tailwind CSS.',
+        demo: `<div class="max-w-sm mx-auto">
+          <svg viewBox="0 0 100 100" class="w-full">
+            <path id="map-region" d="M10,10 L90,10 L90,90 L10,90 Z" fill="#3b82f6"/>
+          </svg>
+          <p id="map-output" class="mt-4"></p>
+        </div>`,
+        code: `
+          document.getElementById('map-region').addEventListener('click', () => {
+            document.getElementById('map-output').textContent = 'Region clicked!';
+          });
+          document.getElementById('map-region').addEventListener('mouseover', () => {
+            document.getElementById('map-region').style.fill = '#1d4ed8';
+          });
+          document.getElementById('map-region').addEventListener('mouseout', () => {
+            document.getElementById('map-region').style.fill = '#3b82f6';
+          });
+        `
+      },
+      {
+        id: 'project-57',
+        title: 'Text to Speech',
+        keywords: ['text', 'speech', 'api', 'js'],
+        description: 'Convert text to speech using the Web Speech API. Great for accessibility, with JavaScript for speech synthesis and Tailwind CSS for UI.',
+        demo: `<div class="max-w-sm mx-auto">
+          <input id="speech-input" type="text" placeholder="Enter text" class="w-full p-2 border rounded">
+          <button onclick="speakText()" class="mt-2 px-4 py-2 bg-blue-600 text-white rounded">Speak</button>
+        </div>`,
+        code: `
+          function speakText() {
+            const text = document.getElementById('speech-input').value;
+            if (text) {
+              const utterance = new SpeechSynthesisUtterance(text);
+              window.speechSynthesis.speak(utterance);
+            }
+          }
+        `
+      },
+      {
+        id: 'project-58',
+        title: 'Color Contrast Checker',
+        keywords: ['color', 'contrast', 'accessibility', 'js'],
+        description: 'Check color contrast for accessibility compliance (WCAG). Useful for designers, using JavaScript for calculations and Tailwind CSS.',
+        demo: `<div class="max-w-sm mx-auto">
+          <input id="color1" type="color" class="p-1 border rounded">
+          <input id="color2" type="color" class="p-1 border rounded ml-2">
+          <button onclick="checkContrast()" class="mt-2 px-4 py-2 bg-blue-600 text-white rounded">Check</button>
+          <p id="contrast-result" class="mt-4"></p>
+        </div>`,
+        code: `
+          function checkContrast() {
+            const color1 = document.getElementById('color1').value;
+            const color2 = document.getElementById('color2').value;
+            const l1 = getLuminance(color1);
+            const l2 = getLuminance(color2);
+            const ratio = (Math.max(l1, l2) + 0.05) / (Math.min(l1, l2) + 0.05);
+            document.getElementById('contrast-result').textContent = \`Contrast Ratio: \${ratio.toFixed(2)}\`;
+          }
+          function getLuminance(hex) {
+            const rgb = parseInt(hex.slice(1), 16);
+            const r = (rgb >> 16) / 255;
+            const g = ((rgb >> 8) & 0xff) / 255;
+            const b = (rgb & 0xff) / 255;
+            return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+          }
+        `
+      },
+      {
+        id: 'project-59',
+        title: 'Typing Animation',
+        keywords: ['typing', 'animation', 'css', 'js'],
+        description: 'Simulated typing animation for text. Perfect for hero sections, using JavaScript for text updates and Tailwind CSS for styling.',
+        demo: `<div class="max-w-sm mx-auto">
+          <p id="typing-text" class="text-xl"></p>
+        </div>`,
+        code: `
+          const texts = ['Welcome!', 'Learn Coding!', 'Build Projects!'];
+          let index = 0;
+          let charIndex = 0;
+          function type() {
+            if (charIndex < texts[index].length) {
+              document.getElementById('typing-text').textContent += texts[index].charAt(charIndex);
+              charIndex++;
+              setTimeout(type, 100);
+            } else {
+              setTimeout(() => {
+                document.getElementById('typing-text').textContent = '';
+                charIndex = 0;
+                index = (index + 1) % texts.length;
+                type();
+              }, 2000);
+            }
+          }
+          type();
+        `
+      },
+      {
+        id: 'project-60',
+        title: 'Infinite Scroll',
+        keywords: ['infinite', 'scroll', 'js'],
+        description: 'Load content dynamically on scroll for seamless browsing. Ideal for feeds, using JavaScript for content loading and Tailwind CSS for styling.',
+        demo: `<div class="max-w-sm mx-auto">
+          <div id="infinite-scroll" class="space-y-2">
+            <div class="p-4 bg-gray-200 rounded">Item 1</div>
+            <div class="p-4 bg-gray-200 rounded">Item 2</div>
+          </div>
+        </div>`,
+        code: `
+          const container = document.getElementById('infinite-scroll');
+          let count = 2;
+          window.addEventListener('scroll', () => {
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100) {
+              for (let i = 0; i < 2; i++) {
+                const div = document.createElement('div');
+                div.textContent = \`Item \${++count}\`;
+                div.className = 'p-4 bg-gray-200 rounded';
+                container.appendChild(div);
+              }
+            }
+          });
+        `
       }
-    `
-  },
-  {
-    id: 'project-45',
-    title: 'Animated Navigation Menu',
-    keywords: 'animated navigation menu css js demo',
-    description: 'A navigation menu with animated transitions for mobile and desktop. This project uses CSS for animations and JavaScript for toggling, enhancing site navigation UX.',
-    demo: `
-      <div style="max-width:400px;margin:auto;">
-        <button id="nav-menu-btn" style="padding:0.5rem;">☰ Menu</button>
-        <nav id="nav-menu" style="display:none;">
-          <a href="#" style="display:block;padding:0.5rem;">Home</a>
-          <a href="#" style="display:block;padding:0.5rem;">About</a>
-          <a href="#" style="display:block;padding:0.5rem;">Contact</a>
-        </nav>
-      </div>
-    `,
-    code: `
-      const navBtn = document.getElementById('nav-menu-btn');
-      const navMenu = document.getElementById('nav-menu');
-      navBtn.addEventListener('click', () => {
-        navMenu.style.display = navMenu.style.display === 'block' ? 'none' : 'block';
-        navMenu.style.transition = 'opacity 0.3s ease';
-        navMenu.style.opacity = navMenu.style.display === 'block' ? '1' : '0';
-      });
-    `
-  },
-  {
-    id: 'project-46',
-    title: 'Word Counter',
-    keywords: 'word counter text javascript demo',
-    description: 'Count words and characters in real-time for text input. This project uses JavaScript for counting logic and CSS for styling, useful for writing or editing tools.',
-    demo: `
-      <div style="max-width:400px;margin:auto;">
-        <textarea id="word-input" placeholder="Type here..." style="width:100%;padding:0.5rem;"></textarea>
-        <p id="word-count">Words: 0, Characters: 0</p>
-      </div>
-    `,
-    code: `
-      const wordInput = document.getElementById('word-input');
-      const wordCount = document.getElementById('word-count');
-      wordInput.addEventListener('input', () => {
-        const text = wordInput.value.trim();
-        const words = text ? text.split(/\s+/).length : 0;
-        const chars = text.length;
-        wordCount.textContent = `Words: ${words}, Characters: ${chars}`;
-      });
-    `
-  },
-  {
-    id: 'project-47',
-    title: 'Digital Clock',
-    keywords: 'digital clock time javascript demo',
-    description: 'A real-time digital clock displaying hours, minutes, and seconds. This project uses JavaScript for time updates and CSS for styling, perfect for dashboards or widgets.',
-    demo: `
-      <div style="max-width:400px;margin:auto;text-align:center;">
-        <p id="digital-clock" style="font-size:2rem;"></p>
-      </div>
-    `,
-    code: `
-      function updateClock() {
-        const now = new Date();
-        const hours = now.getHours().toString().padStart(2, '0');
-        const minutes = now.getMinutes().toString().padStart(2, '0');
-        const seconds = now.getSeconds().toString().padStart(2, '0');
-        document.getElementById('digital-clock').textContent = `${hours}:${minutes}:${seconds}`;
-      }
-      setInterval(updateClock, 1000);
-      updateClock();
-    `
-  },
-  {
-    id: 'project-48',
-    title: 'Color Flipper',
-    keywords: 'color flipper background javascript demo',
-    description: 'Change the background color randomly with a button click. This project uses JavaScript to generate colors and CSS for smooth transitions, adding a playful touch to sites.',
-    demo: `
-      <div style="max-width:400px;margin:auto;text-align:center;">
-        <button onclick="flipColor()">Change Color</button>
-        <p id="color-value"></p>
-      </div>
-    `,
-    code: `
-      function flipColor() {
-        const color = '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
-        document.body.style.backgroundColor = color;
-        document.getElementById('color-value').textContent = color;
-      }
-    `
-  },
-  {
-    id: 'project-49',
-    title: 'Testimonial Slider',
-    keywords: 'testimonial slider css js demo',
-    description: 'A slider to showcase testimonials with navigation. This project uses JavaScript for sliding logic and CSS for styling, ideal for business or portfolio sites.',
-    demo: `
-      <div style="max-width:400px;margin:auto;">
-        <div id="testimonial" style="padding:1rem;border:1px solid #e2e8f0;">
-          <p id="testimonial-text">Great product!</p>
-          <p id="testimonial-author">- John Doe</p>
-        </div>
-        <button onclick="nextTestimonial()">Next</button>
-      </div>
-    `,
-    code: `
-      const testimonials = [
-        { text: 'Great product!', author: 'John Doe' },
-        { text: 'Amazing service!', author: 'Jane Smith' }
-      ];
-      let currentTestimonial = 0;
-      function nextTestimonial() {
-        currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-        document.getElementById('testimonial-text').textContent = testimonials[currentTestimonial].text;
-        document.getElementById('testimonial-author').textContent = `- ${testimonials[currentTestimonial].author}`;
-      }
-    `
-  },
-  {
-    id: 'project-50',
-    title: 'Random User Generator',
-    keywords: 'random user generator api javascript demo',
-    description: 'Fetch random user profiles from an API like RandomUser. This project uses JavaScript for API calls and CSS for card layouts, great for mockups or testing.',
-    demo: `
-      <div style="max-width:400px;margin:auto;">
-        <button onclick="getRandomUser()">Get User</button>
-        <div id="user-profile"></div>
-      </div>
-    `,
-    code: `
-      async function getRandomUser() {
-        const profile = document.getElementById('user-profile');
-        profile.innerHTML = 'Loading...';
-        try {
-          const res = await fetch('https://randomuser.me/api/');
-          const data = await res.json();
-          const user = data.results[0];
-          profile.innerHTML = `
-            <img src="${user.picture.thumbnail}" style="border-radius:50%;" />
-            <p>${user.name.first} ${user.name.last}</p>
-            <p>${user.email}</p>
-          `;
-        } catch {
-          profile.innerHTML = 'Error fetching user.';
-        }
-      }
-    `
-  },
-  {
-    id: 'project-51',
-    title: 'Loan Calculator',
-    keywords: 'loan calculator finance javascript demo',
-    description: 'Calculate monthly loan payments based on amount, interest, and term. This project uses JavaScript for financial calculations and CSS for form styling, useful for finance apps.',
-    demo: `
-      <div style="max-width:400px;margin:auto;">
-        <input type="number" id="loan-amount" placeholder="Loan Amount" style="padding:0.5rem;margin-bottom:0.5rem;" />
-        <input type="number" id="interest-rate" placeholder="Interest Rate (%)" style="padding:0.5rem;margin-bottom:0.5rem;" />
-        <input type="number" id="loan-term" placeholder="Term (years)" style="padding:0.5rem;margin-bottom:0.5rem;" />
-        <button onclick="calculateLoan()">Calculate</button>
-        <p id="loan-result"></p>
-      </div>
-    `,
-    code: `
-      function calculateLoan() {
-        const amount = parseFloat(document.getElementById('loan-amount').value);
-        const rate = parseFloat(document.getElementById('interest-rate').value) / 100 / 12;
-        const term = parseFloat(document.getElementById('loan-term').value) * 12;
-        const result = document.getElementById('loan-result');
-        if (amount && rate && term) {
-          const payme
-   
+    ];
