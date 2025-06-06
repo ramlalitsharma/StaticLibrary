@@ -2,8 +2,6 @@
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
-  <!-- AdSense Script -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-xxxxxxxxxxxxxxxx" crossorigin="anonymous"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Explore 10 web tools and mini-projects with live demos and copyable code. Includes calculators, animations, and more. Optimized for speed and SEO, AdSense-compliant.">
   <meta name="keywords" content="web tools, javascript projects, css animations, calculators, generators, code snippets, responsive, AdSense, SEO">
@@ -11,47 +9,33 @@
   <meta name="robots" content="index, follow">
   <meta name="googlebot" content="index, follow">
   <title>Web Tools Hub - 10 Mini Projects & Live Code Demos</title>
-
   <!-- Open Graph -->
   <meta property="og:title" content="Web Tools Hub - 10 Mini Projects & Live Code Demos">
   <meta property="og:description" content="Discover 10 web tools and mini-projects with live demos and copyable code for developers and designers. Optimized for speed and SEO.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://your-domain.com">
-  <meta property="og:image" content="https://your-domain.com/assets/preview-image.webp">
-  <meta property="og:image:alt" content="Web Tools Hub Preview">
-
+  <meta property="og:url" content="https://staticlibrary.site">
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Web Tools Hub - 10 Mini Projects & Live Code Demos">
   <meta name="twitter:description" content="Discover 10 web tools and mini-projects with live demos and copyable code for developers and designers.">
-  <meta name="twitter:image" content="https://your-domain.com/assets/preview-image.webp">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-
-  <!-- Tailwind CSS CDN (minimized for speed) -->
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com/3.3.2"></script>
   <script>
-    tailwind.config = {
-      theme: {
-        extend: {}
-      }
-    }
+    tailwind.config = { theme: { extend: {} } }
   </script>
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'"> <!-- Defer CSS loading -->
-
+  <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
   <!-- Schema Markup -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "Web Tools Hub",
-      "url": "https://todo-zk6p.onrender.com/",
+      "url": "https://staticlibrary.site",
       "description": "Explore 10 web tools and mini-projects with live demos and code snippets for developers. Optimized for speed and SEO.",
       "potentialAction": {
         "@type": "SearchAction",
-        "target": "https://todo-zk6p.onrender.com//search?q={search_term_string}",
+        "target": "https://staticlibrary.site/search?q={search_term_string}",
         "query-input": "required name=search_term_string"
       }
     }
@@ -64,81 +48,44 @@
     <button id="theme-toggle" class="absolute top-4 right-4 bg-blue-600 text-white rounded-full p-2 hover:bg-blue-700 transition-transform" aria-label="Toggle dark mode">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
     </button>
-    <!-- Banner Ad -->
-    <div class="ad-container mt-6 max-w-4xl mx-auto">
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-xxxxxxxxxxxxxxxx"
-           data-ad-slot="YOUR_BANNER_AD_SLOT_ID"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </div>
   </header>
-
   <nav class="bg-white dark:bg-gray-800 shadow sticky top-0 z-50 py-4" aria-label="Primary navigation">
     <div id="project-nav" class="flex flex-wrap gap-2 justify-center max-w-6xl mx-auto overflow-x-auto px-4" role="list"></div>
   </nav>
-
   <div class="max-w-4xl mx-auto my-6 px-4">
+    <p class="affiliate-disclosure text-sm text-gray-600 dark:text-gray-400">*Disclosure: This page contains affiliate links, including to Shopee. We may earn a commission if you purchase through these links, at no extra cost to you.</p>
     <label for="search-input" class="sr-only">Search projects</label>
     <input type="search" id="search-input" placeholder="Search tools and projects..." class="w-full p-3 rounded-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:outline-none" aria-describedby="search-desc" autocomplete="off">
     <div id="search-desc" class="sr-only">Type keywords to filter projects</div>
     <div id="search-suggestions" class="absolute w-full max-w-md bg-white dark:bg-gray-800 rounded-lg shadow-lg mt-1 hidden"></div>
   </div>
-
   <main id="main-content" class="max-w-6xl mx-auto px-4 pb-16" tabindex="-1" aria-live="polite">
     <div id="projects-container" class="space-y-6">
       <p id="loading-message" class="text-center text-gray-500 dark:text-gray-400">Loading projects... If this persists, check the console for errors.</p>
     </div>
-    <!-- Ad Placements -->
-    <div class="ad-container hidden" id="ad-after-project-5">
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-xxxxxxxxxxxxxxxx"
-           data-ad-slot="YOUR_AD_SLOT_1"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </div>
-    <div class="ad-container hidden" id="ad-after-project-10">
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-xxxxxxxxxxxxxxxx"
-           data-ad-slot="YOUR_AD_SLOT_2"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </div>
   </main>
-
-  <!-- Privacy Policy -->
-  <section id="privacy" class="project bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 max-w-md mx-auto mb-6">
+  <section id="recommended-tools" class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 max-w-6xl mx-auto mb-6">
+    <h2 class="text-2xl font-bold mb-4">Recommended Productivity Tools</h2>
+    <p class="text-gray-700 dark:text-gray-300">Boost your coding efficiency with a premium notebook or tablet for planning projects. <a href="https://s.shopee.com.my/6AZ3j3CYfT" target="_blank" rel="nofollow" class="text-blue-600 hover:underline">Check out this productivity tool on Shopee</a> to stay organized.</p>
+  </section>
+  <section id="privacy" class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 max-w-md mx-auto mb-6">
     <h2 class="text-2xl font-bold mb-4">Privacy Policy</h2>
-    <p class="text-gray-700 dark:text-gray-300">Web Tools Hub collects minimal data via Google Analytics and AdSense cookies to enhance user experience. No personal data is collected unless provided voluntarily. Data isn’t shared except for ad purposes or legal requirements. Opt out via browser settings. Contact [your-email@yourdomain.com] for inquiries.</p>
+    <p class="text-gray-700 dark:text-gray-300">Web Tools Hub collects minimal data via Google Analytics and AdSense cookies to enhance user experience. This site contains affiliate links, including to Shopee, and we may earn a commission at no extra cost to you. No personal data is collected unless provided voluntarily. Contact webtoolshub@example.com for inquiries.</p>
   </section>
-
-  <!-- Terms of Service -->
-  <section id="terms" class="project bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 max-w-md mx-auto mb-6">
+  <section id="terms" class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 max-w-md mx-auto mb-6">
     <h2 class="text-2xl font-bold mb-4">Terms of Service</h2>
-    <p class="text-gray-700 dark:text-gray-300">By using Web Tools Hub, you agree to use content for educational purposes. Code snippets are free to use but not to claim as your own. We’re not liable for damages from site use. Contact [your-email@yourdomain.com] for questions.</p>
+    <p class="text-gray-700 dark:text-gray-300">By using Web Tools Hub, you agree to use content for educational purposes. Code snippets are free to use but not to claim as your own. We’re not liable for damages from site use. Contact webtoolshub@example.com for questions.</p>
   </section>
-
-  <!-- Contact -->
-  <section id="contact" class="project bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 max-w-md mx-auto mb-6">
+  <section id="contact" class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 max-w-md mx-auto mb-6">
     <h2 class="text-2xl font-bold mb-4">Contact Us</h2>
-    <p class="text-gray-700 dark:text-gray-300">Have feedback? Email us at <a href="mailto:your-email@yourdomain.com" class="text-blue-600 hover:underline">your-email@yourdomain.com</a>.</p>
+    <p class="text-gray-700 dark:text-gray-300">Have feedback? Email us at <a href="mailto:webtoolshub@example.com" class="text-blue-600 hover:underline">webtoolshub@example.com</a> or follow on <a href="https://x.com/yourhandle" class="text-blue-600 hover:underline">X</a>.</p>
   </section>
-
   <footer class="bg-gray-900 text-gray-100 text-center py-6">
     <p>© 2025 Web Tools Hub | <a href="#privacy" class="text-blue-400 hover:underline">Privacy</a> | <a href="#terms" class="text-blue-400 hover:underline">Terms</a> | <a href="#contact" class="text-blue-400 hover:underline">Contact</a></p>
   </footer>
-
   <button id="back-to-top" class="fixed bottom-6 right-6 bg-blue-600 text-white rounded-full p-3 shadow-lg hover:bg-blue-700 transition-transform hidden" aria-label="Back to top">
     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" /></svg>
   </button>
-
-  <!-- Main JavaScript (defer for speed) -->
   <script src="script.js" defer></script>
 </body>
 </html>
