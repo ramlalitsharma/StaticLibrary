@@ -3,26 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explore 10 web tools and mini-projects with live demos and copyable code. Includes calculators, animations, and more. Optimized for speed and SEO, AdSense-compliant.">
-  <meta name="keywords" content="web tools, javascript projects, css animations, calculators, generators, code snippets, responsive, AdSense, SEO">
+  <meta name="description" content="Discover 10 web tools and mini-projects with live demos and copyable code, including calculators, animations, and to-do lists. Optimized for speed, SEO, and AdSense compliance.">
+  <meta name="keywords" content="web tools, javascript projects, css animations, calculators, generators, code snippets, responsive, AdSense, SEO, productivity">
   <meta name="author" content="Web Tools Hub">
   <meta name="robots" content="index, follow">
   <meta name="googlebot" content="index, follow">
+  <link rel="canonical" href="https://staticlibrary.site">
   <title>Web Tools Hub - 10 Mini Projects & Live Code Demos</title>
   <!-- Open Graph -->
   <meta property="og:title" content="Web Tools Hub - 10 Mini Projects & Live Code Demos">
-  <meta property="og:description" content="Discover 10 web tools and mini-projects with live demos and copyable code for developers and designers. Optimized for speed and SEO.">
+  <meta property="og:description" content="Explore 10 web tools and mini-projects with live demos and copyable code for developers and designers. Optimized for speed and SEO.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://staticlibrary.site">
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Web Tools Hub - 10 Mini Projects & Live Code Demos">
-  <meta name="twitter:description" content="Discover 10 web tools and mini-projects with live demos and copyable code for developers and designers.">
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com/3.3.2"></script>
-  <script>
-    tailwind.config = { theme: { extend: {} } }
-  </script>
+  <meta name="twitter:description" content="Explore 10 web tools and mini-projects with live demos and copyable code for developers and designers.">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
   <!-- Schema Markup -->
@@ -39,6 +35,14 @@
         "query-input": "required name=search_term_string"
       }
     }
+  </script>
+  <!-- Google Analytics (Placeholder, replace UA-XXXXX-Y) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-Y"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-XXXXX-Y');
   </script>
 </head>
 <body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans transition-colors duration-300">
@@ -61,12 +65,29 @@
   </div>
   <main id="main-content" class="max-w-6xl mx-auto px-4 pb-16" tabindex="-1" aria-live="polite">
     <div id="projects-container" class="space-y-6">
-      <p id="loading-message" class="text-center text-gray-500 dark:text-gray-400">Loading projects... If this persists, check the console for errors.</p>
+      <p id="loading-message" class="text-center text-gray-500 dark:text-gray-400">Loading projects... If this persists, enable JavaScript or check the console for errors.</p>
+      <noscript>
+        <div class="text-center text-gray-700 dark:text-gray-300">
+          <h2 class="text-2xl font-bold mb-4">Web Tools Hub Projects</h2>
+          <p>Explore 10 web tools and mini-projects below. JavaScript is required for interactive demos, but descriptions are available for your convenience.</p>
+          <div class="space-y-6">
+            <div>
+              <h3 class="text-xl font-bold">Expanding Cards</h3>
+              <p>Expanding Cards is an engaging gallery where cards expand on click with smooth CSS animations, perfect for portfolios, product showcases, or galleries. This project uses Tailwind CSS for styling and JavaScript for interactivity, teaching flexbox and event handling. Developers can customize card content, colors, or transitions to match their site’s theme. It’s ideal for beginners learning animations or professionals enhancing UX.</p>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold">Progress Steps</h3>
+              <p>Progress Steps is a multi-step progress bar for forms, checkout processes, or wizards, commonly used in e-commerce or sign-up flows. Styled with Tailwind CSS, it visually tracks user progress with animated transitions. JavaScript dynamically updates steps and buttons, teaching DOM manipulation and state management. Customize colors or steps to fit your brand.</p>
+            </div>
+            <!-- Add remaining 8 projects similarly -->
+          </div>
+        </div>
+      </noscript>
     </div>
   </main>
   <section id="recommended-tools" class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 max-w-6xl mx-auto mb-6">
     <h2 class="text-2xl font-bold mb-4">Recommended Productivity Tools</h2>
-    <p class="text-gray-700 dark:text-gray-300">Boost your coding efficiency with a premium notebook or tablet for planning projects. <a href="https://s.shopee.com.my/6AZ3j3CYfT" target="_blank" rel="nofollow" class="text-blue-600 hover:underline">Check out this productivity tool on Shopee</a> to stay organized.</p>
+    <p class="text-gray-700 dark:text-gray-300">Boost your coding with a premium notebook or tablet for planning projects. <a href="https://s.shopee.com.my/6AZ3j3CYfT" target="_blank" rel="nofollow" class="text-blue-600 hover:underline font-bold">Get this productivity tool on Shopee</a> to stay organized and efficient.</p>
   </section>
   <section id="privacy" class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 max-w-md mx-auto mb-6">
     <h2 class="text-2xl font-bold mb-4">Privacy Policy</h2>
