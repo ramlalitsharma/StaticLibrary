@@ -3,23 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Discover 10 web tools and mini-projects with live demos and copyable code, including calculators, animations, and to-do lists. Optimized for speed, SEO, and AdSense compliance.">
-  <meta name="keywords" content="web tools, javascript projects, css animations, calculators, generators, code snippets, responsive, AdSense, SEO, productivity">
+  <meta name="description" content="Explore Web Tools Hub for 10 interactive web tools and mini-projects with live demos, tutorials, and copyable code. Optimized for AdSense compliance, SEO, and performance.">
+  <meta name="keywords" content="web tools, javascript projects, css animations, calculators, generators, code snippets, responsive, AdSense, SEO, productivity, tutorials">
   <meta name="author" content="Web Tools Hub">
   <meta name="robots" content="index, follow">
   <meta name="googlebot" content="index, follow">
   <link rel="canonical" href="https://staticlibrary.site">
-  <title>Web Tools Hub - 10 Mini Projects & Live Code Demos</title>
+  <title>Web Tools Hub - Interactive Tools & Tutorials</title>
   <!-- Open Graph -->
-  <meta property="og:title" content="Web Tools Hub - 10 Mini Projects & Live Code Demos">
-  <meta property="og:description" content="Explore 10 web tools and mini-projects with live demos and copyable code for developers and designers. Optimized for speed and SEO.">
+  <meta property="og:title" content="Web Tools Hub - Interactive Tools & Tutorials">
+  <meta property="og:description" content="Discover 10 web tools with live demos, tutorials, and code snippets for developers. Optimized for speed, SEO, and AdSense compliance.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://staticlibrary.site">
+  <meta property="og:image" content="https://staticlibrary.site/images/og-image.jpg">
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Web Tools Hub - 10 Mini Projects & Live Code Demos">
-  <meta name="twitter:description" content="Explore 10 web tools and mini-projects with live demos and copyable code for developers and designers.">
-  <!-- Custom CSS -->
+  <meta name="twitter:title" content="Web Tools Hub - Interactive Tools & Tutorials">
+  <meta name="twitter:description" content="Discover 10 web tools with live demos, tutorials, and code snippets for developers.">
+  <meta name="twitter:image" content="https://staticlibrary.site/images/og-image.jpg">
+  <!-- Preload Critical CSS -->
+  <link rel="preload" href="styles.css" as="style">
   <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
   <!-- Schema Markup -->
   <script type="application/ld+json">
@@ -28,27 +31,37 @@
       "@type": "WebSite",
       "name": "Web Tools Hub",
       "url": "https://staticlibrary.site",
-      "description": "Explore 10 web tools and mini-projects with live demos and code snippets for developers. Optimized for speed and SEO.",
+      "description": "Interactive web tools and mini-projects with live demos, tutorials, and code snippets for developers.",
       "potentialAction": {
         "@type": "SearchAction",
         "target": "https://staticlibrary.site/search?q={search_term_string}",
         "query-input": "required name=search_term_string"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Web Tools Hub",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://staticlibrary.site/images/logo.png"
+        }
       }
     }
   </script>
-  <!-- Google Analytics (Placeholder, replace UA-XXXXX-Y) -->
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXX" crossorigin="anonymous"></script>
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-Y"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'UA-XXXXX-Y');
+    gtag('config', 'UA-XXXXX-Y', { 'anonymize_ip': true });
   </script>
 </head>
 <body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans transition-colors duration-300">
-  <header class="bg-gradient-to-r from-gray-900 to-gray-700 text-white text-center py-8 shadow-lg relative">
+  <header class="bg-gradient-to-r from-gray-900 to-gray-700 text-white text-center py-12 shadow-lg relative">
     <h1 class="text-4xl md:text-5xl font-bold">Web Tools Hub</h1>
-    <p class="text-lg md:text-xl mt-2 opacity-90">10 Mini Projects & Live Code Demos — Copy & Use</p>
+    <p class="text-lg md:text-xl mt-2 opacity-90">Interactive Web Tools, Tutorials, and Code Snippets for Developers</p>
     <button id="theme-toggle" class="absolute top-4 right-4 bg-blue-600 text-white rounded-full p-2 hover:bg-blue-700 transition-transform" aria-label="Toggle dark mode">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
     </button>
@@ -59,31 +72,66 @@
   <div class="max-w-4xl mx-auto my-6 px-4">
     <p class="affiliate-disclosure text-sm text-gray-600 dark:text-gray-400">*Disclosure: This page contains affiliate links, including to Shopee. We may earn a commission if you purchase through these links, at no extra cost to you.</p>
     <label for="search-input" class="sr-only">Search projects</label>
-    <input type="search" id="search-input" placeholder="Search tools and projects..." class="w-full p-3 rounded-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:outline-none" aria-describedby="search-desc" autocomplete="off">
-    <div id="search-desc" class="sr-only">Type keywords to filter projects</div>
+    <input type="search" id="search-input" placeholder="Search tools, tutorials, or keywords..." class="w-full p-3 rounded-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:outline-none" aria-describedby="search-desc" autocomplete="off">
+    <div id="search-desc" class="sr-only">Type keywords to filter projects and tutorials</div>
     <div id="search-suggestions" class="absolute w-full max-w-md bg-white dark:bg-gray-800 rounded-lg shadow-lg mt-1 hidden"></div>
   </div>
+  <!-- AdSense Ad Unit -->
+  <div class="max-w-6xl mx-auto px-4 mb-6 text-center">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-XXXXXX"
+         data-ad-slot="XXXXXX"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
   <main id="main-content" class="max-w-6xl mx-auto px-4 pb-16" tabindex="-1" aria-live="polite">
+    <section id="intro" class="mb-8">
+      <h2 class="text-3xl font-bold mb-4">Welcome to Web Tools Hub</h2>
+      <p class="text-gray-700 dark:text-gray-300">Web Tools Hub offers 10 interactive web tools and mini-projects designed for developers and designers. Each project includes a live demo, detailed tutorial, and copyable code snippets. Learn to build calculators, animations, to-do lists, and more while mastering JavaScript, CSS, and HTML. Our site is optimized for speed, SEO, and AdSense compliance, ensuring a seamless experience. Explore below to enhance your coding skills!</p>
+    </section>
     <div id="projects-container" class="space-y-6">
-      <p id="loading-message" class="text-center text-gray-500 dark:text-gray-400">Loading projects... If this persists, enable JavaScript or check the console for errors.</p>
-      <noscript>
-        <div class="text-center text-gray-700 dark:text-gray-300">
-          <h2 class="text-2xl font-bold mb-4">Web Tools Hub Projects</h2>
-          <p>Explore 10 web tools and mini-projects below. JavaScript is required for interactive demos, but descriptions are available for your convenience.</p>
-          <div class="space-y-6">
-            <div>
-              <h3 class="text-xl font-bold">Expanding Cards</h3>
-              <p>Expanding Cards is an engaging gallery where cards expand on click with smooth CSS animations, perfect for portfolios, product showcases, or galleries. This project uses Tailwind CSS for styling and JavaScript for interactivity, teaching flexbox and event handling. Developers can customize card content, colors, or transitions to match their site’s theme. It’s ideal for beginners learning animations or professionals enhancing UX.</p>
-            </div>
-            <div>
-              <h3 class="text-xl font-bold">Progress Steps</h3>
-              <p>Progress Steps is a multi-step progress bar for forms, checkout processes, or wizards, commonly used in e-commerce or sign-up flows. Styled with Tailwind CSS, it visually tracks user progress with animated transitions. JavaScript dynamically updates steps and buttons, teaching DOM manipulation and state management. Customize colors or steps to fit your brand.</p>
-            </div>
-            <!-- Add remaining 8 projects similarly -->
-          </div>
+      <!-- Static content for all projects to ensure AdSense compliance -->
+      <div class="project bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+        <h2 class="text-2xl font-bold mb-4">Expanding Cards</h2>
+        <p class="text-gray-700 dark:text-gray-300 mb-4">Create an interactive gallery where cards expand on click with smooth CSS animations. Perfect for portfolios or product showcases, this project teaches flexbox, transitions, and JavaScript event handling.</p>
+        <p class="text-gray-700 dark:text-gray-300 mb-4">Tutorial: Use a flex container with cards set to `flex: 1`. On click, toggle a class like `flex-[3]` to expand the selected card while shrinking others. Customize with Tailwind CSS or your own styles for unique designs.</p>
+        <div class="demo mb-4 p-4 bg-gray-100 dark:bg-gray-700 rounded"></div>
+        <div class="code relative">
+          <pre class="bg-gray-900 text-gray-100 p-4 rounded overflow-x-auto"><code></code></pre>
         </div>
-      </noscript>
+      </div>
+      <div class="project bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+        <h2 class="text-2xl font-bold mb-4">Progress Steps</h2>
+        <p class="text-gray-700 dark:text-gray-300 mb-4">Build a multi-step progress bar for forms or checkout processes. Ideal for e-commerce, it uses CSS for styling and JavaScript for dynamic updates, teaching DOM manipulation and state management.</p>
+        <p class="text-gray-700 dark:text-gray-300 mb-4">Tutorial: Create steps with HTML and style with CSS. Use JavaScript to update active steps and progress bar width. Customize colors or add animations to enhance user experience.</p>
+        <div class="demo mb-4 p-4 bg-gray-100 dark:bg-gray-700 rounded"></div>
+        <div class="code relative">
+          <pre class="bg-gray-900 text-gray-100 p-4 rounded overflow-x-auto"><code></code></pre>
+        </div>
+      </div>
+      <!-- Add remaining 8 projects similarly with detailed descriptions and tutorials -->
     </div>
+    <noscript>
+      <div class="text-center text-gray-700 dark:text-gray-300">
+        <h2 class="text-2xl font-bold mb-4">Explore Web Tools Hub</h2>
+        <p>JavaScript is required for interactive demos, but you can explore detailed project descriptions and tutorials below. Each project includes code snippets and use cases to help you learn and implement web tools.</p>
+        <div class="space-y-6">
+          <div>
+            <h3 class="text-xl font-bold">Expanding Cards</h3>
+            <p>Build an interactive gallery where cards expand on click with smooth CSS animations. Perfect for portfolios or product showcases, this project uses flexbox and JavaScript event handling. Tutorial: Create a flex container with cards set to `flex: 1`. Toggle a class like `flex-[3]` on click to expand. Customize with Tailwind CSS for unique designs.</p>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold">Progress Steps</h3>
+            <p>Create a multi-step progress bar for forms or checkout processes, ideal for e-commerce. It uses CSS for styling and JavaScript for dynamic updates. Tutorial: Define steps in HTML, style with CSS, and use JavaScript to update active steps and progress bar width. Customize colors for branding.</p>
+          </div>
+          <!-- Add remaining 8 projects with descriptions and tutorials -->
+        </div>
+      </div>
+    </noscript>
   </main>
   <section id="recommended-tools" class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 max-w-6xl mx-auto mb-6">
     <h2 class="text-2xl font-bold mb-4">Recommended Productivity Tools</h2>
@@ -91,13 +139,13 @@
   </section>
   <section id="privacy" class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 max-w-md mx-auto mb-6">
     <h2 class="text-2xl font-bold mb-4">Privacy Policy</h2>
-    <p class="text-gray-700 dark:text-gray-300">Web Tools Hub collects minimal data via Google Analytics and AdSense cookies to enhance user experience. This site contains affiliate links, including to Shopee, and we may earn a commission at no extra cost to you. No personal data is collected unless provided voluntarily. Contact webtoolshub@example.com for inquiries.</p>
+    <p class="text-gray-700 dark:text-gray-300">Web Tools Hub collects minimal data via Google Analytics and AdSense cookies to improve user experience and site performance. We use affiliate links, including to Shopee, and may earn a commission at no extra cost to you. No personal data is collected unless provided voluntarily. Email <a href="mailto:webtoolshub@example.com" class="text-blue-600 hover:underline">webtoolshub@example.com</a> for inquiries.</p>
   </section>
   <section id="terms" class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 max-w-md mx-auto mb-6">
     <h2 class="text-2xl font-bold mb-4">Terms of Service</h2>
-    <p class="text-gray-700 dark:text-gray-300">By using Web Tools Hub, you agree to use content for educational purposes. Code snippets are free to use but not to claim as your own. We’re not liable for damages from site use. Contact webtoolshub@example.com for questions.</p>
+    <p class="text-gray-700 dark:text-gray-300">By using Web Tools Hub, you agree to use content for educational purposes only. Code snippets are free to use but not to claim as your own. We are not liable for damages from site use. Contact <a href="mailto:webtoolshub@example.com" class="text-blue-600 hover:underline">webtoolshub@example.com</a> for questions.</p>
   </section>
-  <section id="contact" class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 max-w-md mx-auto mb-6">
+  <section id="contact" class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 max-w-md mx Wend
     <h2 class="text-2xl font-bold mb-4">Contact Us</h2>
     <p class="text-gray-700 dark:text-gray-300">Have feedback? Email us at <a href="mailto:webtoolshub@example.com" class="text-blue-600 hover:underline">webtoolshub@example.com</a> or follow on <a href="https://x.com/yourhandle" class="text-blue-600 hover:underline">X</a>.</p>
   </section>
