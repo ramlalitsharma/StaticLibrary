@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit Converter Online - Fast, Free & Modern | StaticLibrary</title>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Convert units instantly: length, weight, temperature, and more. Free, fast, and ultra-modern UI. Learn how to use, benefits, and best use cases.">
+  <meta name="keywords" content="unit converter, online converter, length converter, weight converter, temperature converter, free unit tool">
+  <meta name="author" content="StaticLibrary Team">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://staticlibrary.netlify.app/tool-unit-converter.html">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Unit Converter Online - Fast, Free & Modern | StaticLibrary">
+  <meta property="og:description" content="Convert units instantly: length, weight, temperature, and more. Free, fast, and ultra-modern UI. Learn how to use, benefits, and best use cases.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://staticlibrary.netlify.app/tool-unit-converter.html">
+  <meta property="og:image" content="https://staticlibrary.netlify.app/assets/og-image.jpg">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Unit Converter Online - Fast, Free & Modern | StaticLibrary">
+  <meta name="twitter:description" content="Convert units instantly: length, weight, temperature, and more. Free, fast, and ultra-modern UI. Learn how to use, benefits, and best use cases.">
+  <meta name="twitter:image" content="https://staticlibrary.netlify.app/assets/og-image.jpg">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <!-- Google AdSense Placeholder -->
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
+  <style>
+    .glass-card {
+      background: rgba(255,255,255,0.85);
+      box-shadow: 0 8px 32px 0 rgba(31,38,135,0.18);
+      backdrop-filter: blur(8px);
+      border-radius: 1.5rem;
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+    .gradient-bg {
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    }
+    .icon-circle {
+      background: #fff;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      margin: 0 auto 1rem auto;
+      font-size: 2rem;
+      color: #2575fc;
+    }
+  </style>
+</head>
+<body class="bg-light text-dark gradient-bg">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">StaticLibrary</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="tools.html">All Tools</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="py-5 text-center text-white" style="background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);">
+    <div class="container">
+      <h1 class="display-5 fw-bold mb-2">Ultra-Modern Unit Converter</h1>
+      <p class="lead mb-0">Convert length, weight, temperature, and more with a beautiful, fast, and free tool.</p>
+    </div>
+  </section>
+
+  <!-- AdSense Placeholder (Top) -->
+  <div class="container my-4 text-center">
+    <!-- Google AdSense: Top Banner -->
+    <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXX" data-ad-slot="XXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+  </div>
+
+  <!-- Unit Converter Tool UI -->
+  <section class="container py-4">
+    <div class="row justify-content-center">
+      <div class="col-lg-7">
+        <div class="glass-card p-4 mb-4">
+          <div class="icon-circle mb-2"><i class="bi bi-arrow-left-right"></i></div>
+          <h2 class="h4 mb-3 text-center">Unit Converter</h2>
+          <form id="unitForm" class="row g-3 align-items-center justify-content-center">
+            <div class="col-md-4">
+              <select class="form-select" id="unitType">
+                <option value="length">Length</option>
+                <option value="weight">Weight</option>
+                <option value="temperature">Temperature</option>
+              </select>
+            </div>
+            <div class="col-md-4">
+              <input type="number" class="form-control" id="unitInput" placeholder="Value" required>
+            </div>
+            <div class="col-md-4">
+              <select class="form-select" id="unitFromTo">
+                <!-- Options will be populated by JS -->
+              </select>
+            </div>
+            <div class="col-12 text-center">
+              <button type="submit" class="btn btn-primary px-4">Convert</button>
+            </div>
+          </form>
+          <div class="mt-4 text-center">
+            <div id="unitResult" class="fs-4 fw-bold"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AdSense Placeholder (Middle) -->
+  <div class="container my-4 text-center">
+    <!-- Google AdSense: In-Content -->
+    <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXX" data-ad-slot="XXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+  </div>
+
+  <!-- High-Quality Content Section -->
+  <section class="container pb-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <article>
+          <h2 class="h4 mt-4">What is a Unit Converter?</h2>
+          <p>A Unit Converter is an online tool that helps you convert values between different measurement units, such as length, weight, and temperature. It’s essential for students, professionals, travelers, and anyone who needs quick, accurate conversions.</p>
+
+          <h3 class="h5 mt-4">How to Use This Unit Converter</h3>
+          <ol>
+            <li>Select the type of conversion (Length, Weight, Temperature).</li>
+            <li>Enter the value you want to convert.</li>
+            <li>Choose the units to convert from and to.</li>
+            <li>Click <strong>Convert</strong> to see the result instantly.</li>
+          </ol>
+
+          <h3 class="h5 mt-4">Benefits & Features</h3>
+          <ul>
+            <li><strong>Ultra-Modern UI:</strong> Beautiful, glassmorphic design with icons and gradients.</li>
+            <li><strong>Fast & Accurate:</strong> Instant results for all conversions.</li>
+            <li><strong>Multiple Categories:</strong> Length, weight, and temperature supported.</li>
+            <li><strong>Mobile Friendly:</strong> Works on all devices.</li>
+            <li><strong>Free & Unlimited:</strong> No registration or fees required.</li>
+          </ul>
+
+          <h3 class="h5 mt-4">Example Use Cases</h3>
+          <ul>
+            <li>Convert kilometers to miles for travel planning.</li>
+            <li>Switch between Celsius and Fahrenheit for recipes.</li>
+            <li>Convert kilograms to pounds for fitness tracking.</li>
+          </ul>
+
+          <h3 class="h5 mt-4">Frequently Asked Questions (FAQs)</h3>
+          <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="faq1-heading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1">
+                  Is this unit converter free to use?
+                </button>
+              </h2>
+              <div id="faq1" class="accordion-collapse collapse" aria-labelledby="faq1-heading" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Yes! This tool is 100% free and unlimited for personal and business use.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="faq2-heading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+                  What types of conversions are supported?
+                </button>
+              </h2>
+              <div id="faq2" class="accordion-collapse collapse" aria-labelledby="faq2-heading" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  You can convert length (km, mi, m, ft), weight (kg, lb, g, oz), and temperature (Celsius, Fahrenheit, Kelvin).
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="faq3-heading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+                  Is this tool mobile friendly?
+                </button>
+              </h2>
+              <div id="faq3" class="accordion-collapse collapse" aria-labelledby="faq3-heading" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Absolutely! The design is fully responsive and works on all devices.
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- AdSense Placeholder (Bottom) -->
+  <div class="container my-4 text-center">
+    <!-- Google AdSense: Bottom Banner -->
+    <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXX" data-ad-slot="XXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-primary text-white text-center py-4 mt-auto">
+    <div class="container">
+      <div class="mb-2">
+        <a href="about.html" class="text-white me-3">About</a>
+        <a href="contact.html" class="text-white me-3">Contact</a>
+        <a href="terms.html" class="text-white me-3">Terms</a>
+        <a href="privacy.html" class="text-white">Privacy</a>
+      </div>
+      <small>&copy; 2024 StaticLibrary. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Ultra-modern Unit Converter Logic
+    const unitType = document.getElementById('unitType');
+    const unitFromTo = document.getElementById('unitFromTo');
+    const unitForm = document.getElementById('unitForm');
+    const unitInput = document.getElementById('unitInput');
+    const unitResult = document.getElementById('unitResult');
+
+    const units = {
+      length: [
+        { label: 'Kilometers (km) → Miles (mi)', from: 'km', to: 'mi' },
+        { label: 'Miles (mi) → Kilometers (km)', from: 'mi', to: 'km' },
+        { label: 'Meters (m) → Feet (ft)', from: 'm', to: 'ft' },
+        { label: 'Feet (ft) → Meters (m)', from: 'ft', to: 'm' }
+      ],
+      weight: [
+        { label: 'Kilograms (kg) → Pounds (lb)', from: 'kg', to: 'lb' },
+        { label: 'Pounds (lb) → Kilograms (kg)', from: 'lb', to: 'kg' },
+        { label: 'Grams (g) → Ounces (oz)', from: 'g', to: 'oz' },
+        { label: 'Ounces (oz) → Grams (g)', from: 'oz', to: 'g' }
+      ],
+      temperature: [
+        { label: 'Celsius (°C) → Fahrenheit (°F)', from: 'c', to: 'f' },
+        { label: 'Fahrenheit (°F) → Celsius (°C)', from: 'f', to: 'c' },
+        { label: 'Celsius (°C) → Kelvin (K)', from: 'c', to: 'k' },
+        { label: 'Kelvin (K) → Celsius (°C)', from: 'k', to: 'c' }
+      ]
+    };
+
+    function populateUnitOptions() {
+      const type = unitType.value;
+      unitFromTo.innerHTML = '';
+      units[type].forEach((opt, i) => {
+        const option = document.createElement('option');
+        option.value = i;
+        option.textContent = opt.label;
+        unitFromTo.appendChild(option);
+      });
+    }
+    unitType.addEventListener('change', populateUnitOptions);
+    populateUnitOptions();
+
+    unitForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const type = unitType.value;
+      const value = parseFloat(unitInput.value);
+      const opt = units[type][unitFromTo.value];
+      let result = '';
+      if (isNaN(value)) {
+        unitResult.textContent = 'Invalid input';
+        return;
+      }
+      // Conversion logic
+      if (type === 'length') {
+        if (opt.from === 'km' && opt.to === 'mi') result = (value * 0.621371).toFixed(4) + ' mi';
+        else if (opt.from === 'mi' && opt.to === 'km') result = (value / 0.621371).toFixed(4) + ' km';
+        else if (opt.from === 'm' && opt.to === 'ft') result = (value * 3.28084).toFixed(4) + ' ft';
+        else if (opt.from === 'ft' && opt.to === 'm') result = (value / 3.28084).toFixed(4) + ' m';
+      } else if (type === 'weight') {
+        if (opt.from === 'kg' && opt.to === 'lb') result = (value * 2.20462).toFixed(4) + ' lb';
+        else if (opt.from === 'lb' && opt.to === 'kg') result = (value / 2.20462).toFixed(4) + ' kg';
+        else if (opt.from === 'g' && opt.to === 'oz') result = (value * 0.035274).toFixed(4) + ' oz';
+        else if (opt.from === 'oz' && opt.to === 'g') result = (value / 0.035274).toFixed(4) + ' g';
+      } else if (type === 'temperature') {
+        if (opt.from === 'c' && opt.to === 'f') result = ((value * 9/5) + 32).toFixed(2) + ' °F';
+        else if (opt.from === 'f' && opt.to === 'c') result = (((value - 32) * 5/9)).toFixed(2) + ' °C';
+        else if (opt.from === 'c' && opt.to === 'k') result = (value + 273.15).toFixed(2) + ' K';
+        else if (opt.from === 'k' && opt.to === 'c') result = (value - 273.15).toFixed(2) + ' °C';
+      }
+      unitResult.textContent = result;
+    });
+  </script>
+</body>
+</html> 

@@ -172,28 +172,190 @@ function setupCopyButtons() {
   });
 }
 
-// Theme Toggle
-function setupThemeToggle() {
-  const toggle = document.getElementById('theme-toggle');
-  if (!toggle) return;
-  toggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark');
-    localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
-  });
-  if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    document.body.classList.add('dark');
+// Dark/Light Mode Toggle
+const themeToggleBtn = document.createElement('button');
+themeToggleBtn.className = 'btn btn-secondary position-fixed top-0 end-0 m-3';
+themeToggleBtn.innerHTML = '<span id="theme-icon" class="bi bi-moon"></span>';
+themeToggleBtn.title = 'Toggle dark/light mode';
+document.body.appendChild(themeToggleBtn);
+
+function setTheme(mode) {
+  if (mode === 'dark') {
+    document.body.classList.add('bg-dark', 'text-white');
+    document.body.classList.remove('bg-light', 'text-dark');
+    document.getElementById('theme-icon').className = 'bi bi-sun';
+    localStorage.setItem('theme', 'dark');
+  } else {
+    document.body.classList.remove('bg-dark', 'text-white');
+    document.body.classList.add('bg-light', 'text-dark');
+    document.getElementById('theme-icon').className = 'bi bi-moon';
+    localStorage.setItem('theme', 'light');
   }
 }
 
-// Back to Top
-function setupBackToTop() {
-  const btn = document.getElementById('back-to-top');
-  if (!btn) return;
-  window.addEventListener('scroll', () => {
-    btn.classList.toggle('hidden', window.scrollY < 200);
+// Initial theme
+const savedTheme = localStorage.getItem('theme') || 'light';
+setTheme(savedTheme);
+
+themeToggleBtn.onclick = function() {
+  const current = localStorage.getItem('theme') || 'light';
+  setTheme(current === 'light' ? 'dark' : 'light');
+};
+
+// Back to Top Button
+const backToTopBtn = document.createElement('button');
+backToTopBtn.className = 'btn btn-primary position-fixed bottom-0 end-0 m-4 d-none';
+backToTopBtn.innerHTML = '<i class="bi bi-arrow-up"></i>';
+backToTopBtn.title = 'Back to top';
+document.body.appendChild(backToTopBtn);
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    backToTopBtn.classList.remove('d-none');
+  } else {
+    backToTopBtn.classList.add('d-none');
+  }
+});
+backToTopBtn.onclick = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
   });
-  btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+});
+
+// QR Code Generator
+if (document.getElementById('qrForm')) {
+  document.getElementById('qrForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const input = document.getElementById('qrInput').value;
+    const qrResult = document.getElementById('qrResult');
+    if (input.trim() === '') {
+      qrResult.innerHTML = '';
+      return;
+    }
+    // Use Google Chart API for QR code
+    qrResult.innerHTML = `<img src='https://chart.googleapis.com/chart?cht=qr&chs=200x200&chl=${encodeURIComponent(input)}' alt='QR Code' class='img-fluid'/>`;
+  });
 }
+
+// Password Generator
+if (document.getElementById('passwordForm')) {
+  document.getElementById('passwordForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const length = parseInt(document.getElementById('passwordLength').value) || 12;
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+';
+    let password = '';
+    for (let i = 0; i < length; i++) {
+      password += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    document.getElementById('passwordResult').value = password;
+  });
+}
+
+// To-Do List
+if (document.getElementById('todoForm')) {
+  const todoForm = document.getElementById('todoForm');
+  const todoInput = document.getElementById('todoInput');
+  const todoList = document.getElementById('todoList');
+  todoForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const task = todoInput.value.trim();
+    if (task === '') return;
+    const li = document.createElement('li');
+    li.className = 'list-group-item d-flex justify-content-between align-items-center';
+    li.textContent = task;
+    const btn = document.createElement('button');
+    btn.className = 'btn btn-sm btn-danger';
+    btn.textContent = 'Delete';
+    btn.onclick = function() { li.remove(); };
+    li.appendChild(btn);
+    todoList.appendChild(li);
+    todoInput.value = '';
+  });
+}
+
+// Calculator
+if (document.getElementById('calcForm')) {
+  document.getElementById('calcForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const a = parseFloat(document.getElementById('calcA').value);
+    const b = parseFloat(document.getElementById('calcB').value);
+    const op = document.getElementById('calcOp').value;
+    let result = '';
+    if (isNaN(a) || isNaN(b)) {
+      result = 'Invalid input';
+    } else {
+      switch (op) {
+        case '+': result = a + b; break;
+        case '-': result = a - b; break;
+        case '*': result = a * b; break;
+        case '/': result = b !== 0 ? a / b : '∞'; break;
+      }
+    }
+    document.getElementById('calcResult').value = result;
+  });
+}
+
+// Unit Converter
+if (document.getElementById('unitForm')) {
+  document.getElementById('unitForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const value = parseFloat(document.getElementById('unitInput').value);
+    const type = document.getElementById('unitType').value;
+    let result = '';
+    if (isNaN(value)) {
+      result = 'Invalid input';
+    } else {
+      switch (type) {
+        case 'km-mi': result = (value * 0.621371).toFixed(4) + ' mi'; break;
+        case 'mi-km': result = (value / 0.621371).toFixed(4) + ' km'; break;
+        case 'kg-lb': result = (value * 2.20462).toFixed(4) + ' lb'; break;
+        case 'lb-kg': result = (value / 2.20462).toFixed(4) + ' kg'; break;
+      }
+    }
+    document.getElementById('unitResult').value = result;
+  });
+}
+
+// Cookie Consent Banner
+function showCookieConsent() {
+  if (!localStorage.getItem('cookieConsent')) {
+    const banner = document.createElement('div');
+    banner.id = 'cookieConsent';
+    banner.innerHTML = `
+      <span>This website uses cookies to ensure you get the best experience. <a href='terms.html' class='text-info text-decoration-underline'>Learn more</a>.</span>
+      <button id='acceptCookies'>Accept</button>
+    `;
+    document.body.appendChild(banner);
+    document.getElementById('acceptCookies').onclick = function() {
+      localStorage.setItem('cookieConsent', 'true');
+      banner.classList.add('hide');
+    };
+  }
+}
+showCookieConsent();
+
+// Enable lazy loading for all images
+window.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('img').forEach(img => {
+    img.setAttribute('loading', 'lazy');
+  });
+});
+
+// Performance & Security Recommendations:
+// - Use a CDN (e.g., Cloudflare, Netlify) for static assets.
+// - Always serve your site over HTTPS for security and SEO.
+// - Minify CSS/JS (use online tools or build tools for production).
+// - Optimize images before uploading (TinyPNG, Squoosh, etc).
+// - Use rel='noopener noreferrer' for external links.
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
@@ -201,6 +363,6 @@ document.addEventListener('DOMContentLoaded', () => {
   renderProjects();
   setupSearch();
   setupCopyButtons();
-  setupThemeToggle();
-  setupBackToTop();
+  // setupThemeToggle(); // This line is removed as per the new_code, as the theme toggle is now handled by setTheme
+  // setupBackToTop(); // This line is removed as per the new_code, as the back-to-top is now handled by the new_code
 });

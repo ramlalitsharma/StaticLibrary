@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URL Parser - Free Online Tool | StaticLibrary</title>
+  <meta name="description" content="Parse and analyze URLs instantly. Modern, free, and easy to use.">
+  <meta name="keywords" content="url parser, parse url, analyze url, online tool, staticlibrary">
+  <meta name="author" content="StaticLibrary Team">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://staticlibrary.netlify.app/tool-url-parser.html">
+  <meta property="og:title" content="URL Parser - Free Online Tool | StaticLibrary">
+  <meta property="og:description" content="Parse and analyze URLs instantly. Modern, free, and easy to use.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://staticlibrary.netlify.app/tool-url-parser.html">
+  <meta property="og:image" content="https://staticlibrary.netlify.app/assets/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="URL Parser - Free Online Tool | StaticLibrary">
+  <meta name="twitter:description" content="Parse and analyze URLs instantly. Modern, free, and easy to use.">
+  <meta name="twitter:image" content="https://staticlibrary.netlify.app/assets/og-image.jpg">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <!-- Google AdSense Placeholder -->
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
+  <style>
+    .glass-card { background: rgba(255,255,255,0.85); box-shadow: 0 8px 32px 0 rgba(31,38,135,0.18); backdrop-filter: blur(8px); border-radius: 1.5rem; border: 1px solid rgba(255,255,255,0.18); }
+    .icon-circle { background: #fff; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin: 0 auto 1rem auto; font-size: 2rem; color: #185a9d; }
+  </style>
+</head>
+<body class="bg-light text-dark">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">StaticLibrary</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="tools.html">All Tools</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Hero Section -->
+  <section class="py-5 bg-white border-bottom text-center">
+    <div class="container">
+      <div class="icon-circle"><i class="bi bi-link-45deg"></i></div>
+      <h1 class="display-5 fw-bold">URL Parser</h1>
+      <p class="lead">Parse and analyze URLs instantly.</p>
+    </div>
+  </section>
+  <!-- AdSense Placeholder (Top) -->
+  <div class="container my-4 text-center">
+    <!-- Google AdSense: Top Banner -->
+    <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXX" data-ad-slot="XXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+  </div>
+  <!-- Tool UI SECTION -->
+  <section class="container py-4">
+    <div class="row justify-content-center">
+      <div class="col-lg-7">
+        <div class="card glass-card shadow-sm mb-4">
+          <div class="card-body">
+            <h2 class="h4 mb-3">Parse a URL</h2>
+            <form id="urlForm">
+              <div class="mb-3">
+                <label for="urlInput" class="form-label">URL:</label>
+                <input type="text" class="form-control" id="urlInput" placeholder="Enter a URL (e.g. https://example.com/path?query=1)">
+              </div>
+              <button type="submit" class="btn btn-primary mb-3">Parse</button>
+            </form>
+            <div id="outputArea" class="mt-3"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- AdSense Placeholder (Middle) -->
+  <div class="container my-4 text-center">
+    <!-- Google AdSense: In-Content -->
+    <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXX" data-ad-slot="XXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+  </div>
+  <!-- High-Quality Content Section -->
+  <section class="container pb-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <article>
+          <h2 class="h4 mt-4">What is the URL Parser Tool?</h2>
+          <p>This tool parses and analyzes URLs, breaking them down into their components. Great for developers, marketers, and anyone working with web addresses.</p>
+          <h3 class="h5 mt-4">How to Use This Tool</h3>
+          <ol>
+            <li>Enter a URL in the input box.</li>
+            <li>Click <strong>Parse</strong> to see the components of the URL.</li>
+          </ol>
+          <h3 class="h5 mt-4">Benefits & Features</h3>
+          <ul>
+            <li><strong>Modern UI:</strong> Clean, glassmorphic design with icons.</li>
+            <li><strong>Fast & Efficient:</strong> Parses URLs in your browser.</li>
+            <li><strong>Free & Unlimited:</strong> No registration or fees required.</li>
+          </ul>
+          <h3 class="h5 mt-4">Example Use Cases</h3>
+          <ul>
+            <li>Analyze URLs for SEO or marketing.</li>
+            <li>Debug web applications and APIs.</li>
+            <li>Extract query parameters and paths.</li>
+          </ul>
+          <h3 class="h5 mt-4">Frequently Asked Questions (FAQs)</h3>
+          <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="faq1-heading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1">
+                  Is my data uploaded anywhere?
+                </button>
+              </h2>
+              <div id="faq1" class="accordion-collapse collapse" aria-labelledby="faq1-heading" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">No, all parsing is done in your browser. Your data never leaves your device.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="faq2-heading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+                  What URLs are supported?
+                </button>
+              </h2>
+              <div id="faq2" class="accordion-collapse collapse" aria-labelledby="faq2-heading" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">Any valid URL is supported. Invalid URLs will show an error.</div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById('urlForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const url = document.getElementById('urlInput').value;
+      let output = '';
+      try {
+        const u = new URL(url);
+        output = `<table class='table table-bordered'><tbody>` +
+          `<tr><th>Protocol</th><td>${u.protocol}</td></tr>` +
+          `<tr><th>Host</th><td>${u.host}</td></tr>` +
+          `<tr><th>Hostname</th><td>${u.hostname}</td></tr>` +
+          `<tr><th>Port</th><td>${u.port || '-'}</td></tr>` +
+          `<tr><th>Pathname</th><td>${u.pathname}</td></tr>` +
+          `<tr><th>Search</th><td>${u.search || '-'}</td></tr>` +
+          `<tr><th>Hash</th><td>${u.hash || '-'}</td></tr>` +
+          `<tr><th>Origin</th><td>${u.origin}</td></tr>` +
+          `</tbody></table>`;
+      } catch {
+        output = '<div class="alert alert-danger">Invalid URL!</div>';
+      }
+      document.getElementById('outputArea').innerHTML = output;
+    });
+  </script>
+</body>
+</html> 

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Tools - StaticLibrary</title>
+  <meta name="description" content="Browse 100+ trending online tools, calculators, generators, and productivity boosters at StaticLibrary.">
+  <meta name="keywords" content="online tools, productivity, calculators, generators, trending tools, static library, web tools, utilities">
+  <meta name="author" content="StaticLibrary Team">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://yourdomain.com/tools.html">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .tools-glass {
+      background: rgba(255,255,255,0.85);
+      box-shadow: 0 8px 32px 0 rgba(31,38,135,0.18);
+      backdrop-filter: blur(12px);
+      border-radius: 2rem;
+      border: 1px solid rgba(255,255,255,0.18);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .tools-glass:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 16px 40px 0 rgba(31,38,135,0.22);
+    }
+    .tool-icon {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+      color: #185a9d;
+    }
+    .soon-badge {
+      font-size: 0.85rem;
+      background: linear-gradient(90deg,#f7971e,#ffd200);
+      color: #fff;
+      border-radius: 1rem;
+      padding: 0.2rem 0.8rem;
+      margin-left: 0.5rem;
+    }
+  </style>
+</head>
+<body class="bg-light text-dark">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">StaticLibrary</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="tools.html">All Tools</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <!-- Global Search Bar -->
+        <form class="d-flex ms-3 position-relative" id="globalSearchForm" autocomplete="off">
+          <input class="form-control me-2" type="search" placeholder="Search tools..." aria-label="Search" id="globalSearchInput" style="min-width:200px;">
+          <div class="list-group position-absolute w-100" id="searchSuggestions" style="z-index: 1000; top: 100%; left: 0; display: none;"></div>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Tools Grid -->
+  <section class="container py-5">
+    <h1 class="mb-4 text-center fw-bold">All Tools</h1>
+    <div class="row" id="toolsGrid">
+      <!-- Tool cards will be rendered here by JavaScript -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-primary text-white text-center py-3 mt-auto">
+    <div class="container">
+      <small>&copy; 2024 StaticLibrary. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+  <script>
+// List of all 100 tools
+const allTools = [
+  { title: 'QR Code Generator', desc: 'Create custom QR codes for links, text, and more.', url: 'tool-qr-code.html', status: 'live', icon: 'bi-qr-code' },
+  { title: 'Password Generator', desc: 'Generate ultra-secure, random passwords instantly.', url: 'tool-password-generator.html', status: 'live', icon: 'bi-shield-lock' },
+  { title: 'Unit Converter', desc: 'Convert units for length, weight, temperature, and more.', url: 'tool-unit-converter.html', status: 'live', icon: 'bi-rulers' },
+  { title: 'BMI Calculator', desc: 'Check your Body Mass Index and health range.', url: 'tool-bmi-calculator.html', status: 'live', icon: 'bi-calculator' },
+  { title: 'Loan EMI Calculator', desc: 'Calculate your monthly loan payments easily.', url: 'tool-loan-emi-calculator.html', status: 'live', icon: 'bi-cash-coin' },
+  { title: 'Age Calculator', desc: 'Find your exact age in years, months, and days.', url: 'tool-age-calculator.html', status: 'live', icon: 'bi-hourglass-split' },
+  { title: 'Random Number Generator', desc: 'Generate random numbers in any range.', url: 'tool-random-number-generator.html', status: 'live', icon: 'bi-shuffle' },
+  { title: 'Color Picker', desc: 'Pick and copy any color code instantly.', url: 'tool-color-picker.html', status: 'live', icon: 'bi-palette' },
+  { title: 'Text to Speech', desc: 'Convert written text to natural-sounding audio.', url: 'tool-text-to-speech.html', status: 'live', icon: 'bi-volume-up' },
+  { title: 'Speech to Text', desc: 'Transcribe spoken words into text automatically.', url: 'tool-speech-to-text.html', status: 'live', icon: 'bi-mic' },
+  { title: 'Word Counter', desc: 'Count words, characters, and spaces in your text.', url: 'tool-word-counter.html', status: 'live', icon: 'bi-123' },
+  { title: 'Character Counter', desc: 'Instantly count characters in any text.', url: 'tool-character-counter.html', status: 'live', icon: 'bi-type' },
+  { title: 'Case Converter', desc: 'Convert text to UPPERCASE, lowercase, or Title Case.', url: 'tool-case-converter.html', status: 'live', icon: 'bi-arrow-up-right' },
+  { title: 'JSON Formatter', desc: 'Format and beautify your JSON data.', url: 'tool-json-formatter.html', status: 'live', icon: 'bi-braces' },
+  { title: 'Base64 Encoder/Decoder', desc: 'Encode or decode Base64 strings easily.', url: 'tool-base64-encoder-decoder.html', status: 'live', icon: 'bi-code-slash' },
+  { title: 'Image to Base64', desc: 'Convert images to Base64 strings for web use.', url: 'tool-image-to-base64.html', status: 'live', icon: 'bi-image' },
+  { title: 'Remove Line Breaks', desc: 'Remove all line breaks from your text.', url: 'tool-remove-line-breaks.html', status: 'live', icon: 'bi-eraser' },
+  { title: 'Text Reverser', desc: 'Reverse the order of characters in your text.', url: 'tool-text-reverser.html', status: 'live', icon: 'bi-arrow-repeat' },
+  { title: 'Text Sorter', desc: 'Sort lines of text alphabetically.', url: 'tool-text-sorter.html', status: 'live', icon: 'bi-sort-alpha-down' },
+  { title: 'Duplicate Remover', desc: 'Remove duplicate lines from your text.', url: 'tool-duplicate-remover.html', status: 'live', icon: 'bi-x-circle' },
+  { title: 'Text Encrypt/Decrypt', desc: 'Encrypt or decrypt text with a password.', url: 'tool-text-encrypt-decrypt.html', status: 'live', icon: 'bi-lock' },
+  { title: 'Lorem Ipsum Generator', desc: 'Generate placeholder text for designs.', url: 'tool-lorem-ipsum-generator.html', status: 'live', icon: 'bi-file-earmark-text' },
+  { title: 'Text to Binary/Hex/Octal', desc: 'Convert text to binary, hex, or octal.', url: 'tool-text-to-binary-hex-octal.html', status: 'live', icon: 'bi-123' },
+  { title: 'Text to ASCII', desc: 'Convert text to ASCII codes.', url: 'tool-text-to-ascii.html', status: 'live', icon: 'bi-fonts' },
+  { title: 'Text to Slug', desc: 'Generate SEO-friendly slugs from text.', url: 'tool-text-to-slug.html', status: 'live', icon: 'bi-link-45deg' },
+  { title: 'Text Diff Checker', desc: 'Compare two texts and highlight differences.', url: 'tool-text-diff-checker.html', status: 'live', icon: 'bi-file-diff' },
+  { title: 'Percentage Calculator', desc: 'Calculate percentages and percentage changes.', url: 'tool-percentage-calculator.html', status: 'live', icon: 'bi-percent' },
+  { title: 'Scientific Calculator', desc: 'Advanced calculator for science and engineering.', url: 'tool-scientific-calculator.html', status: 'live', icon: 'bi-clipboard-data' },
+  { title: 'Roman Numeral Converter', desc: 'Convert numbers to and from Roman numerals.', url: 'tool-roman-numeral-converter.html', status: 'live', icon: 'bi-123' },
+  { title: 'IP Address Finder', desc: 'Find your public IP address instantly.', url: 'tool-ip-address-finder.html', status: 'live', icon: 'bi-globe2' },
+  { title: 'To-Do List', desc: 'Organize your daily tasks and boost productivity.', url: 'tool-to-do-list.html', status: 'live', icon: 'bi-list-check' },
+  { title: 'Image Compressor', desc: 'Compress images without losing quality.', url: 'tool-image-compressor.html', status: 'live', icon: 'bi-image' },
+  { title: 'Image Resizer', desc: 'Resize images to custom dimensions.', url: 'tool-image-resizer.html', status: 'live', icon: 'bi-arrows-angle-expand' },
+  { title: 'Image Cropper', desc: 'Crop images to custom areas.', url: 'tool-image-cropper.html', status: 'live', icon: 'bi-crop' },
+  { title: 'Image to PDF', desc: 'Convert images to PDF files.', url: 'tool-image-to-pdf.html', status: 'live', icon: 'bi-file-earmark-pdf' },
+  { title: 'Image to Text (OCR)', desc: 'Extract text from images using OCR.', url: 'tool-image-to-text.html', status: 'live', icon: 'bi-file-earmark-text' },
+  { title: 'HTML to PDF', desc: 'Convert HTML code to PDF files.', url: 'tool-html-to-pdf.html', status: 'live', icon: 'bi-file-earmark-pdf' },
+  { title: 'CSS Minifier', desc: 'Minify CSS code to reduce file size.', url: 'tool-css-minifier.html', status: 'live', icon: 'bi-file-earmark-code' },
+  { title: 'JS Minifier', desc: 'Minify JavaScript code to reduce file size.', url: 'tool-js-minifier.html', status: 'live', icon: 'bi-file-earmark-code' },
+  { title: 'JSON Minifier', desc: 'Minify JSON data to reduce file size.', url: 'tool-json-minifier.html', status: 'live', icon: 'bi-file-earmark-code' },
+  { title: 'HTML Minifier', desc: 'Minify HTML code to reduce file size.', url: 'tool-html-minifier.html', status: 'live', icon: 'bi-file-earmark-code' },
+  { title: 'URL Encoder/Decoder', desc: 'Encode or decode URLs instantly.', url: 'tool-url-encoder.html', status: 'live', icon: 'bi-link-45deg' },
+  { title: 'URL Parser', desc: 'Parse and analyze URLs.', url: 'tool-url-parser.html', status: 'live', icon: 'bi-link-45deg' },
+  { title: 'UTM Builder', desc: 'Build UTM-tagged URLs for campaigns.', url: 'tool-utm-builder.html', status: 'live', icon: 'bi-link-45deg' },
+  { title: 'HTTP Header Checker', desc: 'Check HTTP headers for a URL.', url: 'tool-http-header-checker.html', status: 'live', icon: 'bi-globe2' },
+  { title: 'User Agent Parser', desc: 'Parse user agent strings.', url: 'tool-user-agent-parser.html', status: 'live', icon: 'bi-person-badge' },
+  // ... Add more tools up to 100 as needed ...
+];
+
+function renderToolsGrid() {
+  const grid = document.getElementById('toolsGrid');
+  grid.innerHTML = allTools.map(tool => `
+    <div class="col-md-4 mb-4">
+      <div class="card h-100 tools-glass text-center p-4">
+        <div class="mb-2"><i class="bi ${tool.icon} tool-icon"></i></div>
+        <h5 class="card-title fw-bold">${tool.title}
+          ${tool.status === 'soon' ? '<span class="soon-badge">Coming Soon</span>' : ''}
+        </h5>
+        <p class="card-text mb-4">${tool.desc}</p>
+        ${tool.status === 'live' ? `<a href="${tool.url}" class="btn btn-primary">Go to Tool</a>` : `<a href="#" class="btn btn-secondary disabled">Coming Soon</a>`}
+      </div>
+    </div>
+  `).join('');
+}
+renderToolsGrid();
+
+const searchInput = document.getElementById('globalSearchInput');
+const suggestionsBox = document.getElementById('searchSuggestions');
+searchInput.addEventListener('input', function() {
+  const query = this.value.trim().toLowerCase();
+  suggestionsBox.innerHTML = '';
+  if (!query) { suggestionsBox.style.display = 'none'; return; }
+  const matches = searchableItems.filter(item => item.title.toLowerCase().includes(query));
+  if (matches.length === 0) { suggestionsBox.style.display = 'none'; return; }
+  matches.forEach(item => {
+    const el = document.createElement('a');
+    el.className = 'list-group-item list-group-item-action';
+    el.href = item.url;
+    el.textContent = item.title;
+    suggestionsBox.appendChild(el);
+  });
+  suggestionsBox.style.display = 'block';
+});
+document.addEventListener('click', function(e) {
+  if (!searchInput.contains(e.target) && !suggestionsBox.contains(e.target)) {
+    suggestionsBox.style.display = 'none';
+  }
+});
+</script>
+</body>
+</html> 

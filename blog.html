@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Static Library - Blog & Articles</title>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Read the latest articles, tutorials, and updates from StaticLibrary. Stay informed about trending tools, productivity tips, and more.">
+  <meta name="keywords" content="blog, articles, tutorials, updates, productivity, tools, static library">
+  <meta name="author" content="StaticLibrary Team">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://yourdomain.com/blog.html">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+</head>
+<body class="bg-light text-dark">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">StaticLibrary</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="tools.html">Tools</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="terms.html">Terms</a></li>
+          <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="py-5 bg-light text-center border-bottom">
+    <div class="container">
+      <h1 class="display-5 fw-bold">Blog & Articles</h1>
+      <p class="lead">Latest updates, tutorials, and productivity tips from StaticLibrary.</p>
+    </div>
+  </section>
+
+  <!-- Blog Grid -->
+  <section class="container py-5">
+    <div class="row" id="blogGrid">
+      <!-- Blog posts will be loaded here by JavaScript -->
+    </div>
+  </section>
+  <script>
+  // List of all blog posts
+  const blogPosts = [
+    { title: 'How to Use the QR Code Generator', desc: 'Step-by-step guide to creating QR codes for links, text, and more.', url: 'blog-qr-code-generator.html', icon: 'bi-qr-code' },
+    { title: 'Secure Your Accounts with the Password Generator', desc: 'Create strong, unique passwords for your online accounts.', url: 'blog-password-generator.html', icon: 'bi-shield-lock' },
+    { title: 'Convert Anything with the Unit Converter', desc: 'Switch between measurement systems easily.', url: 'blog-unit-converter.html', icon: 'bi-rulers' },
+    { title: 'Check Your Health with the BMI Calculator', desc: 'Find your Body Mass Index and health range.', url: 'blog-bmi-calculator.html', icon: 'bi-calculator' },
+    { title: 'Calculate Loan Payments with the EMI Calculator', desc: 'Estimate your monthly loan payments and plan finances.', url: 'blog-loan-emi-calculator.html', icon: 'bi-cash-coin' },
+    // Add more blog posts here as you create them
+  ];
+  function renderBlogGrid() {
+    const grid = document.getElementById('blogGrid');
+    grid.innerHTML = blogPosts.map(post => `
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm text-center p-4">
+          <div class="mb-2"><i class="bi ${post.icon}" style="font-size:2.2rem;color:#185a9d;"></i></div>
+          <h5 class="card-title fw-bold">${post.title}</h5>
+          <p class="card-text mb-4">${post.desc}</p>
+          <a href="${post.url}" class="btn btn-primary">Read Blog</a>
+        </div>
+      </div>
+    `).join('');
+  }
+  renderBlogGrid();
+  </script>
+  <!-- Instructions for user: Place your .md blog posts in a 'posts' directory at the project root. Add their filenames to the 'posts' array in this file. -->
+
+  <!-- Disqus Comment System -->
+  <section class="container pb-5">
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_config = function () {
+          this.page.url = window.location.href;
+          this.page.identifier = window.location.pathname;
+        };
+        (function() {
+          var d = document, s = d.createElement('script');
+          s.src = 'https://YOUR_DISQUS_SHORTNAME.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-primary text-white text-center py-3 mt-auto">
+    <div class="container">
+      <small>&copy; 2024 StaticLibrary. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html> 

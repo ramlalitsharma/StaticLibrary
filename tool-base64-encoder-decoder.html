@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Base64 Encoder/Decoder - Free, Fast & Modern | StaticLibrary</title>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Encode or decode Base64 instantly. Free, fast, and ultra-modern UI. Learn how to use, benefits, and best use cases.">
+  <meta name="keywords" content="base64 encoder, base64 decoder, online base64 tool, encode base64, decode base64">
+  <meta name="author" content="StaticLibrary Team">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://yourdomain.com/tool-base64-encoder-decoder.html">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Base64 Encoder/Decoder - Free, Fast & Modern | StaticLibrary">
+  <meta property="og:description" content="Encode or decode Base64 instantly. Free, fast, and ultra-modern UI. Learn how to use, benefits, and best use cases.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourdomain.com/tool-base64-encoder-decoder.html">
+  <meta property="og:image" content="https://yourdomain.com/assets/og-image.jpg">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Base64 Encoder/Decoder - Free, Fast & Modern | StaticLibrary">
+  <meta name="twitter:description" content="Encode or decode Base64 instantly. Free, fast, and ultra-modern UI. Learn how to use, benefits, and best use cases.">
+  <meta name="twitter:image" content="https://yourdomain.com/assets/og-image.jpg">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <!-- Google AdSense Placeholder -->
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
+  <style>
+    .glass-card { background: rgba(255,255,255,0.85); box-shadow: 0 8px 32px 0 rgba(31,38,135,0.18); backdrop-filter: blur(8px); border-radius: 1.5rem; border: 1px solid rgba(255,255,255,0.18); }
+    .gradient-bg { background: linear-gradient(135deg, #f7971e 0%, #ffd200 100%); }
+    .icon-circle { background: #fff; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin: 0 auto 1rem auto; font-size: 2rem; color: #f7971e; }
+    pre { background: #f8f9fa; border-radius: 0.5rem; padding: 1rem; font-size: 1rem; }
+  </style>
+</head>
+<body class="bg-light text-dark gradient-bg">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">StaticLibrary</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="tools.html">All Tools</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="py-5 text-center text-white" style="background: linear-gradient(135deg, #f7971e 0%, #ffd200 100%);">
+    <div class="container">
+      <h1 class="display-5 fw-bold mb-2">Ultra-Modern Base64 Encoder/Decoder</h1>
+      <p class="lead mb-0">Encode or decode Base64 with a beautiful, fast, and free tool.</p>
+    </div>
+  </section>
+
+  <!-- AdSense Placeholder (Top) -->
+  <div class="container my-4 text-center">
+    <!-- Google AdSense: Top Banner -->
+    <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXX" data-ad-slot="XXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+  </div>
+
+  <!-- Base64 Encoder/Decoder Tool UI -->
+  <section class="container py-4">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="glass-card p-4 mb-4">
+          <div class="icon-circle mb-2"><i class="bi bi-code-square"></i></div>
+          <h2 class="h4 mb-3 text-center">Base64 Encoder/Decoder</h2>
+          <form id="b64Form" class="row g-3 align-items-center justify-content-center">
+            <div class="col-12">
+              <label for="b64Input" class="form-label">Enter Text</label>
+              <textarea class="form-control" id="b64Input" rows="4" placeholder="Type or paste your text here..." required></textarea>
+            </div>
+            <div class="col-12 text-center">
+              <button type="button" class="btn btn-primary m-1" id="encodeBtn">Encode</button>
+              <button type="button" class="btn btn-secondary m-1" id="decodeBtn">Decode</button>
+            </div>
+            <div class="col-12">
+              <label for="b64Output" class="form-label">Output</label>
+              <pre id="b64Output" class="form-control" style="min-height: 80px; max-height: 300px; overflow:auto;"></pre>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AdSense Placeholder (Middle) -->
+  <div class="container my-4 text-center">
+    <!-- Google AdSense: In-Content -->
+    <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXX" data-ad-slot="XXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+  </div>
+
+  <!-- High-Quality Content Section -->
+  <section class="container pb-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <article>
+          <h2 class="h4 mt-4">What is a Base64 Encoder/Decoder?</h2>
+          <p>A Base64 Encoder/Decoder is an online tool that encodes text to Base64 or decodes Base64 to text. It’s useful for developers, students, and anyone working with data transmission or storage.</p>
+
+          <h3 class="h5 mt-4">How to Use This Base64 Encoder/Decoder</h3>
+          <ol>
+            <li>Enter or paste your text in the box above.</li>
+            <li>Click <strong>Encode</strong> to convert to Base64 or <strong>Decode</strong> to convert Base64 to text.</li>
+            <li>Copy the output as needed.</li>
+          </ol>
+
+          <h3 class="h5 mt-4">Benefits & Features</h3>
+          <ul>
+            <li><strong>Ultra-Modern UI:</strong> Beautiful, glassmorphic design with icons and gradients.</li>
+            <li><strong>Fast & Accurate:</strong> Instant encoding and decoding.</li>
+            <li><strong>Mobile Friendly:</strong> Works on all devices.</li>
+            <li><strong>Free & Unlimited:</strong> No registration or fees required.</li>
+          </ul>
+
+          <h3 class="h5 mt-4">Example Use Cases</h3>
+          <ul>
+            <li>Encoding data for web APIs or storage.</li>
+            <li>Decoding Base64 strings from emails or web data.</li>
+            <li>Learning and teaching about encoding schemes.</li>
+          </ul>
+
+          <h3 class="h5 mt-4">Frequently Asked Questions (FAQs)</h3>
+          <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="faq1-heading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1">
+                  Is this Base64 encoder/decoder free to use?
+                </button>
+              </h2>
+              <div id="faq1" class="accordion-collapse collapse" aria-labelledby="faq1-heading" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Yes! This tool is 100% free and unlimited for personal and business use.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="faq2-heading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+                  Does it work for binary data?
+                </button>
+              </h2>
+              <div id="faq2" class="accordion-collapse collapse" aria-labelledby="faq2-heading" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  This tool is designed for text. For binary files, use a dedicated file-to-base64 tool.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="faq3-heading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+                  Is my data stored or sent anywhere?
+                </button>
+              </h2>
+              <div id="faq3" class="accordion-collapse collapse" aria-labelledby="faq3-heading" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  No. All encoding/decoding happens instantly in your browser for maximum privacy.
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- AdSense Placeholder (Bottom) -->
+  <div class="container my-4 text-center">
+    <!-- Google AdSense: Bottom Banner -->
+    <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXX" data-ad-slot="XXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-primary text-white text-center py-4 mt-auto">
+    <div class="container">
+      <div class="mb-2">
+        <a href="about.html" class="text-white me-3">About</a>
+        <a href="contact.html" class="text-white me-3">Contact</a>
+        <a href="terms.html" class="text-white me-3">Terms</a>
+        <a href="privacy.html" class="text-white">Privacy</a>
+      </div>
+      <small>&copy; 2024 StaticLibrary. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Ultra-modern Base64 Encoder/Decoder Logic
+    const b64Input = document.getElementById('b64Input');
+    const b64Output = document.getElementById('b64Output');
+    document.getElementById('encodeBtn').onclick = function() {
+      try {
+        b64Output.textContent = btoa(unescape(encodeURIComponent(b64Input.value)));
+      } catch (e) {
+        b64Output.textContent = 'Encoding error!';
+      }
+    };
+    document.getElementById('decodeBtn').onclick = function() {
+      try {
+        b64Output.textContent = decodeURIComponent(escape(atob(b64Input.value)));
+      } catch (e) {
+        b64Output.textContent = 'Decoding error!';
+      }
+    };
+  </script>
+</body>
+</html> 

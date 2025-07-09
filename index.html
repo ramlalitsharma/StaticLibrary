@@ -1,160 +1,264 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explore Web Tools Hub for 10 interactive web tools and mini-projects with live demos, tutorials, and copyable code. Optimized for AdSense compliance, SEO, and performance.">
-  <meta name="keywords" content="web tools, javascript projects, css animations, calculators, generators, code snippets, responsive, AdSense, SEO, productivity, tutorials">
-  <meta name="author" content="Web Tools Hub">
+  <title>StaticLibrary - 100+ Trending Online Tools</title>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Discover 100+ trending online tools, calculators, generators, and productivity boosters. Modern, responsive, and SEO-optimized.">
+  <meta name="keywords" content="online tools, productivity, calculators, generators, trending tools, static library, web tools, utilities">
+  <meta name="author" content="StaticLibrary Team">
   <meta name="robots" content="index, follow">
-  <meta name="googlebot" content="index, follow">
-  <link rel="canonical" href="https://staticlibrary.site">
-  <title>Web Tools Hub - Interactive Tools & Tutorials</title>
-  <!-- Open Graph -->
-  <meta property="og:title" content="Web Tools Hub - Interactive Tools & Tutorials">
-  <meta property="og:description" content="Discover 10 web tools with live demos, tutorials, and code snippets for developers. Optimized for speed, SEO, and AdSense compliance.">
+  <link rel="canonical" href="https://staticlibrary.netlify.app/">
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="StaticLibrary - 100+ Trending Online Tools">
+  <meta property="og:description" content="Discover 100+ trending online tools, calculators, generators, and productivity boosters. Modern, responsive, and SEO-optimized.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://staticlibrary.site">
-  <meta property="og:image" content="https://staticlibrary.site/images/og-image.jpg">
-  <!-- Twitter Card -->
+  <meta property="og:url" content="https://staticlibrary.netlify.app/">
+  <meta property="og:image" content="https://staticlibrary.netlify.app/assets/og-image.jpg">
+  <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Web Tools Hub - Interactive Tools & Tutorials">
-  <meta name="twitter:description" content="Discover 10 web tools with live demos, tutorials, and code snippets for developers.">
-  <meta name="twitter:image" content="https://staticlibrary.site/images/og-image.jpg">
-  <!-- Preload Critical CSS -->
-  <link rel="preload" href="styles.css" as="style">
-  <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
-  <!-- Schema Markup -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Web Tools Hub",
-      "url": "https://staticlibrary.site",
-      "description": "Interactive web tools and mini-projects with live demos, tutorials, and code snippets for developers.",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://staticlibrary.site/search?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Web Tools Hub",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://staticlibrary.site/images/logo.png"
-        }
-      }
-    }
-  </script>
-  <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXX" crossorigin="anonymous"></script>
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-Y"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-XXXXX-Y', { 'anonymize_ip': true });
-  </script>
+  <meta name="twitter:title" content="StaticLibrary - 100+ Trending Online Tools">
+  <meta name="twitter:description" content="Discover 100+ trending online tools, calculators, generators, and productivity boosters. Modern, responsive, and SEO-optimized.">
+  <meta name="twitter:image" content="https://staticlibrary.netlify.app/assets/og-image.jpg">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <!-- Google AdSense Placeholder -->
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
+  <style>
+    body { background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%); }
+    .glass { background: rgba(255,255,255,0.85); box-shadow: 0 8px 32px 0 rgba(31,38,135,0.18); backdrop-filter: blur(12px); border-radius: 2rem; border: 1px solid rgba(255,255,255,0.18); }
+    .hero-bg { background: linear-gradient(120deg, #43cea2 0%, #185a9d 100%); }
+    .hero-anim { animation: fadeInUp 1.2s cubic-bezier(.39,.575,.56,1) both; }
+    @keyframes fadeInUp { 0% { opacity: 0; transform: translateY(40px);} 100% { opacity: 1; transform: none; } }
+    .carousel-item img { border-radius: 1.5rem; }
+    .testimonial-card { background: rgba(255,255,255,0.95); border-radius: 1.5rem; box-shadow: 0 2px 16px rgba(0,0,0,0.07); }
+    .gradient-text { background: linear-gradient(90deg, #43cea2, #185a9d, #f7971e, #ffd200); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .cta-btn { font-size: 1.25rem; padding: 0.75rem 2.5rem; border-radius: 2rem; }
+    .feature-icon { font-size: 2.5rem; color: #185a9d; }
+  </style>
 </head>
-<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans transition-colors duration-300">
-  <header class="bg-gradient-to-r from-gray-900 to-gray-700 text-white text-center py-12 shadow-lg relative">
-    <h1 class="text-4xl md:text-5xl font-bold">Web Tools Hub</h1>
-    <p class="text-lg md:text-xl mt-2 opacity-90">Interactive Web Tools, Tutorials, and Code Snippets for Developers</p>
-    <button id="theme-toggle" class="absolute top-4 right-4 bg-blue-600 text-white rounded-full p-2 hover:bg-blue-700 transition-transform" aria-label="Toggle dark mode">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
-    </button>
-  </header>
-  <nav class="bg-white dark:bg-gray-800 shadow sticky top-0 z-50 py-4" aria-label="Primary navigation">
-    <div id="project-nav" class="flex flex-wrap gap-2 justify-center max-w-6xl mx-auto overflow-x-auto px-4" role="list"></div>
-  </nav>
-  <div class="max-w-4xl mx-auto my-6 px-4">
-    <p class="affiliate-disclosure text-sm text-gray-600 dark:text-gray-400">*Disclosure: This page contains affiliate links, including to Shopee. We may earn a commission if you purchase through these links, at no extra cost to you.</p>
-    <label for="search-input" class="sr-only">Search projects</label>
-    <input type="search" id="search-input" placeholder="Search tools, tutorials, or keywords..." class="w-full p-3 rounded-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:outline-none" aria-describedby="search-desc" autocomplete="off">
-    <div id="search-desc" class="sr-only">Type keywords to filter projects and tutorials</div>
-    <div id="search-suggestions" class="absolute w-full max-w-md bg-white dark:bg-gray-800 rounded-lg shadow-lg mt-1 hidden"></div>
-  </div>
-  <!-- AdSense Ad Unit -->
-  <div class="max-w-6xl mx-auto px-4 mb-6 text-center">
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-XXXXXX"
-         data-ad-slot="XXXXXX"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-  </div>
-  <main id="main-content" class="max-w-6xl mx-auto px-4 pb-16" tabindex="-1" aria-live="polite">
-    <section id="intro" class="mb-8">
-      <h2 class="text-3xl font-bold mb-4">Welcome to Web Tools Hub</h2>
-      <p class="text-gray-700 dark:text-gray-300">Web Tools Hub offers 10 interactive web tools and mini-projects designed for developers and designers. Each project includes a live demo, detailed tutorial, and copyable code snippets. Learn to build calculators, animations, to-do lists, and more while mastering JavaScript, CSS, and HTML. Our site is optimized for speed, SEO, and AdSense compliance, ensuring a seamless experience. Explore below to enhance your coding skills!</p>
-    </section>
-    <div id="projects-container" class="space-y-6">
-      <!-- Static content for all projects to ensure AdSense compliance -->
-      <div class="project bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
-        <h2 class="text-2xl font-bold mb-4">Expanding Cards</h2>
-        <p class="text-gray-700 dark:text-gray-300 mb-4">Create an interactive gallery where cards expand on click with smooth CSS animations. Perfect for portfolios or product showcases, this project teaches flexbox, transitions, and JavaScript event handling.</p>
-        <p class="text-gray-700 dark:text-gray-300 mb-4">Tutorial: Use a flex container with cards set to `flex: 1`. On click, toggle a class like `flex-[3]` to expand the selected card while shrinking others. Customize with Tailwind CSS or your own styles for unique designs.</p>
-        <div class="demo mb-4 p-4 bg-gray-100 dark:bg-gray-700 rounded"></div>
-        <div class="code relative">
-          <pre class="bg-gray-900 text-gray-100 p-4 rounded overflow-x-auto"><code></code></pre>
-        </div>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html"><i class="bi bi-lightning-charge"></i> StaticLibrary</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="tools.html">All Tools</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <form class="d-flex ms-3 position-relative" id="globalSearchForm" autocomplete="off">
+          <input class="form-control me-2" type="search" placeholder="Search tools..." aria-label="Search" id="globalSearchInput" style="min-width:200px;">
+          <div class="list-group position-absolute w-100" id="searchSuggestions" style="z-index: 1000; top: 100%; left: 0; display: none;"></div>
+        </form>
       </div>
-      <div class="project bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
-        <h2 class="text-2xl font-bold mb-4">Progress Steps</h2>
-        <p class="text-gray-700 dark:text-gray-300 mb-4">Build a multi-step progress bar for forms or checkout processes. Ideal for e-commerce, it uses CSS for styling and JavaScript for dynamic updates, teaching DOM manipulation and state management.</p>
-        <p class="text-gray-700 dark:text-gray-300 mb-4">Tutorial: Create steps with HTML and style with CSS. Use JavaScript to update active steps and progress bar width. Customize colors or add animations to enhance user experience.</p>
-        <div class="demo mb-4 p-4 bg-gray-100 dark:bg-gray-700 rounded"></div>
-        <div class="code relative">
-          <pre class="bg-gray-900 text-gray-100 p-4 rounded overflow-x-auto"><code></code></pre>
-        </div>
-      </div>
-      <!-- Add remaining 8 projects similarly with detailed descriptions and tutorials -->
     </div>
-    <noscript>
-      <div class="text-center text-gray-700 dark:text-gray-300">
-        <h2 class="text-2xl font-bold mb-4">Explore Web Tools Hub</h2>
-        <p>JavaScript is required for interactive demos, but you can explore detailed project descriptions and tutorials below. Each project includes code snippets and use cases to help you learn and implement web tools.</p>
-        <div class="space-y-6">
-          <div>
-            <h3 class="text-xl font-bold">Expanding Cards</h3>
-            <p>Build an interactive gallery where cards expand on click with smooth CSS animations. Perfect for portfolios or product showcases, this project uses flexbox and JavaScript event handling. Tutorial: Create a flex container with cards set to `flex: 1`. Toggle a class like `flex-[3]` on click to expand. Customize with Tailwind CSS for unique designs.</p>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-bg py-5 text-white text-center position-relative">
+    <div class="container py-5">
+      <h1 class="display-2 fw-bold mb-3 hero-anim gradient-text">100+ Trending Online Tools</h1>
+      <p class="lead mb-4 hero-anim">Boost your productivity, solve problems, and have fun with our ultra-modern, free, and fast web tools hub.</p>
+      <a href="tools.html" class="btn btn-light cta-btn shadow-lg hero-anim">Explore All Tools <i class="bi bi-arrow-right"></i></a>
+    </div>
+    <svg style="position:absolute;bottom:0;left:0;width:100%;height:60px;" viewBox="0 0 1440 60"><path fill="#fff" fill-opacity="1" d="M0,32L1440,60L1440,0L0,0Z"></path></svg>
+  </section>
+
+  <!-- Featured Tools Carousel -->
+  <section class="container py-5">
+    <h2 class="text-center fw-bold mb-4 gradient-text">Featured Tools</h2>
+    <div id="featuredToolsCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-md-4 mb-3">
+              <div class="card glass p-4 text-center">
+                <i class="bi bi-qr-code feature-icon mb-2"></i>
+                <h5 class="fw-bold">QR Code Generator</h5>
+                <p>Create QR codes for URLs, text, and more.</p>
+                <a href="tool-qr-code.html" class="btn btn-primary">Try Now</a>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="card glass p-4 text-center">
+                <i class="bi bi-shield-lock feature-icon mb-2"></i>
+                <h5 class="fw-bold">Password Generator</h5>
+                <p>Generate strong, random passwords instantly.</p>
+                <a href="tool-password-generator.html" class="btn btn-primary">Try Now</a>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="card glass p-4 text-center">
+                <i class="bi bi-rulers feature-icon mb-2"></i>
+                <h5 class="fw-bold">Unit Converter</h5>
+                <p>Convert between metric and imperial units.</p>
+                <a href="tool-unit-converter.html" class="btn btn-primary">Try Now</a>
+              </div>
+            </div>
           </div>
-          <div>
-            <h3 class="text-xl font-bold">Progress Steps</h3>
-            <p>Create a multi-step progress bar for forms or checkout processes, ideal for e-commerce. It uses CSS for styling and JavaScript for dynamic updates. Tutorial: Define steps in HTML, style with CSS, and use JavaScript to update active steps and progress bar width. Customize colors for branding.</p>
+        </div>
+        <div class="carousel-item">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-md-4 mb-3">
+              <div class="card glass p-4 text-center">
+                <i class="bi bi-calculator feature-icon mb-2"></i>
+                <h5 class="fw-bold">BMI Calculator</h5>
+                <p>Calculate your Body Mass Index easily.</p>
+                <a href="tool-bmi-calculator.html" class="btn btn-primary">Try Now</a>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="card glass p-4 text-center">
+                <i class="bi bi-cash-coin feature-icon mb-2"></i>
+                <h5 class="fw-bold">Loan EMI Calculator</h5>
+                <p>Calculate your monthly loan payments.</p>
+                <a href="tool-loan-emi-calculator.html" class="btn btn-primary">Try Now</a>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="card glass p-4 text-center">
+                <i class="bi bi-hourglass-split feature-icon mb-2"></i>
+                <h5 class="fw-bold">Age Calculator</h5>
+                <p>Find your exact age in years, months, days.</p>
+                <a href="tool-age-calculator.html" class="btn btn-primary">Try Now</a>
+              </div>
+            </div>
           </div>
-          <!-- Add remaining 8 projects with descriptions and tutorials -->
+        </div>
+        <div class="carousel-item">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-md-4 mb-3">
+              <div class="card glass p-4 text-center">
+                <i class="bi bi-palette feature-icon mb-2"></i>
+                <h5 class="fw-bold">Color Picker</h5>
+                <p>Pick and copy any color code.</p>
+                <a href="tool-color-picker.html" class="btn btn-primary">Try Now</a>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="card glass p-4 text-center">
+                <i class="bi bi-shuffle feature-icon mb-2"></i>
+                <h5 class="fw-bold">Random Number Generator</h5>
+                <p>Generate random numbers in a range.</p>
+                <a href="tool-random-number-generator.html" class="btn btn-primary">Try Now</a>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="card glass p-4 text-center">
+                <i class="bi bi-clipboard-data feature-icon mb-2"></i>
+                <h5 class="fw-bold">Scientific Calculator</h5>
+                <p>Advanced calculator for science and engineering.</p>
+                <a href="tool-scientific-calculator.html" class="btn btn-primary">Try Now</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </noscript>
-  </main>
-  <section id="recommended-tools" class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 max-w-6xl mx-auto mb-6">
-    <h2 class="text-2xl font-bold mb-4">Recommended Productivity Tools</h2>
-    <p class="text-gray-700 dark:text-gray-300">Boost your coding with a premium notebook or tablet for planning projects. <a href="https://s.shopee.com.my/6AZ3j3CYfT" target="_blank" rel="nofollow" class="text-blue-600 hover:underline font-bold">Get this productivity tool on Shopee</a> to stay organized and efficient.</p>
+      <button class="carousel-control-prev" type="button" data-bs-target="#featuredToolsCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#featuredToolsCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
   </section>
-  <section id="privacy" class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 max-w-md mx-auto mb-6">
-    <h2 class="text-2xl font-bold mb-4">Privacy Policy</h2>
-    <p class="text-gray-700 dark:text-gray-300">Web Tools Hub collects minimal data via Google Analytics and AdSense cookies to improve user experience and site performance. We use affiliate links, including to Shopee, and may earn a commission at no extra cost to you. No personal data is collected unless provided voluntarily. Email <a href="mailto:webtoolshub@example.com" class="text-blue-600 hover:underline">webtoolshub@example.com</a> for inquiries.</p>
+
+  <!-- Trending Tools Section -->
+  <section class="container py-5">
+    <h2 class="text-center fw-bold mb-4 gradient-text">Trending Tools</h2>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-3">
+        <div class="card glass p-3 text-center">
+          <i class="bi bi-mic feature-icon mb-2"></i>
+          <h6 class="fw-bold">Speech to Text</h6>
+          <a href="tool-speech-to-text.html" class="btn btn-outline-primary btn-sm mt-2">Try Now</a>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card glass p-3 text-center">
+          <i class="bi bi-volume-up feature-icon mb-2"></i>
+          <h6 class="fw-bold">Text to Speech</h6>
+          <a href="tool-text-to-speech.html" class="btn btn-outline-primary btn-sm mt-2">Try Now</a>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card glass p-3 text-center">
+          <i class="bi bi-123 feature-icon mb-2"></i>
+          <h6 class="fw-bold">Roman Numeral Converter</h6>
+          <a href="tool-roman-numeral-converter.html" class="btn btn-outline-primary btn-sm mt-2">Try Now</a>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card glass p-3 text-center">
+          <i class="bi bi-globe2 feature-icon mb-2"></i>
+          <h6 class="fw-bold">IP Address Finder</h6>
+          <a href="tool-ip-address-finder.html" class="btn btn-outline-primary btn-sm mt-2">Try Now</a>
+        </div>
+      </div>
+    </div>
   </section>
-  <section id="terms" class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 max-w-md mx-auto mb-6">
-    <h2 class="text-2xl font-bold mb-4">Terms of Service</h2>
-    <p class="text-gray-700 dark:text-gray-300">By using Web Tools Hub, you agree to use content for educational purposes only. Code snippets are free to use but not to claim as your own. We are not liable for damages from site use. Contact <a href="mailto:webtoolshub@example.com" class="text-blue-600 hover:underline">webtoolshub@example.com</a> for questions.</p>
+
+  <!-- Testimonials Section -->
+  <section class="container py-5">
+    <h2 class="text-center fw-bold mb-4 gradient-text">What Users Say</h2>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-4">
+        <div class="testimonial-card p-4 text-center">
+          <i class="bi bi-stars display-4 mb-3 text-warning"></i>
+          <blockquote class="blockquote">“StaticLibrary is my go-to for quick tools. The design is beautiful and everything just works!”</blockquote>
+          <footer class="blockquote-footer mt-2">Amit, Developer</footer>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="testimonial-card p-4 text-center">
+          <i class="bi bi-stars display-4 mb-3 text-warning"></i>
+          <blockquote class="blockquote">“I love the variety and speed. The tools are super easy to use on mobile too.”</blockquote>
+          <footer class="blockquote-footer mt-2">Priya, Student</footer>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="testimonial-card p-4 text-center">
+          <i class="bi bi-stars display-4 mb-3 text-warning"></i>
+          <blockquote class="blockquote">“Best collection of web tools I’ve found. Highly recommended!”</blockquote>
+          <footer class="blockquote-footer mt-2">John, Marketer</footer>
+        </div>
+      </div>
+    </div>
   </section>
-  <section id="contact" class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 max-w-md mx Wend
-    <h2 class="text-2xl font-bold mb-4">Contact Us</h2>
-    <p class="text-gray-700 dark:text-gray-300">Have feedback? Email us at <a href="mailto:webtoolshub@example.com" class="text-blue-600 hover:underline">webtoolshub@example.com</a> or follow on <a href="https://x.com/yourhandle" class="text-blue-600 hover:underline">X</a>.</p>
-  </section>
-  <footer class="bg-gray-900 text-gray-100 text-center py-6">
-    <p>© 2025 Web Tools Hub | <a href="#privacy" class="text-blue-400 hover:underline">Privacy</a> | <a href="#terms" class="text-blue-400 hover:underline">Terms</a> | <a href="#contact" class="text-blue-400 hover:underline">Contact</a></p>
+
+  <!-- AdSense Placeholder (Bottom) -->
+  <div class="container my-4 text-center">
+    <!-- Google AdSense: Bottom Banner -->
+    <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXX" data-ad-slot="XXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-primary text-white text-center py-4 mt-auto">
+    <div class="container">
+      <div class="mb-2">
+        <a href="about.html" class="text-white me-3">About</a>
+        <a href="contact.html" class="text-white me-3">Contact</a>
+        <a href="terms.html" class="text-white me-3">Terms</a>
+        <a href="privacy.html" class="text-white">Privacy</a>
+      </div>
+      <small>&copy; 2024 StaticLibrary. All rights reserved.</small>
+    </div>
   </footer>
-  <butto. id="back-to-top" class="fixed bottom-6 right-6 bg-blue-600 text-white rounded-full p-3 shadow-lg hover:bg-blue-700 transition-transform hidden" aria-label="Back to top">
-    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" /></svg>
-  </button>
-  <script src="script.js" defer></script>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

@@ -160,3 +160,31 @@ html {
 .duration-500 {
   transition-duration: 500ms;
 }
+
+/* Cookie Consent Banner */
+#cookieConsent {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #212529;
+  color: #fff;
+  padding: 1rem 0.5rem;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+}
+#cookieConsent button {
+  margin-left: 1rem;
+  background: #0d6efd;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+#cookieConsent.hide {
+  display: none;
+}
